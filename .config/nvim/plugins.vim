@@ -37,6 +37,9 @@ call plug#begin("~/.vim/plugged")
     " Surround for text surroundings
     Plug 'tpope/vim-surround'
 
+    " Broser utils
+    Plug 'dhruvasagar/vim-open-url'
+
     " Themes
     Plug 'arcticicestudio/nord-vim'
     Plug 'dracula/vim'
