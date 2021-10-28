@@ -21,6 +21,9 @@ sudo npm install -g vscode-langservers-extracted
 echo --Emmet
 sudo npm install -g emmet-ls
 
+echo --eslint + prettier
+sudo npm install -g eslint_d prettier
+
 # echo --Lua
 # cd ~/.vim
 # git clone https://github.com/sumneko/lua-language-server

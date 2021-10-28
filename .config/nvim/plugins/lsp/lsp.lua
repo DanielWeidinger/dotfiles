@@ -2,22 +2,53 @@ local lspconfig = require'lspconfig'
 local configs = require'lspconfig/configs'    
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-lspconfig.tsserver.setup{ capabilities = capabilities, }
-lspconfig.pylsp.setup{capabilities = capabilities,}
-lspconfig.dockerls.setup{capabilities = capabilities,}
-lspconfig.bashls.setup{capabilities = capabilities,}
+local format_async = function(err, _, result, _, bufnr)
+    if err ~= nil or result == nil then return end
+    if not vim.api.nvim_buf_get_option(bufnr, "modified") then
+        local view = vim.fn.winsaveview()
+        vim.lsp.util.apply_text_edits(result, bufnr)
+        vim.fn.winrestview(view)
+        if bufnr == vim.api.nvim_get_current_buf() then
+            vim.api.nvim_command("noautocmd :update")
+        end
+    end
+end
+vim.lsp.handlers["textDocument/formatting"] = format_async
 
--- css
+function on_attach(client)
+    if client.resolved_capabilities.document_formatting then
+        print("Autoformat enabled")
+        vim.api.nvim_exec([[
+         augroup LspAutocommands
+             autocmd! * <buffer>
+             autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()
+         augroup END
+         ]], true)
+    end
+end
+
+lspconfig.pylsp.setup{capabilities = capabilities, on_attach=on_attach,}
+lspconfig.dockerls.setup{capabilities = capabilities, on_attach=on_attach,}
+lspconfig.bashls.setup{capabilities = capabilities, on_attach=on_attach,}
+
+lspconfig.tsserver.setup{ 
+    capabilities = capabilities,
+    on_attach = function(client)
+        client.resolved_capabilities.document_formatting = false
+        on_attach(client)
+    end,
+ }
+
 lspconfig.cssls.setup {
   capabilities = capabilities,
+  on_attach=on_attach,
 }
 
--- html
 lspconfig.html.setup {
   capabilities = capabilities,
+  on_attach=on_attach,
 }
 
--- Emmet
 if not lspconfig.emmet_ls then   
     configs.emmet_ls = {    
         default_config = {    
@@ -30,9 +61,8 @@ if not lspconfig.emmet_ls then
         },    
     }    
 end
-lspconfig.emmet_ls.setup{ capabilities = capabilities }
+lspconfig.emmet_ls.setup{ capabilities = capabilities,  on_attach=on_attach, }
 
--- JSON
 lspconfig.jsonls.setup {
     capabilities = capabilities,
     commands = {
@@ -41,6 +71,7 @@ lspconfig.jsonls.setup {
           vim.lsp.buf.range_formatting({},{0,0},{vim.fn.line("$"),0})
         end
       }
-    }
+    },
+    on_attach=on_attach
 }
 
