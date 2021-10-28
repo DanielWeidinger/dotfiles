@@ -1,8 +1,7 @@
 source ~/.config/nvim/plugins/lsp/lsp.lua
-source ~/.config/nvim/plugins/lsp/ls_json.lua
 
 " for prettier and eslint
-" source ~/.config/nvim/plugins/lsp/diagnostics.lua
+source ~/.config/nvim/plugins/lsp/diagnostics.lua
 
 " LSP config (the mappings used in the default file don't quite work right)
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
