@@ -101,3 +101,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 alias config='/usr/bin/git --git-dir=/home/daniel/dotfiles/ --work-tree=/home/daniel'
+
+# GO installation
+export GOPATH=~/go
+export PATH=$PATH:$GOPATH/bin

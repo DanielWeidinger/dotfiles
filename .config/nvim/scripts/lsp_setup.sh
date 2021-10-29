@@ -22,7 +22,10 @@ echo --Emmet
 sudo npm install -g emmet-ls
 
 echo --eslint + prettier
-sudo npm install -g eslint_d prettier
+sudo npm install -g eslint_d prettier_d_slim
+
+echo '--General purpose lang server (efm)'
+go get github.com/mattn/efm-langserver@latest
 
 # echo --Lua
 # cd ~/.vim
