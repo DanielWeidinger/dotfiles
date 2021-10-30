@@ -17,7 +17,7 @@ vim.lsp.handlers["textDocument/formatting"] = format_async
 
 function on_attach(client)
     if client.resolved_capabilities.document_formatting then
-        print("Autoformat enabled")
+        -- print("Autoformat enabled")
         vim.api.nvim_exec([[
          augroup LspAutocommands
              autocmd! * <buffer>
@@ -72,6 +72,9 @@ lspconfig.jsonls.setup {
         end
       }
     },
-    on_attach=on_attach
+    on_attach = function(client)
+        client.resolved_capabilities.document_formatting = false
+        on_attach(client)
+    end,
 }
 

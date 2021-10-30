@@ -50,13 +50,13 @@ call plug#begin("~/.vim/plugged")
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/cmp-buffer'
     Plug 'hrsh7th/nvim-cmp'
-    " For vsnip users.
     Plug 'hrsh7th/cmp-vsnip'
     Plug 'hrsh7th/vim-vsnip'
     Plug 'hrsh7th/cmp-path'
     Plug 'f3fora/cmp-spell'
     Plug 'hrsh7th/cmp-calc'
     Plug 'ray-x/cmp-treesitter'
+    Plug 'onsails/lspkind-nvim' " Better iconography for completion
     " better code diagnostics with floating window
     Plug 'glepnir/lspsaga.nvim'
 

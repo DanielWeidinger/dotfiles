@@ -1,7 +1,7 @@
 " Source files
 if has('unix')
+    source ~/.config/nvim/utils.vim
 	source ~/.config/nvim/general.vim
-  source ~/.config/nvim/utils.vim
 	source ~/.config/nvim/keys.vim
 else
 	source ~/AppData/Local/nvim/general.vim
@@ -38,5 +38,7 @@ if has('unix')
 else
 	source ~/AppData/Local/nvim/project_management.vim
 endif
+
 "   NERDTree
-let NERDTreeShowHidden=1
+
+autocmd BufEnter * :call RemapIfNerdTree()

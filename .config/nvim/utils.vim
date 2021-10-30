@@ -20,3 +20,19 @@ fun! ToggleQFList(global)
         end
     endif
 endfun
+fun! RemapIfNerdTree()
+    if bufname('#') =~ 'NERD_tree_\d\+' "&& bufname('%') !~ 'NERD_tree_\d\+'
+        " TODO: Integrate whichkey into unmapping
+        let telescope_funcs = ["f", "g", "h", "b", "t"]
+
+        for func in telescope_funcs
+            execute "nnoremap <buffer> <leader>f" . func . " :echo 'There will be general mayhem, so no'<cr>"
+        endfor
+
+        let i = 1
+        while i <= 12
+            execute "nnoremap <buffer> <F" . i . "> :echo 'There will be general mayhem, so no'<cr>"
+            let i = i + 1
+        endwhile 
+    endif
+endfun
