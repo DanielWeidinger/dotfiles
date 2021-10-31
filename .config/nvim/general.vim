@@ -8,13 +8,6 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
 " Populate locallist with lsp diagnostics automatically 
     autocmd User LspDiagnosticsChanged :lua vim.lsp.diagnostic.set_loclist({open_loclist = false})
 
-" lang based executions
-autocmd FileType python map <buffer> <F9> :FloatermNew --autoclose=0 python %<CR>
-autocmd FileType python map <buffer> <F9> :FloatermNew --autoclose=0 python %<CR>
-autocmd FileType python imap <buffer> <F10> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
-autocmd FileType python map <buffer> <F10> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
-
-
 " navigation
 set relativenumber
 set nu

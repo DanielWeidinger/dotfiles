@@ -7,7 +7,6 @@ wk.register({
 wk.register({
     s = { ":so ~/.config/nvim/init.vim<cr>", "source"},
     e = { ":NERDTreeToggle<cr>", "explorer"},
-    m = { ":MaximizerToggle!<cr>", "maximize"},
     q = { ":call ToggleQFList(0)<CR>", "local qfl"},
     ["p"] = "which_key_ignore",  -- special label to hide it in the popup
     ["P"] = "which_key_ignore",  -- special label to hide it in the popup

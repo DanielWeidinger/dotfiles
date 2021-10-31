@@ -73,7 +73,6 @@ call plug#begin("~/.vim/plugged")
 
     " Mutli-language debugger
     Plug 'puremourning/vimspector'
-    Plug 'szw/vim-maximizer'
 
     " Fuzzy finding
     Plug 'nvim-telescope/telescope.nvim'

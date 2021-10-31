@@ -25,6 +25,7 @@ echo --eslint + prettier
 sudo npm install -g eslint_d prettier_d_slim
 
 echo '--General purpose lang server (efm)'
+export GO111MODULE=on
 go get github.com/mattn/efm-langserver@latest
 
 # echo --Lua

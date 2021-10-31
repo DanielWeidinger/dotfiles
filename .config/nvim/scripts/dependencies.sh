@@ -3,7 +3,8 @@
 echo "-- Setup"
 sudo apt-get update -y
 sudo apt-get upgrade
-sudo apt-get -y install ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip curl ripgrep libxext-dev, golang-go
+sudo apt-get -y install ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip curl ripgrep, golang-go
+sudo apt-get -y install libx11-dev, libxext-dev
 #TODO: Move golang-go to global dependencies and add to path
 
 echo "-- Setup -- NodeJs"
