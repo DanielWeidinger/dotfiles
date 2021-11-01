@@ -20,6 +20,7 @@ fun! ToggleQFList(global)
         end
     endif
 endfun
+
 fun! RemapIfNerdTree()
     if bufname('#') =~ 'NERD_tree_\d\+' "&& bufname('%') !~ 'NERD_tree_\d\+'
         " TODO: Integrate whichkey into unmapping
@@ -35,4 +36,9 @@ fun! RemapIfNerdTree()
             let i = i + 1
         endwhile 
     endif
+endfun
+
+fun GotoWindow(id)
+        call win_gotoid(a:id)
+        " MaximizerToggle
 endfun
