@@ -51,7 +51,6 @@ call plug#begin("~/.vim/plugged")
     Plug 'hrsh7th/cmp-buffer'
     Plug 'hrsh7th/nvim-cmp'
     Plug 'hrsh7th/cmp-vsnip'
-    Plug 'hrsh7th/vim-vsnip'
     Plug 'hrsh7th/cmp-path'
     Plug 'f3fora/cmp-spell'
     Plug 'hrsh7th/cmp-calc'
@@ -59,6 +58,9 @@ call plug#begin("~/.vim/plugged")
     Plug 'onsails/lspkind-nvim' " Better iconography for completion
     " better code diagnostics with floating window
     Plug 'glepnir/lspsaga.nvim'
+    " Snippets
+    Plug 'hrsh7th/vim-vsnip'
+    Plug 'rafamadriz/friendly-snippets'
 
     " --- Datasci stuff ---
     Plug 'dccsillag/magma-nvim', { 'do': ':UpdateRemotePlugins' }
