@@ -5,7 +5,7 @@ call plug#begin("~/.vim/plugged")
     " Project managment(Sessions, bookmarks, ...)
     Plug 'mhinz/vim-startify'
     
-    "As the name suggests
+    " As the name suggests
     Plug 'windwp/nvim-autopairs'
     Plug 'preservim/nerdtree'
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -75,6 +75,7 @@ call plug#begin("~/.vim/plugged")
 
     " Mutli-language debugger
     Plug 'puremourning/vimspector'
+    Plug 'szw/vim-maximizer'
 
     " Fuzzy finding
     Plug 'nvim-telescope/telescope.nvim'
