@@ -22,7 +22,7 @@ fun! ToggleQFList(global)
 endfun
 
 fun! RemapIfNerdTree()
-    if bufname('#') =~ 'NERD_tree_\d\+' "&& bufname('%') !~ 'NERD_tree_\d\+'
+    if bufname('%') =~ 'NERD_tree_\d\+' 
         " TODO: Integrate whichkey into unmapping
         let telescope_funcs = ["f", "g", "h", "b", "t"]
 
