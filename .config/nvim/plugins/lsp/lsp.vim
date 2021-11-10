@@ -9,6 +9,19 @@ nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
 
+lua << EOF
+local wk = require("which-key")
+
+wk.register({
+  g = {
+     d = { '<cmd>lua vim.lsp.buf.definition()<CR>', 'Go to definition' },
+     D = { '<cmd>lua vim.lsp.buf.declaration()<CR>', 'Go to declaration' },
+     r = { '<cmd>lua vim.lsp.buf.references()<CR>', 'Open references' },
+     i = { '<cmd>lua vim.lsp.buf.implementation()<CR>', 'Go to implementation' },
+  },
+})
+EOF
+
 " Moved to LSP Saga
 " nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
 " nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
