@@ -23,6 +23,7 @@ call plug#begin("~/.vim/plugged")
     Plug 'vim-airline/vim-airline-themes'
     " should be last 
     Plug 'ryanoasis/vim-devicons'
+    Plug 'kyazdani42/nvim-web-devicons' " for folke's Trouble plugin 
 
     " Terminal functionality
     Plug 'voldikss/vim-floaterm'
@@ -67,6 +68,9 @@ call plug#begin("~/.vim/plugged")
 
     " Which key to show leader commands
     Plug 'folke/which-key.nvim'
+    " Pretty code diagnostics 
+    Plug 'folke/lsp-colors.nvim'
+    Plug 'folke/trouble.nvim'
 
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
 

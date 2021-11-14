@@ -1,5 +1,10 @@
 local saga = require'lspsaga'
-saga.init_lsp_saga()
+saga.init_lsp_saga({
+    error_sign = '', -- 
+    warn_sign = '',
+    hint_sign = '',
+    infor_sign = '',
+})
 
 -- vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR> Geht leider nu ned in whick-key:(
 
@@ -21,7 +26,8 @@ wk.register({
                 name = "Code", -- optional group name
                 a = { ":Lspsaga code_action<cr>", "Action" }, -- create a binding with label
                 r = { ":Lspsaga rename<cr>", "Rename" }, -- create a binding with label
-                d = { "<cmd>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>", "Diagnostic" }, -- create a binding with label
+                d = { "<cmd>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>", "Line Diagnostic" }, -- create a binding with label
+                c = { "<cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>", "Cursor Diagnostic" },
                 p = { "<cmd>lua require'lspsaga.provider'.preview_definition()<CR>", "Preview def" }, -- create a binding with label
         },
 }, { prefix = "<leader>" })

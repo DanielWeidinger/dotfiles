@@ -1,6 +1,7 @@
-require('telescope').setup()
+local telescope = require('telescope')
 require('telescope').load_extension('fzy_native')
 
+telescope.setup {}
 
 local wk = require("which-key")
 wk.register({
