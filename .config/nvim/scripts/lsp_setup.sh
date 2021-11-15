@@ -4,7 +4,7 @@ echo --TSServer
 sudo npm install -g typescript typescript-language-server
         
 echo --Python 
-sudo -H pip install python-lsp-server
+sudo npm install -g pyright
 
 echo --JSON
 sudo npm install -g vscode-langservers-extracted
