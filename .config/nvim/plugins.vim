@@ -58,7 +58,8 @@ call plug#begin("~/.vim/plugged")
     Plug 'ray-x/cmp-treesitter'
     Plug 'onsails/lspkind-nvim' " Better iconography for completion
     " better code diagnostics with floating window
-    Plug 'glepnir/lspsaga.nvim'
+    " Plug 'glepnir/lspsaga.nvim'
+    Plug 'tami5/lspsaga.nvim', { 'branch': 'nvim51' } " NOTE: Not offical but maintained for version > 0.5.0
     " Snippets
     Plug 'hrsh7th/vim-vsnip'
     Plug 'rafamadriz/friendly-snippets'
