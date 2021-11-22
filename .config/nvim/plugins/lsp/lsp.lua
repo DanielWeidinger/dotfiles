@@ -1,6 +1,7 @@
 local lspconfig = require'lspconfig'
 local configs = require'lspconfig/configs'    
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local format_async = function(err, _, result, _, bufnr)
     if err ~= nil or result == nil then return end
@@ -49,19 +50,27 @@ lspconfig.html.setup {
   on_attach=on_attach,
 }
 
-if not lspconfig.emmet_ls then   
-    configs.emmet_ls = {    
-        default_config = {    
-          cmd = {'emmet-ls', '--stdio'},
-          filetypes = {'html', 'css'},
-          root_dir = function(fname)    
-            return vim.loop.cwd()
-          end,        
-          settings = {},    
-        },    
-    }    
-end
-lspconfig.emmet_ls.setup{ capabilities = capabilities,  on_attach=on_attach, }
+-- if not lspconfig.emmet_ls then   
+--     configs.emmet_ls = {    
+--         default_config = {    
+--           cmd = {'emmet-ls', '--stdio'},
+--           filetypes = {'html', 'css'},
+--           root_dir = function(fname)    
+--             return vim.loop.cwd()
+--           end,        
+--           settings = {},    
+--         },    
+--     }    
+-- end
+lspconfig.emmet_ls.setup{ 
+    capabilities = capabilities,
+    on_attach = on_attach,
+    cmd = {'emmet-ls', '--stdio'},
+    filetypes = {'html', 'css'},
+    root_dir = function(fname)    
+        return vim.loop.cwd()
+    end,        
+}
 
 lspconfig.jsonls.setup {
     capabilities = capabilities,
