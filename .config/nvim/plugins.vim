@@ -74,6 +74,7 @@ call plug#begin("~/.vim/plugged")
     Plug 'folke/trouble.nvim'
 
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
+    Plug 'windwp/nvim-ts-autotag' " treesitter based autoclosing and renaming of xml tags
 
     " todo finder and highlighting
     Plug 'folke/todo-comments.nvim'
