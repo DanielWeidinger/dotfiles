@@ -36,6 +36,7 @@ if has('unix')
   source ~/.config/nvim/plugins/browser.lua
   source ~/.config/nvim/plugins/execution/config.vim
   source ~/.config/nvim/plugins/trouble.lua
+  source ~/.config/nvim/plugins/autoclosing.lua
 else
 	source ~/AppData/Local/nvim/project_management.vim
 endif

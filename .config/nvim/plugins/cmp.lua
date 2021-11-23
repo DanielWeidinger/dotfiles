@@ -2,7 +2,7 @@ vim.o.completeopt = "menu,menuone,noselect"
 
 -- Setup nvim-cmp.
 local cmp = require'cmp'
-local lspkind = require('lspkind')
+local lspkind = require('lspkind') -- Better iconography for completion
 
 cmp.setup {
     snippet = {
@@ -47,3 +47,4 @@ vim.opt.spelllang = { 'en_us' }
 
 
 -- Setup lspconfig in lsp.lua
+-- Setup autopairing in autoclosing.lua
