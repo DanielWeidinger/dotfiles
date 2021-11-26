@@ -18,16 +18,16 @@ wk.register({
   t = {
     name = "Term", -- optional group name
      [ ";" ] = { ':FloatermNew --wintype=popup --height=6<cr>'        , 'terminal' },
-     f = { ':FloatermNew fzf<cr>'                               , 'fzf' },
+     -- f = { ':FloatermNew fzf<cr>'                               , 'fzf' },
      g = { ':FloatermNew lazygit<cr>'                           , 'git' },
      d = { ':FloatermNew lazydocker<cr>'                        , 'docker' },
      n = { ':FloatermNew node<cr>'                              , 'node' },
-     N = { ':FloatermNew nnn<cr>'                               , 'nnn' },
+     -- N = { ':FloatermNew nnn<cr>'                               , 'nnn' },
      p = { ':FloatermNew python<cr>'                            , 'python' },
-     r = { ':FloatermNew ranger<cr>'                            , 'ranger' },
+     -- r = { ':FloatermNew ranger<cr>'                            , 'ranger' },
      t = { ':FloatermToggle<cr>'                                , 'toggle' },
-     y = { ':FloatermNew ytop<cr>'                              , 'ytop' },
-     s = { ':FloatermNew ncdu<cr>'                              , 'ncdu' },
+     b = { ':FloatermNew btm<cr>'                               , 'bottom' },
+     -- s = { ':FloatermNew ncdu<cr>'                              , 'ncdu' },
   },
 }, { prefix = "<leader>" })
 EOF

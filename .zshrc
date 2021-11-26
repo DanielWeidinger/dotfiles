@@ -105,4 +105,20 @@ alias config='/usr/bin/git --git-dir=/home/daniel/dotfiles/ --work-tree=/home/da
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
 
-export PATH="$PATH:$HOME/miniconda3/bin"
+export PATH=$PATH:$HOME/.cargo/bin
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/daniel/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/daniel/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/daniel/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/daniel/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
