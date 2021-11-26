@@ -102,6 +102,7 @@ source $ZSH/oh-my-zsh.sh
 #
 alias config='/usr/bin/git --git-dir=/home/daniel/dotfiles/ --work-tree=/home/daniel'
 
-# GO installation
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
+
+export PATH="$PATH:$HOME/miniconda3/bin"
