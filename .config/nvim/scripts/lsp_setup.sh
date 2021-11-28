@@ -28,16 +28,15 @@ echo '--General purpose lang server (efm)'
 export GO111MODULE=on
 go get github.com/mattn/efm-langserver@latest
 
-# echo --Lua
-# cd ~/.vim
-# git clone https://github.com/sumneko/lua-language-server
-# cd lua-language-server
-# git submodule update --init --recursive
-# git checkout 9b33f628e7904a6bac6051d6d590a4b595257c6b #TODO: remove when maintainer fixed version error
-# cd 3rd/luamake
-# ./compile/install.sh
-# cd ../..
-# ./3rd/luamake/luamake rebuild
+echo --Lua
+cd ~/.vim/lang-servers
+git clone https://github.com/sumneko/lua-language-server
+cd lua-language-server
+git submodule update --init --recursive
+cd 3rd/luamake
+./compile/install.sh
+cd ../..
+./3rd/luamake/luamake rebuild
 # cd ~/.vim
 # sudo rm -r -f lang-servers
 # mkdir lang-servers

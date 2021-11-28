@@ -1,15 +1,19 @@
+local lspconfig = require'lspconfig'
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
 -- local sumneko_root_path = vim.fn.stdpath('cache')..'/lspconfig/sumneko_lua/lua-language-server'
 -- local sumneko_binary = sumneko_root_path.."/bin/"..system_name.."/lua-language-server"
--- TODO: fundamental lang server flaws; try again later
-local sumneko_root_path = "/home/daniel/.vim/lang-servers" 
+local sumneko_root_path = "/home/daniel/.vim/lang-servers/lua-language-server/bin/Linux" 
 local sumneko_binary = sumneko_root_path.."/lua-language-server"
 
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
-require'lspconfig'.sumneko_lua.setup {
-  cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
+lspconfig.sumneko_lua.setup {
+  cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
+  capabilities = capabilities,
+  on_attach=on_attach,
   settings = {
     Lua = {
       runtime = {
@@ -24,7 +28,8 @@ require'lspconfig'.sumneko_lua.setup {
       },
       workspace = {
         -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file("", true),
+        -- library = vim.api.nvim_get_runtime_file("", true),
+        library = {[vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true}
       },
       -- Do not send telemetry data containing a randomized but unique identifier
       telemetry = {
