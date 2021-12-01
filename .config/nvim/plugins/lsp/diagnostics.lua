@@ -9,15 +9,21 @@ local eslint = {
   formatCommand = 'eslint_d --fix-to-stdout --stdin --stdin-filename=${INPUT}',
   formatStdin = true,
 }
-
 local prettier = { formatCommand = 'prettier_d_slim --stdin --stdin-filepath ${INPUT}', formatStdin = true }
+local lua_format = {
+                {
+                    formatCommand = "lua-format -i --no-keep-simple-function-one-line --no-break-after-operator --column-limit=150 --break-after-table-lb",
+                    formatStdin = true
+                }
+            }
+
 local format_config = {
   css = { prettier },
   html = { prettier },
   javascript = { prettier, eslint },
   javascriptreact = { prettier, eslint },
   json = { prettier },
-  -- lua = { stylua },
+  lua = { lua_format },
   markdown = { prettier },
   scss = { prettier },
   typescript = { prettier, eslint },

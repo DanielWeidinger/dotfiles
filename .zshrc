@@ -122,3 +122,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+alias luamake=/home/daniel/.vim/lua-language-server/3rd/luamake/luamake
+
+export EDITOR=nvim # to be able use sudoedit for write-protected files

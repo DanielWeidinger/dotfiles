@@ -72,6 +72,7 @@ call plug#begin("~/.vim/plugged")
     " Pretty code diagnostics 
     Plug 'folke/lsp-colors.nvim'
     Plug 'folke/trouble.nvim'
+    Plug 'folke/lua-dev.nvim' " NOTE: remove if u are not developing plugins
 
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
     Plug 'windwp/nvim-ts-autotag' " treesitter based autoclosing and renaming of xml tags
