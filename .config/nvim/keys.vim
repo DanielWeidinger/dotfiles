@@ -3,7 +3,7 @@ let mapleader = " "
 
 " https://www.youtube.com/watch?v=hSHATqh8svM 
 "   behavious like the other actions
-nnoremap Y y$h 
+" nnoremap Y y$h -- nvim 0.6 does this by default
 "   Centering on jumping and concat
 nnoremap n nzzzv
 nnoremap N Nzzzv

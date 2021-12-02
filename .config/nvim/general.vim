@@ -6,7 +6,7 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
     \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 
 " Populate locallist with lsp diagnostics automatically 
-autocmd User LspDiagnosticsChanged :lua vim.lsp.diagnostic.set_loclist({open_loclist = false})
+autocmd User LspDiagnosticsChanged :lua vim.diagnostic.set_loclist({open_loclist = false})
 
 " navigation
 set relativenumber

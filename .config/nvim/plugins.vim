@@ -1,4 +1,7 @@
 call plug#begin("~/.vim/plugged")
+    " Nvim utils(need for some plugs(e.g. todo))
+    Plug 'nvim-lua/plenary.nvim'
+
     " Easy Motion
     Plug 'easymotion/vim-easymotion'
             
@@ -14,8 +17,8 @@ call plug#begin("~/.vim/plugged")
     " Status icons in tree
     Plug 'Xuyuanp/nerdtree-git-plugin'
     " Git Stuff
-    Plug 'mhinz/vim-signify' " GitGutter and diff in Airline
-    Plug 'junegunn/gv.vim' " Commit browse
+    " Plug 'mhinz/vim-signify' 
+    Plug 'lewis6991/gitsigns.nvim' " GitGutter and diff in Airline
     " Hex code colorization
     Plug 'norcalli/nvim-colorizer.lua'
     " Fancy bar
@@ -28,8 +31,6 @@ call plug#begin("~/.vim/plugged")
     " Terminal functionality
     Plug 'voldikss/vim-floaterm'
     Plug 'kassio/neoterm'
-    " Nvim utils(need for some plugs(e.g. todo))
-    Plug 'nvim-lua/plenary.nvim'
 
     " General Git Stuff
     Plug 'tpope/vim-fugitive' " Basic git functionality
@@ -47,6 +48,7 @@ call plug#begin("~/.vim/plugged")
 
     " --- LSP because its built-in ---
     Plug 'neovim/nvim-lspconfig'
+    Plug 'jose-elias-alvarez/null-ls.nvim', { 'branch': '0.6-only' } 
     " Autocomple + Sources
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/cmp-buffer'
@@ -59,7 +61,7 @@ call plug#begin("~/.vim/plugged")
     Plug 'onsails/lspkind-nvim' " Better iconography for completion
     " better code diagnostics with floating window
     " Plug 'glepnir/lspsaga.nvim'
-    Plug 'tami5/lspsaga.nvim', { 'branch': 'nvim51' } " NOTE: Not offical but maintained for version > 0.5.0
+    Plug 'tami5/lspsaga.nvim'
     " Snippets
     Plug 'hrsh7th/vim-vsnip'
     Plug 'rafamadriz/friendly-snippets'

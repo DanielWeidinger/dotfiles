@@ -23,11 +23,10 @@ if has('unix')
   source ~/.config/nvim/plugins/lsp/lsp.vim  
   source ~/.config/nvim/plugins/which-key.lua  
   source ~/.config/nvim/plugins/floatterm.vim  
-  source ~/.config/nvim/plugins/fugitive.lua  
-  source ~/.config/nvim/plugins/cmp.lua
-  source ~/.config/nvim/plugins/lspsaga.lua
-  lua require('nvim-autopairs').setup{}
-  " source ~/.config/nvim/plugins/vsnip.vim
+  source ~/.config/nvim/plugins/git/fugitive.lua  
+  source ~/.config/nvim/plugins/git/signs.lua  
+  source ~/.config/nvim/plugins/lsp/cmp.lua
+  source ~/.config/nvim/plugins/lsp/lspsaga.lua
   source ~/.config/nvim/plugins/themes.lua
   source ~/.config/nvim/plugins/treesitter.lua
   source ~/.config/nvim/plugins/vimspector.lua

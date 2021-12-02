@@ -1,7 +1,7 @@
 source ~/.config/nvim/plugins/lsp/lsp.lua
 
 " for prettier and eslint
-source ~/.config/nvim/plugins/lsp/diagnostics.lua
+source ~/.config/nvim/plugins/lsp/ls_null.lua
 source ~/.config/nvim/plugins/lsp/ls_lua.lua
 
 " LSP config (the mappings used in the default file don't quite work right)
@@ -27,8 +27,8 @@ EOF
 " nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
 " nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 
-nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <silent> <C-n> <cmd>lua vim.diagnostic.goto_prev()<CR>
+nnoremap <silent> <C-p> <cmd>lua vim.diagnostic.goto_next()<CR>
 
 " " auto-format
 " autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
