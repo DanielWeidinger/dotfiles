@@ -3,6 +3,22 @@ local configs = require'lspconfig/configs'
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+
+local format_async = function(err, result, params)
+    print(params.bufnr)
+    if err ~= nil or result == nil then return end
+    if not vim.api.nvim_buf_get_option(params.bufnr, "modified") then
+        local view = vim.fn.winsaveview()
+        vim.lsp.util.apply_text_edits(result, params.bufnr)
+        vim.fn.winrestview(view)
+        if params.bufnr == vim.api.nvim_get_current_buf() then
+            vim.api.nvim_command("noautocmd :update")
+        end
+    end
+end
+vim.lsp.handlers["textDocument/formatting"] = format_async
+
+
 function on_attach(client)
     if client.resolved_capabilities.document_formatting then
         vim.api.nvim_exec([[
