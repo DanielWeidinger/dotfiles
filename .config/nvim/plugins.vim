@@ -1,6 +1,7 @@
 call plug#begin("~/.vim/plugged")
     " Nvim utils(need for some plugs(e.g. todo))
     Plug 'nvim-lua/plenary.nvim'
+    Plug 'DanielWeidinger/nvim-sshfs'
 
     " Easy Motion
     Plug 'easymotion/vim-easymotion'
@@ -68,6 +69,8 @@ call plug#begin("~/.vim/plugged")
 
     " --- Datasci stuff ---
     Plug 'dccsillag/magma-nvim', { 'do': ':UpdateRemotePlugins' }
+
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install'  } 
 
     " Which key to show leader commands
     Plug 'folke/which-key.nvim'
