@@ -1,35 +1,39 @@
-#!/bin/sh
+# !/bin/bash
 
-echo --TSServer
-sudo npm install -g typescript typescript-language-server
+ echo --TSServer
+ sudo npm install -g typescript typescript-language-server
         
-echo --Python 
-sudo npm install -g pyright
+ echo --Python 
+ sudo npm install -g pyright
 
-echo --JSON
-sudo npm install -g vscode-langservers-extracted
+ echo --JSON
+ sudo npm install -g vscode-langservers-extracted
 
-echo --Docker
-sudo npm install -g dockerfile-language-server-nodejs
+ echo --Docker
+ sudo npm install -g dockerfile-language-server-nodejs
 
-echo --Bash
-sudo npm install -g bash-language-server
+ echo --Bash
+ sudo npm install -g bash-language-server
 
-echo --CSS and HTML
-sudo npm install -g vscode-langservers-extracted
+ echo --CSS and HTML
+ sudo npm install -g vscode-langservers-extracted
 
-echo --Emmet
-sudo npm install -g emmet-ls
+ echo --Emmet
+ sudo npm install -g emmet-ls
 
-echo --eslint + prettier
-sudo npm install -g eslint_d prettier_d_slim
+ echo --eslint + prettier
+ sudo npm install -g eslint_d prettier_d_slim
 
-echo '--General purpose lang server (efm)'
-export GO111MODULE=on
-go get github.com/mattn/efm-langserver@latest
+ echo '--General purpose lang server (efm)'
+ export GO111MODULE=on
+ go get github.com/mattn/efm-langserver@latest
 
 echo --Lua
-cd ~/.vim/lang-servers
+lua_dir="$HOME/.vim/lang-servers/"
+if [ ! -d "$lua_dir" ]; then
+    mkdir $lua_dir
+fi
+cd $lua_dir
 git clone https://github.com/sumneko/lua-language-server
 cd lua-language-server
 git submodule update --init --recursive
