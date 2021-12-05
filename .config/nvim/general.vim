@@ -43,6 +43,11 @@ set exrc " additionally executes local rc config if present
 "commands
 set showcmd
 
+" Treesitter Folding
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+
+
 " Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemode = ':t'

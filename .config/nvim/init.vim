@@ -40,6 +40,7 @@ else
 	source ~/AppData/Local/nvim/project_management.vim
 endif
 
+
 "   NERDTree
 
 autocmd BufEnter * :call RemapIfNerdTree()
