@@ -1,7 +1,7 @@
 call plug#begin("~/.vim/plugged")
     " Nvim utils(need for some plugs(e.g. todo))
     Plug 'nvim-lua/plenary.nvim'
-    " Plug 'DanielWeidinger/nvim-sshfs'
+    Plug 'DanielWeidinger/nvim-sshfs'
 
     " Easy Motion
     Plug 'easymotion/vim-easymotion'

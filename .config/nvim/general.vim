@@ -8,9 +8,12 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
 " Populate locallist with lsp diagnostics automatically 
 autocmd User LspDiagnosticsChanged :lua vim.diagnostic.set_loclist({open_loclist = false})
 
+" Local setting
+autocmd FileType markdown setlocal wrap
+
 " navigation
 set relativenumber
-set nu
+set number
 set scrolloff=10 " sets the scroll boarder 2*n lines more narrow
 set encoding=UTF-8
 
@@ -44,8 +47,8 @@ set exrc " additionally executes local rc config if present
 set showcmd
 
 " Treesitter Folding
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
+" set foldmethod=expr
+" set foldexpr=nvim_treesitter#foldexpr()
 
 
 " Airline
