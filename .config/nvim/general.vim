@@ -11,6 +11,11 @@ autocmd User LspDiagnosticsChanged :lua vim.diagnostic.set_loclist({open_loclist
 " Local setting
 autocmd FileType markdown setlocal wrap
 
+" Conda support 
+if has('nvim') && !empty($CONDA_PREFIX)
+  let g:python3_host_prog = $CONDA_PREFIX . '/bin/python'
+endif
+
 " navigation
 set relativenumber
 set number
