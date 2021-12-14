@@ -4,6 +4,13 @@ let g:neoterm_size = '50'
 " let g:neoterm_autoinsert = 1
 let g:neoterm_autojump = 1
 let g:neoterm_direct_open_repl = 1
+let g:neoterm_repl_python = g:python3_host_prog 
+
+" Conda support 
+if has('nvim') && !empty($CONDA_PREFIX)
+  let g:neoterm_repl_python = "ipython"
+endif
+
 
 function! JumpBackIfTerminal()
         let bufType = getbufvar(bufnr(), '&buftype', 'ERROR')

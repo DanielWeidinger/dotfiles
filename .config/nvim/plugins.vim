@@ -68,7 +68,7 @@ call plug#begin("~/.vim/plugged")
     Plug 'rafamadriz/friendly-snippets'
 
     " --- Datasci stuff ---
-    Plug 'dccsillag/magma-nvim', { 'do': ':UpdateRemotePlugins' }
+    "  TODO: add jupyter support (jupyter ascending)
 
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install'  } 
 

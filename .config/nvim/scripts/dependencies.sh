@@ -26,9 +26,3 @@ sudo apt-get update
 sudo apt-get install -y lazygit
 
 echo "-- Setup -- datasci utils"
-pip install jupyterlab
-pip install ueberzug
-# pip install cairosvg
-# pip install pnglatex
-# pip install plotly
-pip install kaleido

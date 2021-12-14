@@ -1,28 +1,29 @@
 # !/bin/bash
 
- echo --TSServer
- sudo npm install -g typescript typescript-language-server
-        
- echo --Python 
- sudo npm install -g pyright
+echo --TSServer
+sudo npm install -g typescript typescript-language-server
+    
+echo --Python 
+sudo npm install -g pyright
+sudo apt-get install -y python3-autopep8
 
- echo --JSON
- sudo npm install -g vscode-langservers-extracted
+echo --JSON
+sudo npm install -g vscode-langservers-extracted
 
- echo --Docker
- sudo npm install -g dockerfile-language-server-nodejs
+echo --Docker
+sudo npm install -g dockerfile-language-server-nodejs
 
- echo --Bash
- sudo npm install -g bash-language-server
+echo --Bash
+sudo npm install -g bash-language-server
 
- echo --CSS and HTML
- sudo npm install -g vscode-langservers-extracted
+echo --CSS and HTML
+sudo npm install -g vscode-langservers-extracted
 
- echo --Emmet
- sudo npm install -g emmet-ls
+echo --Emmet
+sudo npm install -g emmet-ls
 
- echo --eslint + prettier
- sudo npm install -g eslint_d prettier_d_slim
+echo --eslint + prettier
+sudo npm install -g eslint_d prettier_d_slim
 
  echo '--General purpose lang server (efm)'
  export GO111MODULE=on
