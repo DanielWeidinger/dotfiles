@@ -7,7 +7,7 @@ wk.register({
 		t = { ":call GotoWindow(g:vimspector_session_windows.tagpage)<cr>", "GT:Tag" },
 		v = { ":call GotoWindow(g:vimspector_session_windows.variables)<cr>", "GT:Vars" },
 		w = { ":call GotoWindow(g:vimspector_session_windows.watches)<cr>", "GT:Watches" },
-		s = { ":call GotoWindow(g:vimspector_session_windows.stacktrace)<cr>", "GT:Stacktrace" },
+		s = { ":call GotoWindow(g:vimspector_session_windows.StackTrace)<cr>", "GT:Stacktrace" },
 		o = { ":call GotoWindow(g:vimspector_session_windows.output)<cr>", "GT:Ouput" },
 		e = { ":call vimspector#Reset()<cr>", "Reset" },
 		B = { ":call vimspector#CleanLineBreakpoint()<cr>", "◯ :Clean" },

@@ -46,6 +46,8 @@ call plug#begin("~/.vim/plugged")
     " Themes
     Plug 'arcticicestudio/nord-vim'
     Plug 'dracula/vim'
+    Plug 'morhetz/gruvbox'
+
 
     " --- LSP because its built-in ---
     Plug 'neovim/nvim-lspconfig'

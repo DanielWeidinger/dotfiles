@@ -16,7 +16,6 @@
         "cwd": "${workspaceRoot}",
         "python": "python",
         "stopOnEntry": false,
-        "console": "externalTerminal",
         "debugOptions": [],
         "program": "${file}"
       }
