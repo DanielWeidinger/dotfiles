@@ -1,0 +1,25 @@
+{
+  "configurations": {
+    "py: current": {
+      "adapter": "debugpy",
+      "filetypes": [ "python" ],
+      "configuration": {
+        "name": "current file",
+        "breakpoints": {
+            "exception": {
+            "caught": "N",
+            "uncaught": "Y"
+            }
+        },
+        "type": "python",
+        "request": "launch",
+        "cwd": "${workspaceRoot}",
+        "python": "python",
+        "stopOnEntry": false,
+        "console": "externalTerminal",
+        "debugOptions": [],
+        "program": "${file}"
+      }
+    }
+  }
+}

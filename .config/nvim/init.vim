@@ -29,13 +29,13 @@ if has('unix')
   source ~/.config/nvim/plugins/lsp/lspsaga.lua
   source ~/.config/nvim/plugins/themes.lua
   source ~/.config/nvim/plugins/treesitter.lua
-  source ~/.config/nvim/plugins/vimspector.lua
   source ~/.config/nvim/plugins/telescope.lua
   source ~/.config/nvim/plugins/todo.lua
   source ~/.config/nvim/plugins/browser.lua
   source ~/.config/nvim/plugins/execution/config.vim
   source ~/.config/nvim/plugins/trouble.lua
   source ~/.config/nvim/plugins/autoclosing.lua
+  source ~/.config/nvim/plugins/vimspector.lua
 else
 	source ~/AppData/Local/nvim/project_management.vim
 endif

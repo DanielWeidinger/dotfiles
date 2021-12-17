@@ -49,7 +49,7 @@ call plug#begin("~/.vim/plugged")
 
     " --- LSP because its built-in ---
     Plug 'neovim/nvim-lspconfig'
-    Plug 'jose-elias-alvarez/null-ls.nvim', { 'branch': '0.6-only' } 
+    Plug 'jose-elias-alvarez/null-ls.nvim'
     " Autocomple + Sources
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/cmp-buffer'
