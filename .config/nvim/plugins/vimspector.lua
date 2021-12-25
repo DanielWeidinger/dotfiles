@@ -26,3 +26,29 @@ wk.register({
 })
 
 vim.g["vimspector_base_dir"] = vim.fn.expand("$HOME/.config/nvim/vimspector")
+
+-- UI and functionality customizations
+
+-- Autoclosing of execution output terminal
+vim.api.nvim_exec(
+	[[
+fun! CloseDebuggingTermBuf()
+    echom "Enter function"
+    let l:tabInfo = gettabinfo(g:vimspector_session_windows.tabpage)[0]
+    echom tabInfo
+    for l:winid in tabInfo.windows
+        let l:currWin = getwininfo(l:winid)[0]
+        if l:currWin.terminal
+            echom "Terminal found: " . currWin.bufnr
+            augroup custom_vimspector
+                autocmd!
+                execute "autocmd TabClosed " . g:vimspector_session_windows.tabpage . " bwipeout " . currWin.bufnr
+            augroup END
+            break
+        endif
+    endfor
+endfun
+]],
+	false
+)
+vim.api.nvim_exec("autocmd User VimspectorTerminalOpened call CloseDebuggingTermBuf()", false)

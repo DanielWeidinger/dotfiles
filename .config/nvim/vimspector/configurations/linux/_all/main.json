@@ -15,6 +15,7 @@
         "request": "launch",
         "cwd": "${workspaceRoot}",
         "python": "python",
+        "console": "integratedTerminal",
         "stopOnEntry": false,
         "debugOptions": [],
         "program": "${file}"

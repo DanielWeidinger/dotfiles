@@ -12,13 +12,3 @@ wk.register({
 }, {
 	prefix = "<leader>",
 })
-
-wk.register({
-	r = {
-		name = "Run", -- optional group name
-		-- magma
-		o = { ":MagmaEvaluateOperator<CR>" .. jmpBack, "operator" },
-	},
-}, {
-	prefix = "<leader><expr>",
-})
