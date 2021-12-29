@@ -47,6 +47,7 @@ call plug#begin("~/.vim/plugged")
     Plug 'arcticicestudio/nord-vim'
     Plug 'dracula/vim'
     Plug 'morhetz/gruvbox'
+    Plug 'rebelot/kanagawa.nvim'
 
 
     " --- LSP because its built-in ---

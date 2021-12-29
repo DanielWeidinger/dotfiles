@@ -5,6 +5,7 @@ wk.register({
 		n = { ":colorscheme  nord<cr>", "Nord" },
 		d = { ":colorscheme dracula<cr>", "Dracular" },
 		g = { ":colorscheme gruvbox<cr>", "Gruvbox" },
+		k = { ":colorscheme kanagawa<cr>", "Kanagawa" },
 	},
 }, {
 	prefix = "<leader>",

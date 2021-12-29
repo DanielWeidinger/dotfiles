@@ -13,12 +13,13 @@ nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
 lua << EOF
 local wk = require("which-key")
 
+-- Using trouble for navigation rather than QL list
 wk.register({
   g = {
-     d = { '<cmd>lua vim.lsp.buf.definition()<CR>', 'Go to definition' },
+     -- d = { '<cmd>lua vim.lsp.buf.definition()<CR>', 'Go to definition' },
      D = { '<cmd>lua vim.lsp.buf.declaration()<CR>', 'Go to declaration' },
-     r = { '<cmd>lua vim.lsp.buf.references()<CR>', 'Open references' },
-     i = { '<cmd>lua vim.lsp.buf.implementation()<CR>', 'Go to implementation' },
+     -- R = { '<cmd>lua vim.lsp.buf.references()<CR>', 'Open references' },
+     -- i = { '<cmd>lua vim.lsp.buf.implementation()<CR>', 'Go to implementation' },
   },
 })
 EOF
