@@ -20,7 +20,7 @@ wk.register({
 		r = { "<cmd>TroubleToggle lsp_references<cr>", "(Trouble)Refrences" },
 		d = { "<cmd>TroubleToggle lsp_definitions<cr>", "(Trouble)Definitions" },
 		i = { "<cmd>TroubleToggle lsp_implementations<cr>", "(Trouble)Definitions" },
-		t = { "<cmd>TroubleToggle lsp_type_definitions<cr>", "(Trouble)Definitions" },
+		-- t = { "<cmd>TroubleToggle lsp_type_definitions<cr>", "(Trouble)Definitions" },
 	},
 })
 --nnoremap gR <cmd>TroubleToggle lsp_references<cr>

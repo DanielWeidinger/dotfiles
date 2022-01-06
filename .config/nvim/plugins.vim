@@ -1,7 +1,7 @@
 call plug#begin("~/.vim/plugged")
     " Nvim utils(need for some plugs(e.g. todo))
     Plug 'nvim-lua/plenary.nvim'
-    Plug 'DanielWeidinger/nvim-sshfs'
+    " Plug 'DanielWeidinger/nvim-sshfs'
 
     " Easy Motion
     Plug 'easymotion/vim-easymotion'
@@ -17,14 +17,13 @@ call plug#begin("~/.vim/plugged")
 
     " Status icons in tree
     Plug 'Xuyuanp/nerdtree-git-plugin'
-    " Git Stuff
-    " Plug 'mhinz/vim-signify' 
-    Plug 'lewis6991/gitsigns.nvim' " GitGutter and diff in Airline
     " Hex code colorization
     Plug 'norcalli/nvim-colorizer.lua'
     " Fancy bar
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+    Plug 'nvim-lualine/lualine.nvim'
+    Plug 'noib3/nvim-cokeline'
+    " Plug 'vim-airline/vim-airline'
+    " Plug 'vim-airline/vim-airline-themes'
     " should be last 
     Plug 'ryanoasis/vim-devicons'
     Plug 'kyazdani42/nvim-web-devicons' " for folke's Trouble plugin 
@@ -34,6 +33,7 @@ call plug#begin("~/.vim/plugged")
     Plug 'kassio/neoterm'
 
     " General Git Stuff
+    Plug 'lewis6991/gitsigns.nvim' " GitGutter and diff in Airline
     Plug 'tpope/vim-fugitive' " Basic git functionality
     Plug 'tpope/vim-rhubarb' " Adds Browse command to open in the web
     

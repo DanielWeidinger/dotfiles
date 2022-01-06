@@ -6,7 +6,7 @@ source ~/.config/nvim/plugins.vim
 
 
 " Theming
-colorscheme nord
+colorscheme kanagawa
 
 
 "   Plug Configs
@@ -18,7 +18,9 @@ source ~/.config/nvim/plugins/git/fugitive.lua
 source ~/.config/nvim/plugins/git/signs.lua  
 source ~/.config/nvim/plugins/lsp/cmp.lua
 source ~/.config/nvim/plugins/lsp/lspsaga.lua
-source ~/.config/nvim/plugins/themes.lua
+source ~/.config/nvim/plugins/appearence/themes.lua
+source ~/.config/nvim/plugins/appearence/cokeline.lua
+source ~/.config/nvim/plugins/appearence/lualine.lua
 source ~/.config/nvim/plugins/treesitter.lua
 source ~/.config/nvim/plugins/telescope.lua
 source ~/.config/nvim/plugins/todo.lua

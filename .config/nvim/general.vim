@@ -34,6 +34,8 @@ set shiftwidth=4
   " On pressing tab, insert 4 spaces
 set expandtab
 set nowrap
+ 
+set mouse=a
 
 " Search
 set nohlsearch
@@ -54,12 +56,4 @@ set showcmd
 " Treesitter Folding
 " set foldmethod=expr
 " set foldexpr=nvim_treesitter#foldexpr()
-
-
-" Airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#fnamemode = ':t'
-" Only works with powerline font
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#branch#enabled = 1
-
+"

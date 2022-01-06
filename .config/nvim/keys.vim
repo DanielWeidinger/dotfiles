@@ -37,31 +37,9 @@ vnoremap > >gv
 
 " To escape insert mode in a terminal
 tnoremap <Esc><Esc> <C-\><C-n>
-
-if exists('g:vscode')
-		" navigation
-		nnoremap <silent> üü :call VSCodeNotify('workbench.action.navigateToLastEditLocation')<CR>
-		nnoremap <silent> <S-TAB> :call VSCodeNotify('workbench.action.previousEditor')<CR>
-		nnoremap <silent> <TAB> :call VSCodeNotify('workbench.action.nextEditor')<CR>
-
-		" comments
-		xmap gc  <Plug>VSCodeCommentary
-		nmap gc  <Plug>VSCodeCommentary
-		omap gc  <Plug>VSCodeCommentary
-		nmap gcc <Plug>VSCodeCommentaryLine
-else
-    " NERD Tree
-    " nmap <leader>e :NERDTreeToggle<CR>
-		" Movement
-		nnoremap <silent> <S-TAB> :bp<CR>
-		nnoremap <silent> <TAB> :bn<CR>
-		" nnoremap <silent> <C-h> <C-w><h>
-		" nnoremap <silent> <C-l> <C-w><l>
    
-		" Closing buffers(the extra are here to no let NERD tree get the focus on
-    " closing)
-		nnoremap <C-x> :bp<bar>sp<bar>bn<bar>bd<CR>
-		nnoremap <C-c> :close<CR>
-		nnoremap <leader><C-x> :NERDTreeClose <bar> :SClose <bar> :qa<CR>
-endif
+" Closing buffers(the extra are here to no let NERD tree get the focus on closing)
+nnoremap <C-x> :bp<bar>sp<bar>bn<bar>bd<CR>
+nnoremap <C-c> :close<CR>
+nnoremap <leader><C-x> :NERDTreeClose <bar> :SClose <bar> :qa<CR>
 
