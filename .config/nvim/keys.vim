@@ -41,5 +41,4 @@ tnoremap <Esc><Esc> <C-\><C-n>
 " Closing buffers(the extra are here to no let NERD tree get the focus on closing)
 nnoremap <C-x> :bp<bar>sp<bar>bn<bar>bd<CR>
 nnoremap <C-c> :close<CR>
-nnoremap <leader><C-x> :NERDTreeClose <bar> :SClose <bar> :qa<CR>
-
+nnoremap <leader><C-x> :call CloseExtraWindows()<bar>:SClose<bar>:qa<CR>

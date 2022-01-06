@@ -29,8 +29,5 @@ source ~/.config/nvim/plugins/execution/config.vim
 source ~/.config/nvim/plugins/trouble.lua
 source ~/.config/nvim/plugins/autoclosing.lua
 source ~/.config/nvim/plugins/vimspector.lua
+source ~/.config/nvim/plugins/tree.lua
 lua require 'colorizer'.setup()
-
-
-"   NERDTree
-autocmd BufEnter * :call RemapIfNerdTree()

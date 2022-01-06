@@ -11,8 +11,7 @@ call plug#begin("~/.vim/plugged")
     
     " As the name suggests
     Plug 'windwp/nvim-autopairs'
-    Plug 'preservim/nerdtree'
-    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+    Plug 'kyazdani42/nvim-tree.lua'
     Plug 'tpope/vim-commentary'
 
     " Status icons in tree
