@@ -28,7 +28,7 @@ set shiftwidth=4
 set expandtab
 set nowrap
  
-set mouse=a
+set mouse=
 
 " Search
 set nohlsearch

@@ -4,6 +4,7 @@ wk.register({
 	["<C-q>"] = { ":call ToggleQFList(1)<CR>", "quickfix" },
 })
 
+-- TODO: create cursor toggle cuz of link clicking issues in terminal
 wk.register({
 	s = { ":so ~/.config/nvim/init.vim<cr>", "source" },
 	e = { ":NvimTreeToggle<cr>", "explorer" },

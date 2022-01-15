@@ -71,7 +71,8 @@ call plug#begin("~/.vim/plugged")
 
     " --- Datasci stuff ---
     "  TODO: add jupyter support (jupyter ascending)
-    " Plug 'DanielWeidinger/telescope-conda.nvim'
+    " Plug 'untitled-ai/jupyter_ascending.vim'
+    " Plug 'IllustratedMan-code/telescope-conda.nvim'
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install'  } 
 
     " Which key to show leader commands
