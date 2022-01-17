@@ -13,7 +13,7 @@ colorscheme kanagawa
 source ~/.config/nvim/plugins/project_management.vim
 source ~/.config/nvim/plugins/lsp/lsp.vim  
 source ~/.config/nvim/plugins/which-key.lua  
-source ~/.config/nvim/plugins/floatterm.vim  
+source ~/.config/nvim/plugins/floaterm.vim  
 source ~/.config/nvim/plugins/git/fugitive.lua  
 source ~/.config/nvim/plugins/git/signs.lua  
 source ~/.config/nvim/plugins/lsp/cmp.lua
