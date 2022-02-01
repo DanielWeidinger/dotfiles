@@ -4,12 +4,12 @@ wk.register({
 	["<C-q>"] = { ":call ToggleQFList(1)<CR>", "quickfix" },
 })
 
--- TODO: create cursor toggle cuz of link clicking issues in terminal
 wk.register({
 	s = { ":so ~/.config/nvim/init.vim<cr>", "source" },
 	e = { ":NvimTreeToggle<cr>", "explorer" },
 	m = { ":MaximizerToggle!<cr>", "maximize" },
 	q = { ":call ToggleQFList(0)<CR>", "local qfl" },
+	["-"] = { ":call ToggleMouseMode()<CR>", "local qfl" },
 	["p"] = "which_key_ignore", -- special label to hide it in the popup
 	["P"] = "which_key_ignore", -- special label to hide it in the popup
 	["<space>"] = "which_key_ignore", -- special label to hide it in the popup

@@ -47,6 +47,7 @@ call plug#begin("~/.vim/plugged")
     Plug 'dracula/vim'
     Plug 'morhetz/gruvbox'
     Plug 'rebelot/kanagawa.nvim'
+    Plug 'folke/tokyonight.nvim'
 
 
     " --- LSP because its built-in ---
@@ -72,7 +73,6 @@ call plug#begin("~/.vim/plugged")
     " --- Datasci stuff ---
     "  TODO: add jupyter support (jupyter ascending)
     " Plug 'untitled-ai/jupyter_ascending.vim'
-    " Plug 'IllustratedMan-code/telescope-conda.nvim'
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install'  } 
 
     " Which key to show leader commands
