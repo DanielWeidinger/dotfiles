@@ -114,6 +114,20 @@ export PATH=$PATH:$GOPATH/bin
 
 export PATH=$PATH:$HOME/.cargo/bin
 
+# Android SDK
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools/
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin/
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools/
+PATH=$ANDROID_SDK_ROOT/emulator:$PATH
+
+alias luamake=/home/daniel/.vim/lua-language-server/3rd/luamake/luamake
+
+export EDITOR=nvim # to be able use sudoedit for write-protected files
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/daniel/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -129,9 +143,5 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-alias luamake=/home/daniel/.vim/lua-language-server/3rd/luamake/luamake
-
-export EDITOR=nvim # to be able use sudoedit for write-protected files
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# SSH-Agent with systemd
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"

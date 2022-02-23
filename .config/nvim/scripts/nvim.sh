@@ -1,5 +1,5 @@
 echo Installing dependencies
-./scripts/dependencies.sh
+
 
 echo --Downloading Repo...
 git clone https://github.com/neovim/neovim.git

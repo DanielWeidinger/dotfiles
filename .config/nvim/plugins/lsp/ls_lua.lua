@@ -3,7 +3,7 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 
 -- local sumneko_root_path = vim.fn.stdpath('cache')..'/lspconfig/sumneko_lua/lua-language-server'
 -- local sumneko_binary = sumneko_root_path.."/bin/"..system_name.."/lua-language-server"
-local sumneko_root_path = "/home/daniel/.vim/lang-servers/lua-language-server/bin/Linux"
+local sumneko_root_path = "/home/daniel/.vim/lang-servers/lua-language-server/bin"
 local sumneko_binary = sumneko_root_path.."/lua-language-server"
 local plugin_development = true
 
