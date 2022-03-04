@@ -6,7 +6,7 @@ source ~/.config/nvim/plugins.vim
 
 
 " Theming
-colorscheme tokyonight
+colorscheme gruvbox
 
 
 "   Plug Configs

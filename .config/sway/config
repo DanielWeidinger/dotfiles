@@ -24,6 +24,7 @@ set $right l
 # Your preferred terminal emulator
 set $term alacritty
 set $browser firefox
+set $sway_path ~/.config/sway
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -100,9 +101,12 @@ exec swayidle -w \
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
     bindsym $mod+b exec $browser
+    bindsym $mod+Print exec grimshot save area
+    bindsym $mod+Shift+Print exec grimshot copy area
 
     bindsym $mod+t border toggle 1
 
+    # Function keys
     bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
     bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
     bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
@@ -165,6 +169,10 @@ exec swayidle -w \
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
+    
+    bindsym $mod+less move workspace to output left
+    bindsym $mod+greater move workspace to output right
+
 #
 # Layout stuff:
 #
