@@ -33,7 +33,7 @@ set $menu wofi --show=drun --lines=10 --prompt=""
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/daniel/Pictures/wallpapers/monet1.jpg fill
+output * bg ~/Pictures/wallpapers/monet1.jpg fill
 #
 # Example configuration:
 #
@@ -99,6 +99,8 @@ exec swayidle -w \
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+    bindsym $mod+p exec swaylock -e -f -c 000000 -i ~/Pictures/wallpapers/monet2.jpg -t
 
     bindsym $mod+b exec $browser
     bindsym $mod+Print exec grimshot save area
