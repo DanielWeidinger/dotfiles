@@ -1,0 +1,10 @@
+profile {
+    output "Unknown 0x0730 0x00000000" position 3840,1080 
+    output "BenQ Corporation BenQ GL2780 ETA7M0360404U" position 3840,0
+    output "Acer Technologies V246HL LXXEE0058521" position 1920,0
+}
+
+profile {
+    output "Unknown 0x0730 0x00000000"  position 3840,0 
+    output "BenQ Corporation BenQ GL2780 ET7CL0175304U" position 1920,0
+}

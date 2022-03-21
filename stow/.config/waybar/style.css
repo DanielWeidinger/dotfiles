@@ -1,0 +1,109 @@
+* {
+  font-size: 13px;
+  font-family: "Terminus (TTF)";
+}
+
+window#waybar {
+  background: rgba(0, 0, 0, 0);
+}
+
+#network,
+#cpu,
+#battery {
+  background: #1d1f21;
+  color: #c5c8c6;
+  margin: 3px 0px 3px 0px;
+  padding: 5px;
+}
+
+#workspaces {
+  margin: 3px;
+  padding: 5px 7px 5px 7px;
+  border-radius: 10px;
+  background: #1d1f21;
+  color: #c5c8c6;
+}
+
+#window {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#custom-media {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  color: rgba(217, 216, 216, 0.4);
+}
+
+#workspaces button.visible {
+  color: rgba(217, 216, 216, 1);
+}
+
+#workspaces button.focused {
+  border-top: 3px solid rgba(217, 216, 216, 1);
+  border-bottom: 3px solid rgba(217, 216, 216, 0);
+}
+
+#workspaces button.urgent {
+  color: rgba(238, 46, 36, 1);
+}
+
+#pulseaudio {
+  margin: 3px 3px 3px 0px;
+  padding: 5px 7px 5px 5px;
+  background: #1d1f21;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: #c5c8c6;
+}
+
+#custom-quit {
+  margin: 3px 3px 3px 0px;
+  padding: 5px 7px 5px 5px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-right: 2px solid #1d1f21;
+  border-top: 2px solid #1d1f21;
+  border-bottom: 2px solid #1d1f21;
+  background: #f00;
+  color: #fff;
+}
+
+#clock {
+  margin: 3px 0px 3px 3px;
+  padding: 5px;
+  color: #fff;
+  background: #1d1f21;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  color: #c5c8c6;
+}
+
+#pulseaudio {
+  margin: 3px 3px 3px 0px;
+  padding: 5px 7px 5px 5px;
+  background: #1d1f21;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: #c5c8c6;
+}
+
+#backlight {
+  background: #1d1f21;
+  color: #c5c8c6;
+  margin: 3px 0px 3px 0px;
+  padding: 5px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#memory {
+  background: #1d1f21;
+  color: #c5c8c6;
+  margin: 3px 0px 3px 0px;
+  padding: 5px;
+}
