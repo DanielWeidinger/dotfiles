@@ -126,6 +126,9 @@ export EDITOR=nvim # to be able use sudoedit for write-protected files
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Standard pip binaries
+export PATH="$PATH:$HOME/.local/bin/"
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/daniel/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
