@@ -31,14 +31,12 @@ local components = {
 					and buffer.pick_letter .. " "
 				or buffer.devicon.icon
 		end,
-		hl = {
-			fg = function(buffer)
-				return buffer.devicon.color
-			end,
-			style = function(_)
-				return (rq_mappings.is_picking_focus() or rq_mappings.is_picking_close()) and "italic,bold" or nil
-			end,
-		},
+        fg = function(buffer)
+            return buffer.devicon.color
+        end,
+        style = function(_)
+            return (rq_mappings.is_picking_focus() or rq_mappings.is_picking_close()) and "italic,bold" or nil
+        end,
 	},
 
 	index = {
@@ -97,13 +95,11 @@ local components = {
 				or (buffer.diagnostics.warnings ~= 0 and "  " .. buffer.diagnostics.warnings)
 				or ""
 		end,
-		hl = {
-			fg = function(buffer)
-				return (buffer.diagnostics.errors ~= 0 and errors_fg)
-					or (buffer.diagnostics.warnings ~= 0 and warnings_fg)
-					or nil
-			end,
-		},
+        fg = function(buffer)
+            return (buffer.diagnostics.errors ~= 0 and errors_fg)
+                or (buffer.diagnostics.warnings ~= 0 and warnings_fg)
+                or nil
+        end,
 		truncation = { priority = 2 },
 	},
 
@@ -126,14 +122,8 @@ cokeline.setup({
 		cycle_prev_next = true,
 	},
 	default_hl = {
-		focused = {
-			fg = rq_get_hex("Normal", "fg"),
-			bg = rq_get_hex("ColorColumn", "bg"),
-		},
-		unfocused = {
-			fg = rq_get_hex("Comment", "fg"),
-			bg = rq_get_hex("ColorColumn", "bg"),
-		},
+			fg = function(buffer) return buffer.is_focused and rq_get_hex("Normal", "fg") or rq_get_hex("Comment", "fg") end,
+			bg = function(buffer) return buffer.is_focused and rq_get_hex("ColorColumn", "bg") end,
 	},
 	buffers = {
 		-- filter_visible = function(buffer) return buffer.type ~= 'terminal' end,
@@ -174,6 +164,7 @@ wk.register(switch_mappings, { prefix = "<leader>" })
 wk.register({
 	n = { "<Plug>(cokeline-switch-next)", "Bufnext" },
 	N = { "<Plug>(cokeline-switch-prev)", "Bufprev" },
+	b = { "<Plug>(cokeline-pick-focus)", "Buf pick focus" },
 }, {
 	prefix = "<leader>",
 })
