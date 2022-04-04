@@ -4,6 +4,25 @@ vim.o.completeopt = "menu,menuone,noselect"
 local cmp = require'cmp'
 local lspkind = require('lspkind') -- Better iconography for completion
 
+-- WARN: Copilot Setup
+vim.g.copilot_no_tab_map = true
+vim.g.copilot_assume_mapped = true
+vim.g.copilot_tab_fallback = ""
+local tab_map = function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+            elseif vim.fn["vsnip#available"](1) > 0 then
+                -- handle vsnip
+            else
+                local copilot_keys = vim.fn["copilot#Accept"]()
+                if copilot_keys ~= "" then
+                    vim.api.nvim_feedkeys(copilot_keys, "i", true)
+                else
+                    fallback()
+                end
+            end
+        end
+
 cmp.setup {
     snippet = {
         expand = function(args)
@@ -17,7 +36,8 @@ cmp.setup {
         ['<C-p>'] = cmp.mapping.scroll_docs(-4),
         ['<C-n>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
-        ['<Tab>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+        --['<Tab>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+        ['<Tab>'] = tab_map,
         ['<S-Tab>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
         -- ['<Tab>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
         -- ['<S-Tab>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
