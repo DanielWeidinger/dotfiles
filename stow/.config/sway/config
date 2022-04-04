@@ -105,6 +105,7 @@ exec swayidle -w \
     bindsym $mod+b exec $browser
     bindsym $mod+Print exec grimshot save area
     bindsym $mod+Shift+Print exec grimshot copy area
+    bindsym $mod+Alt+Print exec grimshot save active
 
     bindsym $mod+t border toggle 1
 
