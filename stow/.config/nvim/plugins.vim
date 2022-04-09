@@ -53,8 +53,10 @@ call plug#begin("~/.vim/plugged")
     " --- LSP because its built-in ---
     Plug 'neovim/nvim-lspconfig'
     Plug 'jose-elias-alvarez/null-ls.nvim'
-    " Behold the mighty copilot
-    Plug 'github/copilot.vim'
+    " WARN: Behold the mighty copilot
+    " Plug 'github/copilot.vim' " Needed for the setup
+    " Plug 'zbirenbaum/copilot.lua'
+    " Plug 'zbirenbaum/copilot-cmp' " cmp source
     " Autocomple + Sources
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/cmp-buffer'
@@ -66,23 +68,26 @@ call plug#begin("~/.vim/plugged")
     Plug 'ray-x/cmp-treesitter'
     Plug 'onsails/lspkind-nvim' " Better iconography for completion
     " better code diagnostics with floating window
-    " Plug 'glepnir/lspsaga.nvim'
+    Plug 'glepnir/lspsaga.nvim'
     Plug 'tami5/lspsaga.nvim'
     " Snippets
     Plug 'hrsh7th/vim-vsnip'
     Plug 'rafamadriz/friendly-snippets'
 
     " --- Datasci stuff ---
-    "  TODO: add jupyter support (jupyter ascending)
+    " TODO: add jupyter support (jupyter ascending)
     " Plug 'untitled-ai/jupyter_ascending.vim'
-    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install'  } 
+    " TODO: add markdown preview support
 
     " Which key to show leader commands
     Plug 'folke/which-key.nvim'
     " Pretty code diagnostics 
     Plug 'folke/lsp-colors.nvim'
     Plug 'folke/trouble.nvim'
-    Plug 'folke/lua-dev.nvim' " NOTE: remove if u are not developing plugins
+    if g:plugin_dev_mode
+        echo "Plugin dev mode is active!"
+        Plug 'folke/lua-dev.nvim' 
+    endif
 
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
     Plug 'windwp/nvim-ts-autotag' " treesitter based autoclosing and renaming of xml tags

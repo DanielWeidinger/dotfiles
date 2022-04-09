@@ -5,11 +5,10 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 -- local sumneko_binary = sumneko_root_path.."/bin/"..system_name.."/lua-language-server"
 local sumneko_root_path = "/home/daniel/.vim/lang-servers/lua-language-server/bin"
 local sumneko_binary = sumneko_root_path.."/lua-language-server"
-local plugin_development = true
 
 local command = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"}
 
-if plugin_development then
+if vim.g.plugin_dev_mode then
     local luadev = require("lua-dev").setup({
       lspconfig = {
         cmd = command,

@@ -28,9 +28,8 @@ vnoremap <silent> <C-S> <C-C>:update<CR>
 inoremap <silent> <C-S> <C-O>:update<CR>
 
 " Quick Escape
-" TODO: Eval what is faster
-" inoremap jk <Esc>
-" inoremap kj <Esc>
+inoremap jk <Esc>
+inoremap kj <Esc>
 
 " Better Indentations
 vnoremap < <gv

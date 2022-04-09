@@ -2,11 +2,12 @@
 source ~/.config/nvim/utils.vim
 source ~/.config/nvim/general.vim
 source ~/.config/nvim/keys.vim
+source ~/.config/nvim/plugins/plugin_dev.lua
 source ~/.config/nvim/plugins.vim
 
 
 " Theming
-colorscheme dracula
+colorscheme nord
 
 
 "   Plug Configs
