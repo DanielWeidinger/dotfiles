@@ -2,7 +2,7 @@
     "layer": "top",
     "position": "top",
     "modules-left": ["sway/workspaces", "custom/media"],
-    "modules-center": ["sway/window"],
+    "modules-center": ["sway/window", "custom/mode"],
     "modules-right": ["backlight", "custom/keyboard", "network", "cpu", "memory", "battery", "pulseaudio", "clock", "custom/quit"],
     "sway/workspaces": {
         "disable-scroll": true,
@@ -92,5 +92,10 @@
     "custom/quit": {
         "format": "",
         "on-click": "swaynag -f 'Sauce Code Pro'  -t warning -m 'Action' -b 'Shutdown' 'systemctl poweroff' -b 'Reboot' 'systemctl reboot'"
-    }
+    },
+    "custom/mode": {
+        "format": "{}",
+        "interval": 1,
+        "exec": "$HOME/.config/waybar/get_sway_mode.sh"
+    },
 }
