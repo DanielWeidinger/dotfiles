@@ -37,6 +37,9 @@ export PATH=$PATH:$HOME/.cargo/bin
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# nnn config
+source ~/.config/nnn/nnnrc.sh
+
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
