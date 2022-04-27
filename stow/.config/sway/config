@@ -1,6 +1,9 @@
 ### Sway
 
-exec kanshi &
+# Autoload Monitor setup
+exec kanshi
+# Notification deamon
+exec dunst
 
 font pango:SourceCodePro Medium 11
 
@@ -31,7 +34,7 @@ set $menu wofi --show=drun --lines=10 --prompt=""
 # Default Wallpager
 # output * bg ~/.wallpapers/monet1.jpg fill
 # Cycle through random wallpapers
-exec $sway_path/background.sh &
+exec $sway_path/background.sh
 
 
 exec swayidle -w \
@@ -90,12 +93,12 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
     bindsym $mod+t border toggle 1
 
     # Function keys
-    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+    bindsym XF86AudioRaiseVolume exec ~/.local/bin/changevolume up
+    bindsym XF86AudioLowerVolume exec ~/.local/bin/changevolume down
+    bindsym XF86AudioMute exec ~/.local/bin/changevolume mute
     bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-    bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
-    bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+    bindsym XF86MonBrightnessDown exec ~/.local/bin/changebrightness down
+    bindsym XF86MonBrightnessUp exec ~/.local/bin/changebrightness up
     bindsym XF86AudioPlay exec playerctl play-pause
     bindsym XF86AudioNext exec playerctl next
     bindsym XF86AudioPrev exec playerctl previous
