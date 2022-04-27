@@ -1,4 +1,4 @@
-### Swayg 
+### Sway
 
 exec kanshi &
 
@@ -28,26 +28,11 @@ set $sway_path ~/.config/sway
 # on the original workspace that the command was run on.
 set $menu wofi --show=drun --lines=10 --prompt=""
 
-### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pictures/wallpapers/monet1.jpg fill
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
+# Default Wallpager
+# output * bg ~/.wallpapers/monet1.jpg fill
+# Cycle through random wallpapers
+exec $sway_path/background.sh &
 
-### Idle configuration
-#
-# Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
 
 exec swayidle -w \
 	timeout 1800 'swaylock' \
@@ -95,7 +80,7 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
-    bindsym $mod+p exec swaylock -e -f -c 000000 -i ~/Pictures/wallpapers/monet2.jpg -t
+    bindsym $mod+p exec swaylock -e -f -c 000000 -i "$HOME/.wallpapers/monet1.jpg"
 
     bindsym $mod+b exec $browser
     bindsym $mod+Print exec grimshot save area
