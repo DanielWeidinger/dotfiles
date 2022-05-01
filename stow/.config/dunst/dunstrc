@@ -194,7 +194,7 @@
     max_icon_size = 32
 
     # Paths to default icons.
-    icon_path = /home/daniel/.local/icons/fontawesom
+    icon_path = /home/daniel/.local/icons/fontawesome
 
     ### History ###
 
@@ -290,8 +290,9 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#222222"
-    foreground = "#888888"
+    background = "#2E3440"
+    foreground = "#D8DEE9"
+    highlight = "#5E81AC"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     # default_icon = /path/to/icon
