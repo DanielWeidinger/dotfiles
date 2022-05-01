@@ -61,6 +61,7 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
 #
 # Basics:
 #
+
     # Start a terminal
     bindsym $mod+Return exec $term
 
@@ -70,11 +71,7 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
     # Start your launcher
     bindsym $mod+d exec $menu
 
-    # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
-    # Despite the name, also works for non-floating windows.
-    # Change normal to inverse to use left mouse button for resizing and right
-    # mouse button for dragging.
+    # Drag and drop windows while holding $mod
     floating_modifier $mod normal
 
     # Reload the configuration file
@@ -83,7 +80,11 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
+    # Lock
     bindsym $mod+p exec swaylock -e -f -c 000000 -i "$HOME/.wallpapers/monet1.jpg"
+
+    # Disable notifications
+    bindsym $mod+i exec dunstctl set-paused toggle
 
     bindsym $mod+b exec $browser
     bindsym $mod+Print exec grimshot save area
