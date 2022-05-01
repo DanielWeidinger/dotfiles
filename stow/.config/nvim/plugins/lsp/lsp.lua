@@ -8,7 +8,8 @@ local format_async = function(err, result, params)
 	end
 	if not vim.api.nvim_buf_get_option(params.bufnr, "modified") then
 		local view = vim.fn.winsaveview()
-		vim.lsp.util.apply_text_edits(result, params.bufnr)
+        local client = vim.lsp.get_client_by_id(params.client_id)
+		vim.lsp.util.apply_text_edits(result, params.bufnr, client.offset_encoding)
 		vim.fn.winrestview(view)
 		if params.bufnr == vim.api.nvim_get_current_buf() then
 			vim.api.nvim_command("noautocmd :update")
