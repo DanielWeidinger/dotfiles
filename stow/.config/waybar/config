@@ -19,7 +19,7 @@
         "max-length": 50,
     },
     "clock": {
-        "format": "{:%H:%M %d.%m. }",
+        "format": "{:%H:%M %d.%m.}",
         "format-alt": "{:%a %b %d}",
         "tooltip": false
     },
@@ -33,9 +33,8 @@
             "critical": 15
         },
         "format": "| {icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        /* "format-discharging": " {capacity}%", */
+        "format-charging": "|  {capacity}%",
+        "format-plugged": "|  {capacity}%",
         "format-alt": "{icon} {time}",
         "format-icons": ["", "", "", "", ""]
     },
