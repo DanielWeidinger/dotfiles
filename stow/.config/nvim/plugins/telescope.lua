@@ -1,5 +1,6 @@
 local telescope = require("telescope")
 require("telescope").load_extension("fzy_native")
+require("telescope").load_extension("flutter")
 
 telescope.setup({})
 
@@ -14,9 +15,10 @@ wk.register({
 		["&"] = { "<cmd>Telescope colorscheme<cr>", "avaliable colorschemes" }, -- create a binding with label
 		g = { "<cmd>Telescope live_grep<cr>", "Grep" }, -- create a binding with label
 		b = { "<cmd>Telescope fers<cr>", "Buffers" },
-		h = { "<cmd>Telescope help_tags<cr>", "Help Tags" },
-		r = { "<cmd>Telescope reloader<cr>", "Reload Modules" },
+		h = { "<cmd>Telescope help_tags<cr>", "Help tags" },
+		r = { "<cmd>Telescope reloader<cr>", "Reload modules" },
 		t = { "<cmd>TodoTelescope<cr>", "Todos" },
+		d = { "<cmd>lua require('telescope').extensions.flutter.commands()<cr>", "Flutter commands" },
 	},
 }, {
 	prefix = "<leader>",

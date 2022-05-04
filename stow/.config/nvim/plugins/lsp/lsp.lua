@@ -96,3 +96,9 @@ lspconfig.jsonls.setup({
 		on_attach(client)
 	end,
 })
+
+-- Flutter tools setup
+require("flutter-tools").setup{
+	capabilities = capabilities,
+	on_attach = on_attach
+}

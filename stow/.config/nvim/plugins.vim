@@ -70,6 +70,8 @@ call plug#begin("~/.vim/plugged")
     " better code diagnostics with floating window
     Plug 'glepnir/lspsaga.nvim'
     Plug 'tami5/lspsaga.nvim'
+    " Flutter support (autosetup for dartls)
+    Plug 'akinsho/flutter-tools.nvim'
     " Snippets
     Plug 'hrsh7th/vim-vsnip'
     Plug 'rafamadriz/friendly-snippets'
