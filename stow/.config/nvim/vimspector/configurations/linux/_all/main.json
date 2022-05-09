@@ -2,14 +2,14 @@
   "configurations": {
     "py: current": {
       "adapter": "debugpy",
-      "filetypes": [ "python" ],
+      "filetypes": ["python"],
       "configuration": {
         "name": "current file",
         "breakpoints": {
-            "exception": {
+          "exception": {
             "caught": "N",
             "uncaught": "Y"
-            }
+          }
         },
         "type": "python",
         "request": "launch",

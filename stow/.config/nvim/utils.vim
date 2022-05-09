@@ -22,6 +22,7 @@ fun! ToggleQFList(global)
 endfun
 
 fun! CloseExtraWindows()
+    lua require'dapui'.close()
     NvimTreeClose
     TroubleClose
 endfun

@@ -1,7 +1,7 @@
 local wk = require("which-key")
 wk.register({
 	d = {
-		name = "Debug", -- optional group name
+		name = "VimSpec Debug", -- optional group name
 		d = { ":call vimspector#Launch()<cr>", "Launch" },
 		D = { "<Plug>VimpectorRestart<cr>", "Launch" },
 		c = { ":call GotoWindow(g:vimspector_session_windows.code)<cr>", "GT:Code" },

@@ -99,6 +99,13 @@ call plug#begin("~/.vim/plugged")
 
     " Mutli-language debugger
     Plug 'puremourning/vimspector'
+
+    " DAP
+    Plug 'mfussenegger/nvim-dap'
+    Plug 'theHamsta/nvim-dap-virtual-text'
+    Plug 'rcarriga/nvim-dap-ui'
+    Plug 'mfussenegger/nvim-dap-python'
+
     Plug 'szw/vim-maximizer'
 
     " Fuzzy finding
