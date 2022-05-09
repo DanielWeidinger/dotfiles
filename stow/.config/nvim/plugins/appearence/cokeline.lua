@@ -164,7 +164,7 @@ wk.register(switch_mappings, { prefix = "<leader>" })
 wk.register({
 	n = { "<Plug>(cokeline-switch-next)", "Bufnext" },
 	N = { "<Plug>(cokeline-switch-prev)", "Bufprev" },
-	b = { "<Plug>(cokeline-pick-focus)", "Buf pick focus" },
+	-- b = { "<Plug>(cokeline-pick-focus)", "Buf pick focus" },
 }, {
 	prefix = "<leader>",
 })

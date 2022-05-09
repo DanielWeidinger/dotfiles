@@ -52,7 +52,10 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools/
 export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin/
 export PATH=$PATH:$ANDROID_SDK_ROOT/tools/
-PATH=$ANDROID_SDK_ROOT/emulator:$PATH
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+
+# Flutter executeables
+export PATH="$PATH":"$HOME/.pub-cache/bin"   
 
 
 export EDITOR=nvim # to be able use sudoedit for write-protected files

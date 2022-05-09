@@ -99,6 +99,22 @@ lspconfig.jsonls.setup({
 
 -- Flutter tools setup
 require("flutter-tools").setup{
-	capabilities = capabilities,
-	on_attach = on_attach
+    lsp = {
+        capabilities = capabilities,
+        enabled = false,
+        on_attach = function(client)
+            on_attach(client)
+            client.resolved_capabilities.document_formatting = true
+        end,
+    },
+    debugger = { -- integrate with nvim dap + install dart code debugger
+        enabled = true,
+        run_via_dap = true, -- use dap instead of a plenary job to run flutter apps
+        -- register_configurations = function(paths)
+
+        -- end,
+    },
+    dev_log = {
+        enabled = false,
+    }
 }

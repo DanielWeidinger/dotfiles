@@ -42,3 +42,7 @@ tnoremap <Esc><Esc> <C-\><C-n>
 nnoremap <C-x> :bp<bar>sp<bar>bn<bar>bd<CR>
 nnoremap <C-c> :close<CR>
 nnoremap <leader><C-x> :call CloseExtraWindows()<bar>:SClose<bar>:qa<CR>
+
+" Tab functionality
+nnoremap <A-x> :tabclose<CR>
+
