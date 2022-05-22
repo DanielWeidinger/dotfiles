@@ -5,9 +5,9 @@
 autocmd FileType markdown setlocal wrap
 
 " Conda support 
-if has('nvim') && !empty($CONDA_PREFIX)
-  let g:python3_host_prog = $CONDA_PREFIX . '/bin/python'
-endif
+lua << EOF
+    vim.g.python3_host_prog = vim.fn.trim(vim.fn.system("which python") )
+EOF
 
 " navigation
 set relativenumber

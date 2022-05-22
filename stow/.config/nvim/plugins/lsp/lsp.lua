@@ -118,3 +118,4 @@ require("flutter-tools").setup{
         enabled = false,
     }
 }
+require("telescope").load_extension("flutter")

@@ -22,6 +22,11 @@ nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
+" Special QWERTZ mappings
+nnoremap ö {
+nnoremap ä }
+nnoremap ü /
+
 " Ctrl + s for buffer writing
 noremap <silent> <C-S> :update<CR>
 vnoremap <silent> <C-S> <C-C>:update<CR>

@@ -1,8 +1,14 @@
 local dap, dapui = require("dap"), require("dapui")
+dap.defaults.fallback.external_terminal = {
+    command = '/usr/bin/alacritty';
+    args = {'-e'};
+}
+dap.defaults.fallback.force_external_terminal = true
+
 dapui.setup()
 
 dap.listeners.after.event_initialized["dapui_config"] = function()
-  dapui.open("tray")
+  -- dapui.open("tray")
 end
 dap.listeners.before.event_terminated["dapui_config"] = function()
   dapui.close()
@@ -12,7 +18,12 @@ dap.listeners.before.event_exited["dapui_config"] = function()
 end
 
 require("nvim-dap-virtual-text").setup({enabled = true})
-require('dap-python').setup('/home/daniel/miniconda3/bin/python')
+
+-- python
+require('dap-python').setup(vim.g.python3_host_prog)
+
+-- overwrite native nvim dialog to use telescope
+require('telescope').load_extension('dap')
 
 -- dap.set_log_level('DEBUG')
 

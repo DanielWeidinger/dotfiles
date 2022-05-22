@@ -1,6 +1,5 @@
 local telescope = require("telescope")
 require("telescope").load_extension("fzy_native")
-require("telescope").load_extension("flutter")
 
 telescope.setup({})
 

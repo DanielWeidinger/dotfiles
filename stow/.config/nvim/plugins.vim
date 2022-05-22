@@ -3,9 +3,6 @@ call plug#begin("~/.vim/plugged")
     Plug 'nvim-lua/plenary.nvim'
     " Plug 'DanielWeidinger/nvim-sshfs'
 
-    " Easy Motion
-    Plug 'easymotion/vim-easymotion'
-            
     " Project managment(Sessions, bookmarks, ...)
     Plug 'mhinz/vim-startify'
     
@@ -86,10 +83,7 @@ call plug#begin("~/.vim/plugged")
     " Pretty code diagnostics 
     Plug 'folke/lsp-colors.nvim'
     Plug 'folke/trouble.nvim'
-    if g:plugin_dev_mode
-        echo "Plugin dev mode is active!"
-        Plug 'folke/lua-dev.nvim' 
-    endif
+    Plug 'folke/lua-dev.nvim' 
 
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
     Plug 'windwp/nvim-ts-autotag' " treesitter based autoclosing and renaming of xml tags
@@ -98,13 +92,16 @@ call plug#begin("~/.vim/plugged")
     Plug 'folke/todo-comments.nvim'
 
     " Mutli-language debugger
-    Plug 'puremourning/vimspector'
+    " Plug 'puremourning/vimspector'
 
     " DAP
     Plug 'mfussenegger/nvim-dap'
     Plug 'theHamsta/nvim-dap-virtual-text'
     Plug 'rcarriga/nvim-dap-ui'
     Plug 'mfussenegger/nvim-dap-python'
+    Plug 'nvim-telescope/telescope-dap.nvim'
+    Plug 'rcarriga/cmp-dap'
+    " Plug 'Pocco81/dap-buddy.nvim'
 
     Plug 'szw/vim-maximizer'
 

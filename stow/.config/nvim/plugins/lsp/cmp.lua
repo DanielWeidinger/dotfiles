@@ -40,10 +40,14 @@ cmp.setup {
         { name = 'spell' },
         { name = 'calc' },
         { name = 'treesitter' },
+        { name = 'dap' }
     }),
     formatting = {
         format = lspkind.cmp_format({with_text = true, })
-    }
+    },
+    enabled = function ()
+        return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt" or require("cmp_dap").is_dap_buffer()
+    end,
 } 
 
 -- enable spellling suggestions
