@@ -4,6 +4,8 @@
 exec kanshi
 # Notification deamon
 exec dunst
+# blue light filter(lat/long for vienna)
+exec wlsunset -l 48.2 -L 16.3 
 
 font pango:SourceCodePro Medium 11
 
