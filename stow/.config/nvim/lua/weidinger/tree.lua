@@ -1,4 +1,3 @@
-vim.g["nvim_tree_group_empty"] = 1
 require("nvim-tree").setup({
 	disable_netrw = false,
 	update_cwd = true,
@@ -10,5 +9,8 @@ require("nvim-tree").setup({
 			warning = "",
 			error = "",
 		},
+	},
+	renderer = {
+		group_empty = true,
 	},
 })

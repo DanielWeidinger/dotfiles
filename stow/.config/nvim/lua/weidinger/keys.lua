@@ -10,8 +10,7 @@ vim.g.maplocalleader = " "
 keymap("n", "n", "nzzzv", opts)
 keymap("n", "N", "Nzzzv", opts)
 
-keymap("v", " <leader>y", '"+y', opts)
-keymap("n", "<leader>Y", '"+yg_', opts)
+keymap("v", "<leader>y", '"+y', opts)
 keymap("n", "<leader>y", '"+y', opts)
 
 keymap("n", "<leader>p", '"+p', opts)

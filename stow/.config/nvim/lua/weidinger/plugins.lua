@@ -114,8 +114,18 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-calc")
 	use("ray-x/cmp-treesitter")
 	use("onsails/lspkind-nvim") -- Better iconography for completion
+	use({
+		"ray-x/lsp_signature.nvim",
+		config = function()
+			require("lsp_signature").setup({
+				hint_enable = true,
+				floating_window = false,
+				hint_prefix = "ﲒ ",
+				timer_interval = 100,
+			})
+		end,
+	}) -- Floating window lsp signature
 	-- better code diagnostics with floating window
-	-- use 'glepnir/lspsaga.nvim'
 	use("tami5/lspsaga.nvim")
 	-- Flutter support (autosetup for dartls)
 	use("akinsho/flutter-tools.nvim")
@@ -135,7 +145,10 @@ return packer.startup(function(use)
 	use("folke/trouble.nvim")
 	use("folke/lua-dev.nvim")
 
-	use("nvim-treesitter/nvim-treesitter") -- TODO: , {'do': ':TSUpdate'}
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		run = ":TSUpdate",
+	})
 	-- treesitter based autoclosing and renaming of xml tags
 	use({ "windwp/nvim-ts-autotag", config = function() end })
 
