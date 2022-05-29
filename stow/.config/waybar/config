@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "top",
-    "modules-left": ["sway/workspaces", "custom/media"],
+    "modules-left": ["sway/workspaces"],
     "modules-center": ["sway/window", "custom/mode"],
     "modules-right": ["backlight", "custom/keyboard", "network", "cpu", "memory", "battery", "pulseaudio", "clock", "custom/quit"],
     "sway/workspaces": {
