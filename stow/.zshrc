@@ -3,12 +3,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/daniel/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
-
-# Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
 
 COMPLETION_WAITING_DOTS="true"
 
@@ -17,13 +14,13 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 setopt globdots # include hidden files
 
 ### User configuration
 ## aliases
-alias luamake=/home/daniel/.vim/lua-language-server/3rd/luamake/luamake
+alias luamake=$HOME/.vim/lua-language-server/3rd/luamake/luamake
 alias rrm='rm'
 alias rm='trash'
 
@@ -34,8 +31,6 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$HOME/.cargo/bin
 
 ## Plugins
-
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # nnn config
 source ~/.config/nnn/nnnrc.sh
@@ -68,14 +63,14 @@ export PATH="$PATH:$HOME/.local/bin/"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/daniel/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$("$HOME/miniconda3/bin/conda" 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/daniel/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/daniel/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/daniel/miniconda3/bin:$PATH"
+        export PATH="$HOME/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
