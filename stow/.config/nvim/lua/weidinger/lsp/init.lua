@@ -23,4 +23,4 @@ wk.register({
 require("weidinger.lsp.lsp")
 require("weidinger.lsp.ls_lua")
 require("weidinger.lsp.ls_null")
-require("weidinger.lsp.lspsaga")
+require("weidinger.lsp.lsp_actions")

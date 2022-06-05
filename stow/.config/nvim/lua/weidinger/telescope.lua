@@ -1,8 +1,14 @@
 local telescope = require("telescope")
-require("telescope").load_extension("fzy_native")
-require("telescope").load_extension("ui-select")
+telescope.setup({
+	extensions = {
+		["ui-select"] = {
+			require("telescope.themes").get_cursor(),
+		},
+	},
+})
 
-telescope.setup({})
+telescope.load_extension("fzy_native")
+telescope.load_extension("ui-select")
 
 local wk = require("which-key")
 wk.register({

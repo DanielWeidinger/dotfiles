@@ -1,6 +1,6 @@
 local saga = require("lspsaga")
 saga.init_lsp_saga({
-	error_sign = "", -- 
+	error_sign = "",
 	warn_sign = "",
 	hint_sign = "",
 	infor_sign = "",
@@ -24,7 +24,7 @@ wk.register({
 wk.register({
 	c = {
 		name = "Code", -- optional group name
-		a = { ":Lspsaga code_action<cr>", "Action" }, -- create a binding with label
+		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Action" }, -- create a binding with label
 		r = { ":Lspsaga rename<cr>", "Rename" }, -- create a binding with label
 		d = { "<cmd>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>", "Line Diagnostic" }, -- create a binding with label
 		c = { "<cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>", "Cursor Diagnostic" },

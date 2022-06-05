@@ -30,7 +30,7 @@ local options = {
 	expandtab = true,
 	wrap = false,
 
-	mouse = "",
+	mouse = "n",
 
 	-- Search
 	hlsearch = false,

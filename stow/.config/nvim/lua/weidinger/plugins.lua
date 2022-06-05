@@ -51,6 +51,10 @@ return packer.startup(function(use)
 		config = function()
 			require("session_manager").setup({
 				autoload_mode = require("session_manager.config").AutoloadMode.LastSession, -- Define what to do when Neovim is started without arguments. Possible values: Disabled, CurrentDir, LastSession
+				autosave_ignore_filetypes = { -- All buffers of these file types will be closed before the session is saved.
+					"gitcommit",
+					"zsh",
+				},
 			})
 		end,
 	})
@@ -149,7 +153,7 @@ return packer.startup(function(use)
 	use("folke/which-key.nvim")
 	-- Pretty code diagnostics
 	use("folke/lsp-colors.nvim")
-	use("folke/trouble.nvim")
+	use("bellini666/trouble.nvim")
 	use("folke/lua-dev.nvim")
 
 	use({

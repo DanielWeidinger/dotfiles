@@ -19,7 +19,7 @@ wk.register({
 	g = {
 		r = { "<cmd>TroubleToggle lsp_references<cr>", "(Trouble)Refrences" },
 		d = { "<cmd>TroubleToggle lsp_definitions<cr>", "(Trouble)Definitions" },
-		i = { "<cmd>TroubleToggle lsp_implementations<cr>", "(Trouble)Definitions" },
+		i = { "<cmd>TroubleToggle lsp_implementations<cr>", "(Trouble)Implementations" },
 		-- t = { "<cmd>TroubleToggle lsp_type_definitions<cr>", "(Trouble)Definitions" },
 	},
 })
