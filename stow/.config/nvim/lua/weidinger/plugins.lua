@@ -59,7 +59,6 @@ return packer.startup(function(use)
 		end,
 	})
 
-	use("windwp/nvim-autopairs")
 	use("kyazdani42/nvim-tree.lua")
 	use("tpope/vim-commentary")
 
@@ -73,8 +72,7 @@ return packer.startup(function(use)
 	-- Fancy bar
 	use("nvim-lualine/lualine.nvim")
 	use("noib3/nvim-cokeline")
-	-- use 'vim-airline/vim-airline'
-	-- use 'vim-airline/vim-airline-themes'
+
 	-- should be last
 	use("ryanoasis/vim-devicons")
 	use("kyazdani42/nvim-web-devicons") -- for folke's Trouble plugin
@@ -131,8 +129,15 @@ return packer.startup(function(use)
 	}) -- Floating window lsp signature
 	-- better code diagnostics with floating window
 	use("tami5/lspsaga.nvim")
+
 	-- Flutter support (autosetup for dartls)
-	use("akinsho/flutter-tools.nvim")
+	use({
+		"akinsho/flutter-tools.nvim",
+		config = function()
+			require("weidinger.lsp.ls_flutter").setup()
+		end,
+		ft = { "dart" },
+	})
 	-- Snippets
 	use("hrsh7th/vim-vsnip")
 	use("rafamadriz/friendly-snippets")
@@ -152,7 +157,12 @@ return packer.startup(function(use)
 	-- Which key to show leader commands
 	use("folke/which-key.nvim")
 	-- Pretty code diagnostics
-	use("folke/lsp-colors.nvim")
+	use({
+		"folke/lsp-colors.nvim",
+		config = function()
+			require("lsp-colors").setup()
+		end,
+	})
 	use("bellini666/trouble.nvim")
 	use("folke/lua-dev.nvim")
 
@@ -160,7 +170,8 @@ return packer.startup(function(use)
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	})
-	-- treesitter based autoclosing and renaming of xml tags
+
+	use("windwp/nvim-autopairs")
 	use({ "windwp/nvim-ts-autotag", config = function() end })
 
 	-- todo finder and highlighting

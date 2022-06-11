@@ -1,5 +1,4 @@
 local lspconfig = require("lspconfig")
-local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- local sumneko_root_path = vim.fn.stdpath('cache')..'/lspconfig/sumneko_lua/lua-language-server'
 -- local sumneko_binary = sumneko_root_path.."/bin/"..system_name.."/lua-language-server"
@@ -12,8 +11,8 @@ if vim.g.plugin_dev_mode then
 	local luadev = require("lua-dev").setup({
 		lspconfig = {
 			cmd = command,
-			capabilities = capabilities,
-			on_attach = on_attach,
+			capabilities = Capabilities,
+			on_attach = On_attach,
 		},
 	})
 	lspconfig.sumneko_lua.setup(luadev)
@@ -24,7 +23,7 @@ else
 
 	lspconfig.sumneko_lua.setup({
 		cmd = command,
-		capabilities = capabilities,
+		capabilities = Capabilities,
 		on_attach = function(client)
 			client.resolved_capabilities.document_formatting = false
 		end,

@@ -24,7 +24,6 @@ wk.register({
 		h = { "<cmd>Telescope help_tags<cr>", "Help tags" },
 		r = { "<cmd>Telescope reloader<cr>", "Reload modules" },
 		t = { "<cmd>TodoTelescope<cr>", "Todos" },
-		d = { "<cmd>lua require('telescope').extensions.flutter.commands()<cr>", "Flutter commands" },
 		s = { "<cmd>SessionManager load_session<cr>", "Load Session" }, --SessionCommands
 	},
 }, {

@@ -26,7 +26,7 @@ echo --eslint + prettier
 sudo npm install -g eslint_d @fsouza/prettierd
 
 echo --Lua
-lua_dir="$HOME/.vim/lang-servers/"
+lua_dir="$HOME/.local/share/nvim/lang-servers"
 if [ ! -d "$lua_dir" ]; then
     mkdir $lua_dir
 fi
@@ -38,7 +38,7 @@ cd 3rd/luamake
 ./compile/install.sh
 cd ../..
 ./3rd/luamake/luamake rebuild
-# cd ~/.vim
+
 # sudo rm -r -f lang-servers
 # mkdir lang-servers
 # mv lua-language-server/bin/Linux/lua-language-server lang-servers

@@ -1,3 +1,7 @@
+-- Global Config
+Capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+Capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 -- LSP config (the mappings used in the default file don't quite work right)
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
