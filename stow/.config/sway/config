@@ -28,6 +28,7 @@ set $right l
 set $term alacritty
 set $browser firefox
 set $sway_path ~/.config/sway
+set $file_explorer nautilus
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -87,6 +88,8 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
 
     # Disable notifications
     bindsym $mod+i exec dunstctl set-paused toggle
+
+    bindsym $mod+u exec $file_explorer
 
     bindsym $mod+b exec $browser
     bindsym $mod+Print exec grimshot save area
