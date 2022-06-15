@@ -19,6 +19,13 @@ wk.register({
 	prefix = "<leader>",
 })
 
+wk.register({
+	s = { '"sy:%s/<C-R>s/<C-R>s/g<Left><Left>', "source" },
+}, {
+	prefix = "<leader>",
+	mode = "v",
+})
+
 -- spelling
 wk.register({
 	z = {
