@@ -1,2 +1,0 @@
--- vim.g.vsnip_filetypes = {}
--- vim.g.vsnip_filetypes.dart = { 'flutter' }

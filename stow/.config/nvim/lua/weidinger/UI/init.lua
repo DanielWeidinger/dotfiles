@@ -1,0 +1,7 @@
+require("weidinger.UI.cokeline")
+require("weidinger.UI.floaterm")
+require("weidinger.UI.lualine")
+require("weidinger.UI.telescope")
+require("weidinger.UI.tree")
+require("weidinger.UI.trouble")
+require("weidinger.UI.which-key")

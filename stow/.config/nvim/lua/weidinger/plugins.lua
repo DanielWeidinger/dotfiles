@@ -82,7 +82,12 @@ return packer.startup(function(use)
 	use("kassio/neoterm")
 
 	-- General Git Stuff
-	use("lewis6991/gitsigns.nvim") -- GitGutter and diff in Airline
+	use({
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("gitsigns").setup({ keymaps = {} })
+		end,
+	}) -- GitGutter and diff in Airline
 	use("tpope/vim-fugitive") -- Basic git functionality
 	use("tpope/vim-rhubarb") -- Adds Browse command to open in the web
 
@@ -175,7 +180,16 @@ return packer.startup(function(use)
 	use({ "windwp/nvim-ts-autotag", config = function() end })
 
 	-- todo finder and highlighting
-	use("folke/todo-comments.nvim")
+	use({
+		"folke/todo-comments.nvim",
+		config = function()
+			require("todo-comments").setup({
+				search = {
+					command = "rg",
+				},
+			})
+		end,
+	})
 
 	-- Mutli-language debugger
 	-- use 'puremourning/vimspector'

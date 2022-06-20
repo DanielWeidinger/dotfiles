@@ -24,7 +24,6 @@
         "tooltip": false
     },
     "battery": {
-        "bat": "BAT0",
         "adapter": "ADP1",
         "interval": 10,
         "states": {
