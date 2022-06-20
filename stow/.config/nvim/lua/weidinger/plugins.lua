@@ -45,6 +45,19 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim")
 	-- use 'DanielWeidinger/nvim-sshfs'
 
+	use({
+		"nathom/filetype.nvim",
+		config = function()
+			require("filetype").setup({
+				overrides = {
+					extensions = {
+						ipynb = "jupyter",
+					},
+				},
+			})
+		end,
+	})
+
 	-- Session managment(wrapper around mksession)
 	use({
 		"Shatur/neovim-session-manager",
@@ -77,9 +90,25 @@ return packer.startup(function(use)
 	use("ryanoasis/vim-devicons")
 	use("kyazdani42/nvim-web-devicons") -- for folke's Trouble plugin
 
-	-- Terminal functionality
+	-- Terminal functionality and execution
 	use("voldikss/vim-floaterm")
 	use("kassio/neoterm")
+	use({
+		"untitled-ai/jupyter_ascending.vim",
+		ft = { "python" },
+		setup = function()
+			local wk = require("which-key")
+			wk.register({
+				j = {
+					name = "Jupyter",
+					j = { "<Plug>JupyterExecute", "Execute cell" },
+					a = { "<Plug>JupyterExecuteAll", "Execute all cells" },
+				},
+			}, {
+				prefix = "<leader>",
+			})
+		end,
+	})
 
 	-- General Git Stuff
 	use({

@@ -24,7 +24,7 @@ local wk = require("which-key")
 local jmpBack = ":call JumpBackIfTerminal()<cr>" --<C-w>r
 wk.register({
 	r = {
-		name = "Run", -- optional group name
+		name = "Run",
 		-- neoterm
 		f = { ":TREPLSendFile<CR>" .. jmpBack, "file" },
 		l = { ":TREPLSendLine<CR>" .. jmpBack, "line" },

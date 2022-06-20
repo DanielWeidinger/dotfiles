@@ -23,6 +23,7 @@ keymap("v", "<leader>P", '"+P', opts)
 keymap("n", "ö", "{", opts)
 keymap("n", "ä", "}", opts)
 keymap("n", "ü", "/", { noremap = true })
+keymap("n", "Ü", "?", { noremap = true })
 
 -- Ctrl + s for buffer writing
 keymap("n", "<C-S>", ":update<CR>", opts)

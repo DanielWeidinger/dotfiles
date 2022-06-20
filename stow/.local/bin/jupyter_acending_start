@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo $1
+
+if [ ! -f "$1.sync.py" ]; then
+    echo "Jupyer ascending .synced pair does not exist"
+    echo "Creating $1 files"
+    python -m jupyter_ascending.scripts.make_pair --base $1
+    echo 'print("Hello World!")' >> "$1.sync.py"
+fi
+
+jupyter notebook "$1.sync.ipynb"
+python -m jupyter_ascending.requests.sync --filename "$1.sync.py"
