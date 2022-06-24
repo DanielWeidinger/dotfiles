@@ -11,4 +11,7 @@ vim.cmd([[colorscheme nord]]) -- actiavtes filetype, the possibility to load plu
 require("weidinger.lsp")
 require("weidinger.UI")
 require("weidinger.execution")
+require("weidinger.utils")
+
+require("weidinger.treesitter")
 require("weidinger.dap")

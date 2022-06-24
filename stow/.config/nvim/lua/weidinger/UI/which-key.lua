@@ -20,7 +20,8 @@ wk.register({
 })
 
 wk.register({
-	s = { '"sy:%s/<C-R>s/<C-R>s/g<Left><Left>', "source" },
+	s = { '"sy:%s/<C-R>s//g<Left><Left>', "source" },
+	S = { '"sy:%s/<C-R>s/<C-R>s/g<Left><Left>', "source" },
 }, {
 	prefix = "<leader>",
 	mode = "v",
