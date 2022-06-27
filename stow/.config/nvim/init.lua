@@ -15,3 +15,4 @@ require("weidinger.utils")
 
 require("weidinger.treesitter")
 require("weidinger.dap")
+require("weidinger.neotest")

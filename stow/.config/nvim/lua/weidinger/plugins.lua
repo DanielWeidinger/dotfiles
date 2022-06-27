@@ -220,9 +220,6 @@ return packer.startup(function(use)
 		end,
 	})
 
-	-- Mutli-language debugger
-	-- use 'puremourning/vimspector'
-
 	-- DAP
 	use("mfussenegger/nvim-dap")
 	use("theHamsta/nvim-dap-virtual-text")
@@ -233,6 +230,10 @@ return packer.startup(function(use)
 	use({ "Pocco81/dap-buddy.nvim", commit = "24923c3819a450a772bb8f675926d530e829665f" })
 
 	use("szw/vim-maximizer")
+
+	-- Test runner
+	use("nvim-neotest/neotest")
+	use("haydenmeade/neotest-jest")
 
 	-- Fuzzy finding
 	use("nvim-telescope/telescope.nvim")
