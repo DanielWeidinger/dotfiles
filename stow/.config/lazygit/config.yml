@@ -2,7 +2,7 @@ gui:
   showIcons: true
 customCommands:
   - key: "C"
-    command: "git cz"
+    command: "git cz commit"
     context: "files"
     loadingText: "opening commitizen commit tool"
     subprocess: true

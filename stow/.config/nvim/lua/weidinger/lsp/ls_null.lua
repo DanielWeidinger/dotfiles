@@ -9,7 +9,7 @@ null_ls.setup({
 		}),
 		null_ls.builtins.diagnostics.eslint_d.with({
 			condition = function(utils)
-				return utils.root_has_file({ "eslint.json", "eslint.js" })
+				return utils.root_has_file({ "eslint.json", "eslintrc.json", "eslint.js" })
 			end,
 		}),
 		-- null_ls.builtins.code_actions.gitsigns,
