@@ -126,6 +126,7 @@ return packer.startup(function(use)
 	-- Broser utils
 	use("dhruvasagar/vim-open-url")
 
+	use({ "GustavoKatel/tasks.nvim", requires = { "nvim-lua/plenary.nvim" } })
 	-- Themes
 	use("arcticicestudio/nord-vim")
 	use("dracula/vim")

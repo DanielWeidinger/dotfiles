@@ -31,7 +31,8 @@ wk.register({
 		b = { "<cmd>Telescope fers<cr>", "Buffers" },
 		h = { "<cmd>Telescope help_tags<cr>", "Help tags" },
 		r = { "<cmd>Telescope reloader<cr>", "Reload modules" },
-		t = { "<cmd>TodoTelescope<cr>", "Todos" },
+		t = { "<cmd>Telescope tasks specs<cr>", "Tasks" },
+		T = { "<cmd>TodoTelescope<cr>", "Todos" },
 		s = { "<cmd>SessionManager load_session<cr>", "Load Session" }, --SessionCommands
 	},
 }, {

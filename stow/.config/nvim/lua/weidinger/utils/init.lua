@@ -55,3 +55,4 @@ endfun
 require("weidinger.utils.autoclosing")
 require("weidinger.utils.browser")
 require("weidinger.utils.fugitive")
+require("weidinger.utils.tasks")
