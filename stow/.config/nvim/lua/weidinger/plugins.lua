@@ -127,6 +127,15 @@ return packer.startup(function(use)
 	use("dhruvasagar/vim-open-url")
 
 	use({ "GustavoKatel/tasks.nvim", requires = { "nvim-lua/plenary.nvim" } })
+
+	use({
+		"phaazon/hop.nvim",
+		branch = "v1", -- optional but strongly recommended
+		config = function()
+			require("hop").setup()
+		end,
+	})
+
 	-- Themes
 	use("arcticicestudio/nord-vim")
 	use("dracula/vim")

@@ -22,8 +22,8 @@ keymap("v", "<leader>P", '"+P', opts)
 -- Special QWERTZ mappings
 keymap("n", "ö", "{", opts)
 keymap("n", "ä", "}", opts)
-keymap("n", "ü", "/", { noremap = true })
-keymap("n", "Ü", "?", { noremap = true })
+keymap("n", "ü", ":HopWord<cr>", opts)
+keymap("n", "Ü", "/", { noremap = true })
 
 -- Ctrl + s for buffer writing
 keymap("n", "<C-S>", ":update<CR>", opts)

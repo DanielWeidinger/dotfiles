@@ -6,8 +6,6 @@ saga.init_lsp_saga({
 	infor_sign = "",
 })
 
--- vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR> Geht leider nu ned in whick-key:(
-
 local wk = require("which-key")
 
 wk.register({
