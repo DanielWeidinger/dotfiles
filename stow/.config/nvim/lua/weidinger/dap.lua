@@ -64,7 +64,7 @@ dap.adapters.node2 = {
 	type = "executable",
 	command = "node",
 	args = {
-		vim.fn.stdpath("data") .. "/dapinstall/jsnode_dbg/" .. "/vscode-node-debug2/out/src/nodeDebug.js",
+		vim.fn.stdpath("data") .. "/dapinstall/jsnode_dbg/" .. "vscode-node-debug2/out/src/nodeDebug.js",
 	},
 }
 dap.configurations.javascript = {
@@ -101,6 +101,7 @@ wk.register({
 		o = { ":lua require'dapui'.toggle()<cr>", "Toggle full UI" },
 		O = { ":lua require'dapui'.open()<cr>", "Open full UI" },
 		w = { ":Telescope dap list_breakpoints<cr>", "Open Watches" },
+		s = { ":call GotoWindow(1004)<cr>", "Goto Scopes" },
 	},
 	["<leader>"] = { ":lua require'dap'.continue()<cr>", "Continue" },
 	b = { ":lua require'dap'.toggle_breakpoint()<cr>", "◯ :Toggle" },
