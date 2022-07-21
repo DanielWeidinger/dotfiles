@@ -9,12 +9,12 @@ dapui.setup({
 	layouts = {
 		{
 			elements = {
-				{ id = "scopes", size = 0.25 },
 				{ id = "watches", size = 0.25 },
+				{ id = "scopes", size = 0.5 },
 				{ id = "stacks", size = 0.25 },
-				{ id = "breakpoints", size = 0.25 },
+				-- { id = "breakpoints", size = 0.25 },
 			},
-			size = 0.25,
+			size = 0.2,
 			position = "left",
 		},
 		{
@@ -64,7 +64,7 @@ dap.adapters.node2 = {
 	type = "executable",
 	command = "node",
 	args = {
-		vim.fn.stdpath("data") .. "/dapinstall/jsnode_dbg/" .. "/vscode-node-debug2/out/src/nodeDebug.js",
+		vim.fn.stdpath("data") .. "/dapinstall/jsnode_dbg/" .. "vscode-node-debug2/out/src/nodeDebug.js",
 	},
 }
 dap.configurations.javascript = {
@@ -97,9 +97,11 @@ wk.register({
 		-- ["<leader>"] = { ":lua require'dap'.continue()<cr>", "Continue" },
 		r = { ":lua require'dap'.run_to_cursor()<cr>", "ToCursor" },
 		-- b = { ":lua require'dap'.toggle_breakpoint()<cr>", "◯ :Toggle" },
-		i = { ":lua require('dap.ui.widgets').hover()<cr>", "Eval under cursor" },
+		i = { ":lua require'dap.ui.widgets'.hover()<cr>", "Eval under cursor" },
 		o = { ":lua require'dapui'.toggle()<cr>", "Toggle full UI" },
 		O = { ":lua require'dapui'.open()<cr>", "Open full UI" },
+		w = { ":Telescope dap list_breakpoints<cr>", "Open Watches" },
+		s = { ":call GotoWindow(1004)<cr>", "Goto Scopes" },
 	},
 	["<leader>"] = { ":lua require'dap'.continue()<cr>", "Continue" },
 	b = { ":lua require'dap'.toggle_breakpoint()<cr>", "◯ :Toggle" },
