@@ -1,8 +1,7 @@
 -- require files
-require("weidinger.utils")
+require("weidinger.plugins")
 require("weidinger.general")
 require("weidinger.keys")
-require("weidinger.plugins")
 
 -- Theming
 vim.cmd([[colorscheme nord]]) -- actiavtes filetype, the possibility to load plugins and the indent.vim plugin

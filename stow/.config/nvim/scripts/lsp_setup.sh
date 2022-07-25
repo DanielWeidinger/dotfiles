@@ -5,7 +5,7 @@ sudo npm install -g typescript typescript-language-server
     
 echo --Python 
 sudo npm install -g pyright
-sudo apt-get install -y python3-autopep8
+sudo pacman -S autopep8 --noconfirm
 
 echo --JSON
 sudo npm install -g vscode-langservers-extracted
@@ -26,6 +26,7 @@ echo --eslint + prettier
 sudo npm install -g eslint_d @fsouza/prettierd
 
 echo --Lua
+sudo pacman -S stylua --noconfirm
 lua_dir="$HOME/.local/share/nvim/lang-servers"
 if [ ! -d "$lua_dir" ]; then
     mkdir $lua_dir
