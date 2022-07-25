@@ -34,8 +34,8 @@ set $file_explorer nautilus
 # on the original workspace that the command was run on.
 set $menu wofi --show=drun --lines=10 --prompt=""
 
-# Default Wallpager
-# output * bg ~/.wallpapers/monet1.jpg fill
+# Default Wallpaper
+# output * bg ~/.wallpapers/impressionist_13.jpg fill
 # Cycle through random wallpapers
 exec $sway_path/background.sh
 
@@ -96,7 +96,7 @@ input "1739:31251:SYNA2393:00_06CB:7A13_Touchpad" {
     bindsym $mod+Shift+Print exec grimshot copy area
     bindsym $mod+Alt+Print exec grimshot save active
 
-    bindsym $mod+t border toggle 1
+    # bindsym $mod+t border toggle 1 */
 
     # Function keys
     bindsym XF86AudioRaiseVolume exec ~/.local/bin/changevolume up
