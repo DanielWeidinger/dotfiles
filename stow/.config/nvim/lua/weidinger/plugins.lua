@@ -143,7 +143,7 @@ return packer.startup(function(use)
 	use("rebelot/kanagawa.nvim")
 	use("folke/tokyonight.nvim")
 
-	-- --- LSP because its built-in ---
+	-- LSP
 	use("neovim/nvim-lspconfig")
 	use("jose-elias-alvarez/null-ls.nvim")
 	-- WARN: Behold the mighty copilot
@@ -171,8 +171,23 @@ return packer.startup(function(use)
 			})
 		end,
 	}) -- Floating window lsp signature
+	use({
+		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+		config = function()
+			require("lsp_lines").setup()
+		end,
+	})
 	-- better code diagnostics with floating window
-	use("tami5/lspsaga.nvim")
+	use({
+		"glepnir/lspsaga.nvim",
+		branch = "main",
+		config = function()
+			require("lspsaga").init_lsp_saga({
+				diagnostic_header = { " ", " ", " ", "ﴞ " },
+			})
+		end,
+	})
+	use("b0o/schemastore.nvim") -- For json schema validation capabilities
 
 	-- Flutter support (autosetup for dartls)
 	use({
@@ -182,13 +197,12 @@ return packer.startup(function(use)
 		end,
 		ft = { "dart" },
 	})
+
 	-- Snippets
 	use("hrsh7th/vim-vsnip")
 	use("rafamadriz/friendly-snippets")
 
-	-- --- Datasci stuff ---
-	-- TODO: add jupyter support (jupyter ascending)
-	-- use 'untitled-ai/jupyter_ascending.vim'
+	-- Previewers
 	use({
 		"iamcco/markdown-preview.nvim",
 		run = "cd app && npm install",
