@@ -84,7 +84,7 @@ input "1739:31251:SYNA2393:00_06CB:7A13_Touchpad" {
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
     # Lock
-    bindsym $mod+p exec swaylock -e -f -c 000000 -i "$HOME/.wallpapers/monet1.jpg"
+    bindsym $mod+p exec swaylock -e -f -c 000000 -i "$HOME/.wallpapers/impressionist_1.jpg"
 
     # Disable notifications
     bindsym $mod+i exec dunstctl set-paused toggle
