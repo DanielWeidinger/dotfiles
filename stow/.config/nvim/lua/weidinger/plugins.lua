@@ -173,6 +173,7 @@ return packer.startup(function(use)
 	}) -- Floating window lsp signature
 	use({
 		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+		disable = true,
 		config = function()
 			require("lsp_lines").setup()
 		end,

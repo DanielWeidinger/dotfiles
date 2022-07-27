@@ -9,17 +9,6 @@ local colors = {
 }
 
 local theme = "auto"
--- {
--- 	normal = {
--- 		a = { fg = colors.white, bg = colors.black },
--- 		b = { fg = colors.white, bg = colors.grey },
--- 		c = { fg = colors.black, bg = colors.white },
--- 		z = { fg = colors.white, bg = colors.black },
--- 	},
--- 	insert = { a = { fg = colors.black, bg = colors.light_green } },
--- 	visual = { a = { fg = colors.black, bg = colors.orange } },
--- 	replace = { a = { fg = colors.black, bg = colors.green } },
--- }
 
 local empty = require("lualine.component"):extend()
 function empty:draw(default_highlight)

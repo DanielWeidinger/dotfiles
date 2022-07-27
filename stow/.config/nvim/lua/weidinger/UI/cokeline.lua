@@ -90,8 +90,8 @@ local components = {
 
 	diagnostics = {
 		text = function(buffer)
-			return (buffer.diagnostics.errors ~= 0 and "  " .. buffer.diagnostics.errors)
-				or (buffer.diagnostics.warnings ~= 0 and "  " .. buffer.diagnostics.warnings)
+			return (buffer.diagnostics.errors ~= 0 and " " .. LspSigns.Error .. " " .. buffer.diagnostics.errors)
+				or (buffer.diagnostics.warnings ~= 0 and " " .. LspSigns.Warn .. " " .. buffer.diagnostics.warnings)
 				or ""
 		end,
 		fg = function(buffer)
