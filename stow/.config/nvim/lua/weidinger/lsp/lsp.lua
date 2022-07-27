@@ -84,6 +84,12 @@ lspconfig.emmet_ls.setup({
 })
 
 lspconfig.jsonls.setup({
+	settings = {
+		json = {
+			schemas = require("schemastore").json.schemas(),
+			validate = { enable = true },
+		},
+	},
 	capabilities = Capabilities,
 	commands = {
 		Format = {
@@ -92,6 +98,32 @@ lspconfig.jsonls.setup({
 			end,
 		},
 	},
+	on_attach = function(client)
+		client.resolved_capabilities.document_formatting = false
+		On_attach(client)
+	end,
+})
+
+-- add yaml schema definitions
+local json_schemas = require("schemastore").json.schemas({})
+local yaml_schemas = {}
+vim.tbl_map(function(schema)
+	if schema.name == "openapi.json" and type(schema.fileMatch) == "table" then
+		schema.fileMatch = vim.list_extend({ "mantik-api-spec.yaml" }, schema.fileMatch)
+	end
+	yaml_schemas[schema.url] = schema.fileMatch
+end, json_schemas)
+lspconfig.yamlls.setup({
+	capabilities = Capabilities,
+	settings = {
+		yaml = {
+			trace = { server = "verbose" },
+			-- schemaStore = { enable = true },
+			schemas = yaml_schemas,
+			-- validate = { enable = true },
+		},
+	},
+	cmd = { "yaml-language-server", "--stdio" },
 	on_attach = function(client)
 		client.resolved_capabilities.document_formatting = false
 		On_attach(client)

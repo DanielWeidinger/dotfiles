@@ -7,17 +7,17 @@ echo --Python
 sudo npm install -g pyright
 sudo pacman -S autopep8 --noconfirm
 
-echo --JSON
-sudo npm install -g vscode-langservers-extracted
-
 echo --Docker
 sudo npm install -g dockerfile-language-server-nodejs
 
 echo --Bash
 sudo npm install -g bash-language-server
 
-echo --CSS and HTML
+echo --JSON, CSS and HTML
 sudo npm install -g vscode-langservers-extracted
+ 
+echo --YAML
+sudo npm install -g yaml-language-server
 
 echo --Emmet
 sudo npm install -g emmet-ls
