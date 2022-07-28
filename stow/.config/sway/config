@@ -12,9 +12,10 @@ font pango:SourceCodePro Medium 11
 default_border pixel 2
 
 gaps inner 5
+hide_edge_borders smart
+smart_gaps on
 
 ### Variables
-#
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Home row direction keys, like vim
