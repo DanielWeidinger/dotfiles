@@ -1,7 +1,7 @@
 #!/bin/bash
 
 pacman -Syuu
-BASE_DEPS="wayland sway waybar gnome wofi feh kanshi wlsunset alacritty git curl zsh neovim go npm ninja"
+BASE_DEPS="wayland sway waybar gnome wofi feh kanshi wlsunset alacritty git curl zsh neovim go npm ninja firefox"
 yay -S $BASE_DEPS --noconfirm
 
 # Install yay
@@ -14,10 +14,10 @@ then
     rm -rf yay
 fi
 
-UTILS_DEPS="dunst light pamixer pavucontrol"
+UTILS_DEPS="dunst light pamixer pavucontrol playerctl"
 yay -S $UTILS_DEPS --noconfirm
 
-AUX_DEPS="lazygit lazydocker"
+AUX_DEPS="lazygit lazydocker anki-official-binary-bundle"
 yay -S $AUX_DEPS --noconfirm
 
 
