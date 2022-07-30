@@ -1,8 +1,13 @@
 #!/bin/bash
 
-pacman -Syuu
-BASE_DEPS="wayland sway waybar gnome wofi feh kanshi wlsunset alacritty git curl zsh neovim go npm ninja firefox"
-yay -S $BASE_DEPS --noconfirm
+if ! [ "$EUID" -ne 0 ]
+  then echo "Do not run as root"
+  exit
+fi
+
+sudo pacman -Syuu
+BASE_DEPS="wayland sway waybar gnome wofi feh kanshi wlsunset alacritty git curl zsh neovim go npm ninja firefox pipewire pipewire-alsa pipewire-jack"
+sudo pacman -S $BASE_DEPS --noconfirm
 
 # Install yay
 if ! command -v yay &> /dev/null
@@ -14,7 +19,7 @@ then
     rm -rf yay
 fi
 
-UTILS_DEPS="dunst light pamixer pavucontrol playerctl"
+UTILS_DEPS="dunst light pamixer pavucontrol playerctl grim slurp"
 yay -S $UTILS_DEPS --noconfirm
 
 AUX_DEPS="lazygit lazydocker anki-official-binary-bundle"
@@ -40,3 +45,9 @@ zsh ~/.dotfiles/stow/.config/nvim/scripts/dependencies.sh
 # Install fonts
 echo "Install fonts(takes a long time)"
 zsh ./fonts.sh
+
+# Install grimshot for screenshoting
+curl https://raw.githubusercontent.com/swaywm/sway/master/contrib/grimshot > /tmp/grimshot
+sudo mv /tmp/grimshot /usr/bin
+sudo chmod +x /usr/bin/grimshot
+
