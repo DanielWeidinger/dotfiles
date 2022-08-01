@@ -36,6 +36,7 @@ INSTALL_SCRIPT_PATH="/tmp/install_minionda.sh"
 curl https://repo.anaconda.com/miniconda/Miniconda3-py37_4.12.0-Linux-x86_64.sh > $INSTALL_SCRIPT_PATH
 chmod +x $INSTALL_SCRIPT_PATH
 zsh $INSTALL_SCRIPT_PATH
+conda config --set auto_activate_base false
 
 # nvim deps
 zsh ~/.dotfiles/stow/.config/nvim/scripts/dependencies.sh

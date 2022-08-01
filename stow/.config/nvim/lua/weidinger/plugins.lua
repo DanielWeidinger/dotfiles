@@ -185,6 +185,7 @@ return packer.startup(function(use)
 		config = function()
 			require("lspsaga").init_lsp_saga({
 				diagnostic_header = { " ", " ", " ", "ﴞ " },
+				show_diagnostic_source = true,
 			})
 		end,
 	})
