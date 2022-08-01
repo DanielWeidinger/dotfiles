@@ -1,12 +1,14 @@
 #!/bin/bash
 
 echo $1
-
 if [ ! -f "$1.sync.py" ]; then
     echo "Jupyer ascending .synced pair does not exist"
     echo "Creating $1 files"
     python -m jupyter_ascending.scripts.make_pair --base $1
-    echo 'print("Hello World!")' >> "$1.sync.py"
+elif [ ! -f "$1.sync.ipynb" ]; then
+    echo "Creating $1.sync.ipynb"
+    NOTEBOOK_CONTENT='{ "cells": [ { "cell_type": "code", "execution_count": null, "id": "579ec3d0", "metadata": {}, "outputs": [], "source": [] } ], "metadata": { "kernelspec": { "display_name": "Python 3", "language": "python", "name": "python3" } }, "nbformat": 4, "nbformat_minor": 5 }'
+    echo "$NOTEBOOK_CONTENT" | python -m json.tool > "$1.sync.ipynb"
 fi
 
 jupyter notebook "$1.sync.ipynb"
