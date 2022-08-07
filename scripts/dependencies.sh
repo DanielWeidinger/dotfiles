@@ -5,9 +5,19 @@ if ! [ "$EUID" -ne 0 ]
   exit
 fi
 
+sudo pacman -S reflector --noconfirm
+reflector -c Austria -a 6 --sort rate --save /etc/pacman.d/mirrorlist
 sudo pacman -Syuu
-BASE_DEPS="wayland sway waybar gnome wofi feh kanshi wlsunset alacritty git curl zsh neovim go npm ninja firefox pipewire pipewire-alsa pipewire-jack"
+sudo pacman -Syyu
+GRAPHICAL_INTERFACE="wayland sway waybar xorg-xlsclients"
+sudo pacman -S $GRAPHICAL_INTERFACE --noconfirm
+DRIVERS="pipewire pipewire-alsa pipewire-jack bluez-utils alsa-firmware"
+sudo pacman -S $DRIVERS --noconfirm
+BASE_DEPS="zsh gdm wofi feh kanshi alacritty git curl neovim go npm ninja firefox stow"
 sudo pacman -S $BASE_DEPS --noconfirm
+
+# Start services
+sudo systemctl enable gdm
 
 # Install yay
 if ! command -v yay &> /dev/null
@@ -22,14 +32,18 @@ fi
 UTILS_DEPS="dunst light pamixer pavucontrol playerctl grim slurp"
 yay -S $UTILS_DEPS --noconfirm
 
-AUX_DEPS="lazygit lazydocker anki-official-binary-bundle"
+AUX_DEPS="lazygit lazydocker anki-official-binary-bundle wlsunset"
 yay -S $AUX_DEPS --noconfirm
 
+rm $HOME/.bashrc
+stow stow
 
 # OhMyZsh
 if ! [ -d ~/.oh-my-zsh ]; then
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 # miniconda/python 
 INSTALL_SCRIPT_PATH="/tmp/install_minionda.sh"
