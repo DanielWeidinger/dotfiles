@@ -6,6 +6,8 @@ exec kanshi
 exec dunst
 # blue light filter(lat/long for vienna)
 exec wlsunset -l 48.2 -L 16.3 
+# Automatically switch to headphones when connected
+exec pactl load-module module-switch-on-connect
 
 font pango:SourceCodePro Medium 11
 
