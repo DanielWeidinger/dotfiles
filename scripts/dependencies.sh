@@ -7,14 +7,22 @@ fi
 
 sudo pacman -S reflector --noconfirm
 reflector -c Austria -a 6 --sort rate --save /etc/pacman.d/mirrorlist
-sudo pacman -Syuu
-sudo pacman -Syyu
-GRAPHICAL_INTERFACE="wayland sway waybar xorg-xlsclients"
+sudo pacman -Syuu --noconfirm
+sudo pacman -Syyu --noconfirm
+
+
+GRAPHICAL_INTERFACE="wayland kanshi sway waybar xorg-xlsclients swaybg swaylock"
 sudo pacman -S $GRAPHICAL_INTERFACE --noconfirm
-DRIVERS="pipewire pipewire-alsa pipewire-jack bluez-utils alsa-firmware"
+
+DRIVERS="pipewire pipewire-alsa pipewire-jack pipewire-pulse bluez-utils alsa-firmware"
 sudo pacman -S $DRIVERS --noconfirm
-BASE_DEPS="zsh gdm wofi feh kanshi alacritty git curl neovim go npm ninja firefox stow"
+
+BASE_DEPS="zsh gdm git curl go npm ninja stow jq ripgrep docker"
 sudo pacman -S $BASE_DEPS --noconfirm
+
+GUI_DEPS="wofi feh alacritty firefox chromium"
+sudo pacman -S $GUI_DEPS --noconfirm
+
 
 # Start services
 sudo systemctl enable gdm
@@ -29,8 +37,8 @@ then
     rm -rf yay
 fi
 
-UTILS_DEPS="dunst light pamixer pavucontrol playerctl grim slurp"
-yay -S $UTILS_DEPS --noconfirm
+MISC_UTIL_DEPS="dunst light pamixer pavucontrol playerctl grim slurp trash-cli brightnessctl"
+yay -S $MISC_UTIL_DEPS --noconfirm
 
 AUX_DEPS="lazygit lazydocker anki-official-binary-bundle wlsunset"
 yay -S $AUX_DEPS --noconfirm
