@@ -29,5 +29,5 @@ wk.register({
 		D = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Go to declaration" },
 	},
 	["Ö"] = { "<cmd>lua vim.diagnostic.goto_next()<CR>", "Go to next Diagnostic" },
-	["Ä"] = { "<cmd>lua vim.diagnostic.goto_prev()<CR>", "Go to next Diagnostic" },
+	["Ä"] = { "<cmd>lua vim.diagnostic.goto_prev()<CR>", "Go to prev Diagnostic" },
 })

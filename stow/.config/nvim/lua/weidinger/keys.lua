@@ -20,8 +20,8 @@ keymap("v", "<leader>p", '"+p', opts)
 keymap("v", "<leader>P", '"+P', opts)
 
 -- Special QWERTZ mappings
-keymap("n", "ö", "{", opts)
-keymap("n", "ä", "}", opts)
+keymap("n", "ö", "}", opts)
+keymap("n", "ä", "{", opts)
 keymap("n", "ü", ":HopWord<cr>", opts)
 keymap("n", "Ü", "/", { noremap = true })
 
