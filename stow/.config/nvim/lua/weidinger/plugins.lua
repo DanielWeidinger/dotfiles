@@ -178,6 +178,15 @@ return packer.startup(function(use)
 			require("lsp_lines").setup()
 		end,
 	})
+	use({
+		"mrshmllow/document-color.nvim",
+		config = function()
+			require("document-color").setup({
+				-- Default options
+				mode = "background", -- "background" | "foreground"
+			})
+		end,
+	})
 	-- better code diagnostics with floating window
 	use({
 		"glepnir/lspsaga.nvim",

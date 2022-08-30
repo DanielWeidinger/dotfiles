@@ -2,3 +2,8 @@
 
 bluetoothctl power on
 bluetoothctl connect 38:18:4C:BE:D2:77
+
+sleep 2
+# Try a second time for good measure 
+bluetoothctl power on
+bluetoothctl connect 38:18:4C:BE:D2:77
