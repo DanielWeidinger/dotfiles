@@ -1,9 +1,9 @@
 #!/bin/bash
 
 bluetoothctl power on
-bluetoothctl connect 38:18:4C:BE:D2:77
+dunstify -a "connect_headset" "Trying to connect headset" -t 3000
 
-sleep 2
-# Try a second time for good measure 
-bluetoothctl power on
-bluetoothctl connect 38:18:4C:BE:D2:77
+for i in {1..3}; do
+    bluetoothctl connect 38:18:4C:BE:D2:77
+    sleep 2
+done

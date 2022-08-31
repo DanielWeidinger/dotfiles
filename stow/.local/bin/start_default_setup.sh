@@ -10,7 +10,7 @@ if [ $N_DISPLAYS -eq 3 ]; then
         sleep $DELAY
         swaymsg 'workspace 3; exec $browser --new-window'
         sleep $DELAY
-        swaymsg 'workspace 9; exec $browser pcode-at.slack.com/ https://mail.google.com/ --new-window'
+        swaymsg 'workspace 9; exec $browser pcode-at.slack.com/ https://mail.google.com/ https://app.tmetric.com/ --new-window'
         sleep $DELAY
         swaymsg 'workspace 3'
         swaymsg 'workspace 2; exec $term'
