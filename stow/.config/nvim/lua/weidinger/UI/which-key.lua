@@ -9,6 +9,7 @@ wk.register({
 	e = { ":NvimTreeToggle<cr>", "explorer" },
 	m = { ":MaximizerToggle!<cr>", "maximize" },
 	q = { ":call ToggleQFList(0)<CR>", "local qfl" },
+	u = { ":UndotreeToggle<CR>", "Open UndoTree helper" },
 	["-"] = { ":call ToggleMouseMode()<CR>", "local qfl" },
 	["p"] = "which_key_ignore", -- special label to hide it in the popup
 	["P"] = "which_key_ignore", -- special label to hide it in the popup

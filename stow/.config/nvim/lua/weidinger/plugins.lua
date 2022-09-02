@@ -110,6 +110,9 @@ return packer.startup(function(use)
 		end,
 	})
 
+	-- Undotree helper
+	use("mbbill/undotree")
+
 	-- General Git Stuff
 	use({
 		"lewis6991/gitsigns.nvim",
