@@ -2,6 +2,7 @@
 
 N_DISPLAYS=$(swaymsg -t get_outputs | jq length)
 DELAY=1
+sleep $DELAY
 if [ $N_DISPLAYS -eq 3 ]; then
     if [ $(date +%H) -gt 19 ]; then
         swaymsg 'workspace 2; exec $browser --new-window'
