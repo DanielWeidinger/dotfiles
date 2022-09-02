@@ -125,6 +125,7 @@ return packer.startup(function(use)
 
 	-- Surround for text surroundings
 	use("tpope/vim-surround")
+	use("tpope/vim-repeat") -- for dot repeat functionality
 
 	-- Broser utils
 	use("dhruvasagar/vim-open-url")
@@ -265,7 +266,6 @@ return packer.startup(function(use)
 	use("mfussenegger/nvim-dap-python")
 	use("nvim-telescope/telescope-dap.nvim")
 	use("rcarriga/cmp-dap")
-	use({ "Pocco81/dap-buddy.nvim", commit = "24923c3819a450a772bb8f675926d530e829665f" })
 
 	use("szw/vim-maximizer")
 

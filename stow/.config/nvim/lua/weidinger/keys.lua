@@ -19,9 +19,18 @@ keymap("n", "<leader>P", '"+P', opts)
 keymap("v", "<leader>p", '"+p', opts)
 keymap("v", "<leader>P", '"+P', opts)
 
+-- Remap forward jumplist movement due to tab-<C-i> equality
+keymap("n", "<A-o>", "<C-i>", opts)
+
+-- Window functionality
+keymap("n", "<A-<>", "<C-w><", opts) -- resizing
+keymap("n", "<A->>", "<C-w>>", opts)
+
 -- Special QWERTZ mappings
 keymap("n", "ö", "}", opts)
 keymap("n", "ä", "{", opts)
+keymap("v", "ö", "}", opts)
+keymap("v", "ä", "{", opts)
 keymap("n", "ü", ":HopWord<cr>", opts)
 keymap("n", "Ü", "/", { noremap = true })
 
@@ -40,7 +49,7 @@ keymap("v", ">", ">gv", opts)
 
 -- To escape insert mode in a terminal
 keymap("t", "<Esc><Esc>", "<C-\\><C-n>", opts)
---
+
 -- Closing buffers(the extra are here to no let NERD tree get the focus on closing)
 keymap("n", "<C-x>", ":bp<bar>sp<bar>bn<bar>bd<CR>", opts)
 keymap("n", "<C-c>", ":close<CR>", opts)

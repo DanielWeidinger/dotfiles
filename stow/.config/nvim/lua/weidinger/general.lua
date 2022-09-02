@@ -20,8 +20,6 @@ local options = {
 	-- Styling
 	termguicolors = true,
 
-	-- Text formatting
-
 	-- show existing tab with 4 spaces width
 	tabstop = 4,
 	-- when indenting with '>', use 4 spaces width
