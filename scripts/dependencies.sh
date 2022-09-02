@@ -44,6 +44,8 @@ AUX_DEPS="lazygit lazydocker anki-official-binary-bundle wlsunset"
 yay -S $AUX_DEPS --noconfirm
 
 rm $HOME/.bashrc
+mkdir $HOME/.config
+mkdir $HOME/.local
 stow stow
 
 # OhMyZsh
@@ -65,12 +67,11 @@ zsh ~/.dotfiles/stow/.config/nvim/scripts/dependencies.sh
 # Install nvim lsp
 ./stow/.config/nvim/scripts/lsp_setup.sh
 
-# Install fonts
-echo "Install fonts(takes a long time)"
-zsh ./fonts.sh
-
 # Install grimshot for screenshoting
 curl https://raw.githubusercontent.com/swaywm/sway/master/contrib/grimshot > /tmp/grimshot
 sudo mv /tmp/grimshot /usr/bin
 sudo chmod +x /usr/bin/grimshot
 
+# Install fonts
+echo "Install fonts(takes a long time)"
+zsh ./fonts.sh
