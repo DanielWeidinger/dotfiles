@@ -23,8 +23,10 @@ keymap("v", "<leader>P", '"+P', opts)
 keymap("n", "<A-o>", "<C-i>", opts)
 
 -- Window functionality
-keymap("n", "<A-<>", "<C-w><", opts) -- resizing
-keymap("n", "<A->>", "<C-w>>", opts)
+keymap("n", "<A-<>", "10<C-w><", opts) -- resizing
+keymap("n", "<A->>", "10<C-w>>", opts)
+keymap("n", "<A-+>", "10<C-w>+", opts) -- resizing
+keymap("n", "<A-->", "10<C-w>-", opts)
 
 -- Special QWERTZ mappings
 keymap("n", "ö", "}", opts)

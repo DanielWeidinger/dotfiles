@@ -197,8 +197,10 @@ return packer.startup(function(use)
 		branch = "main",
 		config = function()
 			require("lspsaga").init_lsp_saga({
-				diagnostic_header = { " ", " ", " ", "ﴞ " },
-				show_diagnostic_source = true,
+				code_action_icon = "ﴞ ",
+				code_action_lightbulb = {
+					virtual_text = false,
+				},
 			})
 		end,
 	})
