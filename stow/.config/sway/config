@@ -9,13 +9,16 @@ exec wlsunset -l 48.2 -L 16.3
 # Automatically switch to headphones when connected
 exec pactl load-module module-switch-on-connect
 
+# Cosmetics
 font pango:SourceCodePro Medium 11
-
 default_border pixel 2
-
 gaps inner 5
 hide_edge_borders smart
 smart_gaps on
+client.unfocused #4c566a #2e3440 #ffffff 
+client.focused #88c0d0 #5e81ac #ffffff 
+client.focused_inactive #5e81ac #4c566a #ffffff 
+client.urgent #bf616a #d08770 #ffffff 
 
 ### Variables
 # Logo key. Use Mod1 for Alt.
