@@ -17,15 +17,14 @@ sudo pacman -S $GRAPHICAL_INTERFACE --noconfirm
 DRIVERS="pipewire pipewire-alsa pipewire-jack pipewire-pulse bluez-utils alsa-firmware"
 sudo pacman -S $DRIVERS --noconfirm
 
-BASE_DEPS="zsh gdm git curl go npm ninja stow jq ripgrep docker"
+BASE_DEPS="networkmanager zsh git curl go npm ninja stow jq ripgrep docker"
 sudo pacman -S $BASE_DEPS --noconfirm
 
 GUI_DEPS="wofi feh alacritty firefox chromium"
 sudo pacman -S $GUI_DEPS --noconfirm
 
-
 # Start services
-sudo systemctl enable gdm
+sudo systemctl enable --now NetworkManager.service
 
 # Install yay
 if ! command -v yay &> /dev/null
@@ -46,6 +45,7 @@ yay -S $AUX_DEPS --noconfirm
 rm $HOME/.bashrc
 mkdir $HOME/.config
 mkdir $HOME/.local
+mkdir $HOME/.local/.bin
 stow stow
 
 # OhMyZsh
