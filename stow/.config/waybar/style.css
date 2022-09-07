@@ -11,7 +11,7 @@ window#waybar {
 #cpu,
 #battery {
   background: #2e3440;
-  color: #c5c8c6;
+  color: #e5e9f0;
   margin: 3px 0px 3px 0px;
   padding: 5px;
 }
@@ -21,7 +21,7 @@ window#waybar {
   padding: 5px 7px 5px 7px;
   border-radius: 10px;
   background: #2e3440;
-  color: #c5c8c6;
+  color: #e5e9f0;
 }
 
 #window {
@@ -58,7 +58,7 @@ window#waybar {
   background: #2e3440;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  color: #c5c8c6;
+  color: #e5e9f0;
 }
 
 #custom-quit {
@@ -70,12 +70,12 @@ window#waybar {
   border-top: 2px solid #2e3440;
   border-bottom: 2px solid #2e3440;
   background: #f00;
-  color: #fff;
+  color: #e5e9f0;
 }
 
 #custom-mode {
   background: #f00;
-  color: #fff;
+  color: #e5e9f0;
   padding: 5px 7px 5px 5px;
   margin-left: 50px;
   border-radius: 10px;
@@ -84,11 +84,10 @@ window#waybar {
 #clock {
   margin: 3px 0px 3px 3px;
   padding: 5px;
-  color: #fff;
   background: #2e3440;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  color: #c5c8c6;
+  color: #e5e9f0;
 }
 
 #pulseaudio {
@@ -97,12 +96,12 @@ window#waybar {
   background: #2e3440;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  color: #c5c8c6;
+  color: #e5e9f0;
 }
 
 #backlight {
   background: #2e3440;
-  color: #c5c8c6;
+  color: #e5e9f0;
   margin: 3px 0px 3px 0px;
   padding: 5px;
   border-top-left-radius: 10px;
@@ -111,7 +110,7 @@ window#waybar {
 
 #memory {
   background: #2e3440;
-  color: #c5c8c6;
+  color: #e5e9f0;
   margin: 3px 0px 3px 0px;
   padding: 5px;
 }

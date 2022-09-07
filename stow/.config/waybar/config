@@ -1,5 +1,4 @@
 {
-    "output":[ "eDP-1", "DP-10" ],
     "layer": "top",
     "position": "top",
     "modules-left": ["sway/workspaces"],

@@ -1,6 +1,5 @@
 #!/bin/bash
 
-bluetoothctl scan on
 bluetoothctl power on
 
 dunstify -a "connect_headset" "Trying to connect headset" -t 3000
