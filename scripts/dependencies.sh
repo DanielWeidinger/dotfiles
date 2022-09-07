@@ -17,7 +17,10 @@ sudo pacman -S $GRAPHICAL_INTERFACE --noconfirm
 DRIVERS="pipewire pipewire-alsa pipewire-jack pipewire-pulse bluez-utils alsa-firmware"
 sudo pacman -S $DRIVERS --noconfirm
 
-BASE_DEPS="networkmanager zsh git curl go npm ninja stow jq ripgrep docker"
+BASE_DEPS="networkmanager zsh git curl wget go npm ninja stow jq ripgrep"
+sudo pacman -S $BASE_DEPS --noconfirm
+
+DEV_DEPS="docker dotnet-sdk mono mono-msbuild"
 sudo pacman -S $BASE_DEPS --noconfirm
 
 GUI_DEPS="wofi feh alacritty firefox chromium"
@@ -71,6 +74,10 @@ zsh ~/.dotfiles/stow/.config/nvim/scripts/dependencies.sh
 curl https://raw.githubusercontent.com/swaywm/sway/master/contrib/grimshot > /tmp/grimshot
 sudo mv /tmp/grimshot /usr/bin
 sudo chmod +x /usr/bin/grimshot
+
+# Docker non-sudo execution
+sudo groupadd docker
+sudo usermod -aG docker $USER
 
 # Install fonts
 echo "Install fonts(takes a long time)"

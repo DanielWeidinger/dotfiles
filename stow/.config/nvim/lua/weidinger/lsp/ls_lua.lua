@@ -26,6 +26,7 @@ else
 		capabilities = Capabilities,
 		on_attach = function(client)
 			client.resolved_capabilities.document_formatting = false
+			On_attach(client)
 		end,
 		settings = {
 			Lua = {

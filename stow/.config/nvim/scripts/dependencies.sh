@@ -5,6 +5,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvi
 
 echo "-- npm"
 sudo npm install -g neovim
-echo "-- miniconda"
+sudo npm install -g commitizen
+echo "-- pip"
 pip install neovim
 

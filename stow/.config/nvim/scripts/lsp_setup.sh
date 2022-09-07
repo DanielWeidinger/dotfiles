@@ -25,13 +25,13 @@ sudo npm install -g emmet-ls
 echo --eslint + prettier
 sudo npm install -g eslint_d @fsouza/prettierd
 
+langserver_dir="$HOME/.local/share/nvim/lang-servers"
+if [ ! -d "$langserver_dir" ]; then
+    mkdir $langserver_dir
+fi
 echo --Lua
 sudo pacman -S stylua --noconfirm
-lua_dir="$HOME/.local/share/nvim/lang-servers"
-if [ ! -d "$lua_dir" ]; then
-    mkdir $lua_dir
-fi
-cd $lua_dir
+cd $langserver_dir
 git clone https://github.com/sumneko/lua-language-server
 cd lua-language-server
 git submodule update --init --recursive
@@ -40,9 +40,15 @@ cd 3rd/luamake
 cd ../..
 ./3rd/luamake/luamake rebuild
 
-# sudo rm -r -f lang-servers
-# mkdir lang-servers
-# mv lua-language-server/bin/Linux/lua-language-server lang-servers
-# mv lua-language-server/bin/Linux/main.lua lang-servers
-# chmod +x lang-servers/lua-language-server
-# sudo rm -r -f lua-language-server
+echo --OmniSharp
+cd $langserver_dir
+if [ ! -d "omnisharp" ]; then
+    mkdir omnisharp
+fi
+cd omnisharp
+curl -s https://api.github.com/repos/OmniSharp/omnisharp-roslyn/releases/latest \
+| grep "browser_download_url.*omnisharp-linux-x86.tar.gz" \
+| cut -d : -f 2,3 \
+| tr -d \" \
+| wget -qi -
+tar -xzf omnisharp-linux-x86.tar.gz
