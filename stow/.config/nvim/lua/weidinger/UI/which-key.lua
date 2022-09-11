@@ -21,8 +21,9 @@ wk.register({
 })
 
 wk.register({
-	s = { '"sy:%s/<C-R>s//g<Left><Left>', "source" },
-	S = { '"sy:%s/<C-R>s/<C-R>s/g<Left><Left>', "source" },
+	s = { '"sy:%s/<C-R>s//g<Left><Left>', "rename all" },
+	S = { '"sy:%s/<C-R>s/<C-R>s/g<Left><Left>', "full rename all" },
+	-- k = { [[:s/\%V\w\u\+\(_\w\u\+\)\+/\L\0/g<cr>:s/\%V_\(\w\)/\U\1/g<cr>]], "Snake to Camel" },
 }, {
 	prefix = "<leader>",
 	mode = "v",

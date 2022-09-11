@@ -11,6 +11,7 @@ local create_run_floaterm_fn = function(cmd_list)
 	local cmd = vim.fn.join(cmd_list)
 	return function()
 		vim.cmd([[:FloatermNew! --silent ]] .. cmd)
+		vim.cmd(":FloatermToggle")
 	end
 end
 
@@ -25,15 +26,6 @@ tasks.setup({
 	sources = {
 		npm = source_npm,
 		vscode = source_tasksjson,
-		utils = builtin.new_builtin_source({
-			sleep = {
-				fn = function(ctx)
-					local pasync = require("plenary.async")
-
-					pasync.util.sleep(10000)
-				end,
-			},
-		}),
 	},
 	router = function(spec_name, spec, args, source_name)
 		if source_name == "npm" then
