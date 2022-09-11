@@ -39,7 +39,7 @@ set $file_explorer nautilus
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu wofi --show=drun --lines=10 --prompt=""
+set $menu wofi --show=drun --lines=10 --prompt="" --allow-images
 
 # Start when env is set
 exec $HOME/.local/bin/start_default_setup.sh
