@@ -52,6 +52,18 @@ else
 endfun
 ]])
 
+--- Check if a file or directory exists in this path
+function Exists(file)
+	local ok, err, code = os.rename(file, file)
+	if not ok then
+		if code == 13 then
+			-- Permission denied, but it exists
+			return true
+		end
+	end
+	return ok, err
+end
+
 require("weidinger.utils.autoclosing")
 require("weidinger.utils.browser")
 require("weidinger.utils.fugitive")

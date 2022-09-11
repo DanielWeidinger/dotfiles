@@ -141,6 +141,7 @@ return packer.startup(function(use)
 	})
 
 	-- Themes
+	use("raddari/last-color.nvim")
 	use("arcticicestudio/nord-vim")
 	use("dracula/vim")
 	use("morhetz/gruvbox")
