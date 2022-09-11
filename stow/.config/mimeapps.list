@@ -2,3 +2,5 @@
 [Default Applications]
 image/png=feh.desktop
 image/jpeg=feh.desktop
+application/pdf=firefox.desktop
+
