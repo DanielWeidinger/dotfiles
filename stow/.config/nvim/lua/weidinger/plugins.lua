@@ -110,9 +110,6 @@ return packer.startup(function(use)
 		end,
 	})
 
-	-- Undotree helper
-	use("mbbill/undotree")
-
 	-- General Git Stuff
 	use({
 		"lewis6991/gitsigns.nvim",
@@ -127,7 +124,7 @@ return packer.startup(function(use)
 	use("tpope/vim-surround")
 	use("tpope/vim-repeat") -- for dot repeat functionality
 
-	-- Broser utils
+	-- Browser utils
 	use("dhruvasagar/vim-open-url")
 
 	use({ "GustavoKatel/tasks.nvim", requires = { "nvim-lua/plenary.nvim" } })
@@ -140,6 +137,15 @@ return packer.startup(function(use)
 		end,
 	})
 
+	use({
+		"rcarriga/nvim-notify",
+		config = function()
+			vim.notify = require("notify")
+		end,
+	})
+
+	use("mbbill/undotree")
+
 	-- Themes
 	use("raddari/last-color.nvim")
 	use("arcticicestudio/nord-vim")
@@ -151,10 +157,6 @@ return packer.startup(function(use)
 	-- LSP
 	use("neovim/nvim-lspconfig")
 	use("jose-elias-alvarez/null-ls.nvim")
-	-- WARN: Behold the mighty copilot
-	-- use 'github/copilot.vim' " Needed for the setup
-	-- use 'zbirenbaum/copilot.lua'
-	-- use 'zbirenbaum/copilot-cmp' " cmp source
 	-- Autocomple + Sources
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-buffer")
