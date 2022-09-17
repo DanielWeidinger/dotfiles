@@ -16,6 +16,14 @@ window#waybar {
   padding: 5px;
 }
 
+#battery.warning {
+  color: #d08770;
+}
+
+#battery.warning {
+  color: #bf616a;
+}
+
 #workspaces {
   margin: 3px;
   padding: 5px 7px 5px 7px;
