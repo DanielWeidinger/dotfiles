@@ -3,4 +3,5 @@
 image/png=feh.desktop
 image/jpeg=feh.desktop
 application/pdf=firefox.desktop
+inode/directory=org.gnome.Nautilus.desktop
 
