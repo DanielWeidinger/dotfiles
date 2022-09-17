@@ -5,7 +5,8 @@ vim.g.neoterm_size = "50"
 vim.g.neoterm_autojump = 1
 vim.g.neoterm_direct_open_repl = 1
 
-vim.g.neoterm_repl_python = "ipython --no-autoindent"
+vim.g.neoterm_repl_python = { "ipython --no-autoindent --no-confirm-exit" }
+vim.g.neoterm_repl_command = vim.g.neoterm_repl_python
 
 vim.cmd([[
 function! JumpBackIfTerminal()
