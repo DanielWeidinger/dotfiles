@@ -1,5 +1,6 @@
 ### Sway
 
+### Services
 # Autoload Monitor setup
 exec kanshi
 # Notification deamon
@@ -21,7 +22,6 @@ client.focused_inactive #5e81ac #4c566a #ffffff
 client.urgent #bf616a #d08770 #ffffff 
 
 ### Variables
-# Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Home row direction keys, like vim
 set $left h
@@ -30,25 +30,18 @@ set $up k
 set $right l
 
 # Your preferred tools
-#
 set $term alacritty
 set $browser firefox
 set $sec_browser gtk-lauch chromium.desktop
 set $sway_path ~/.config/sway
 set $file_explorer nautilus
-# Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
 set $menu wofi --show=drun --lines=10 --prompt="" --allow-images
 
 # Start when env is set
 exec $HOME/.local/bin/start_default_setup.sh
 
-# Default Wallpaper
-# output * bg ~/.wallpapers/impressionist_13.jpg fill
 # Cycle through random wallpapers
 exec $sway_path/background.sh
-
 
 exec swayidle -w \
 	timeout 1800 'swaylock' \
@@ -56,13 +49,10 @@ exec swayidle -w \
 	resume 'swaymsg "output * dpms on"'
 
 ### Input configuration
-
 input * xkb_layout "de"
-
 input "type:keyboard" {
     xkb_options caps:escape
 }
-
 input "1267:12572:VEN_04F3:00_04F3:311C_Touchpad" {
       dwt enabled
       tap enabled
@@ -71,18 +61,9 @@ input "1267:12572:VEN_04F3:00_04F3:311C_Touchpad" {
 }
 
 ### Key bindings
-#
 # Basics:
-#
-
-    # Start a terminal
-    bindsym $mod+Return exec $term
-
     # Kill focused window
     bindsym $mod+Shift+q kill
-
-    # Start your launcher
-    bindsym $mod+d exec $menu
 
     # Drag and drop windows while holding $mod
     floating_modifier $mod normal
@@ -90,19 +71,22 @@ input "1267:12572:VEN_04F3:00_04F3:311C_Touchpad" {
     # Reload the configuration file
     bindsym $mod+Shift+c reload
 
+    # Start a terminal
+    bindsym $mod+Return exec $term
+    # Start your launcher
+    bindsym $mod+d exec $menu
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
-
     # Lock
     bindsym $mod+p exec swaylock -e -f -c 000000 -i "$HOME/.wallpapers/impressionist_1.jpg"
-
     # Disable notifications
     bindsym $mod+i exec dunstctl set-paused toggle
-
+    # File Explorer
     bindsym $mod+u exec $file_explorer
-
+    # Browser
     bindsym $mod+b exec $browser
-    bindsym $mod+Alt+b exec $sec_browser
+    bindsym $mod+shift+b exec $sec_browser
+    # Screenshots
     bindsym $mod+Print exec grimshot save area
     bindsym $mod+Shift+Print exec grimshot copy area
     bindsym $mod+Alt+Print exec grimshot save active
@@ -121,9 +105,7 @@ input "1267:12572:VEN_04F3:00_04F3:311C_Touchpad" {
     bindsym XF86AudioPrev exec playerctl previous
     bindsym XF86Search exec bemenu-run
 
-#
 # Moving around:
-#
     # Move your focus around
     bindsym $mod+$left focus left
     bindsym $mod+$down focus down
@@ -145,9 +127,8 @@ input "1267:12572:VEN_04F3:00_04F3:311C_Touchpad" {
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
-#
+
 # Workspaces:
-#
     # Switch to workspace
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
@@ -170,78 +151,54 @@ input "1267:12572:VEN_04F3:00_04F3:311C_Touchpad" {
     bindsym $mod+Shift+8 move container to workspace number 8
     bindsym $mod+Shift+9 move container to workspace number 9
     bindsym $mod+Shift+0 move container to workspace number 10
-    # Note: workspaces can have any name you want, not just numbers.
-    # We just use 1-10 as the default.
     
     bindsym $mod+less move workspace to output left
     bindsym $mod+greater move workspace to output right
 
-#
 # Layout stuff:
-#
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
     # bindsym $mod+b splith
     # bindsym $mod+v splitv
 
-    # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
     bindsym $mod+w layout tabbed
     bindsym $mod+e layout toggle split
 
-    # Make the current focus fullscreen
     bindsym $mod+f fullscreen
 
-    # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+space floating toggle
 
-    # Swap focus between the tiling area and the floating area
     bindsym $mod+space focus mode_toggle
-
-    # Move focus to the parent container
     bindsym $mod+a focus parent
-#
+
 # Scratchpad:
-#
-    # Sway has a "scratchpad", which is a bag of holding for windows.
-    # You can send windows there and get them back later.
-
-    # Move the currently focused window to the scratchpad
     bindsym $mod+Shift+minus move scratchpad
-
-    # Show the next scratchpad window or hide the focused scratchpad window.
-    # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
-#
+    bindsym $mod+alt+Return [app_id="Alacritty"] scratchpad show; move position center; resize set 70ppt 70ppt
+    bindsym $mod+alt+u [app_id="org.gnome.Nautilus"] scratchpad show; move position center; resize set 70ppt 70ppt
+    bindsym $mod+alt+b [app_id="firefox"] scratchpad show; move position center; resize set 70ppt 70ppt
+    bindsym $mod+alt+m [class="Spotify"] scratchpad show; move position center; resize set 70ppt 70ppt
+
 # Resizing containers:
-#
 mode "resize" {
-    # left will shrink the containers width
-    # right will grow the containers width
-    # up will shrink the containers height
-    # down will grow the containers height
     bindsym $left resize shrink width 20px
     bindsym $down resize grow height 20px
     bindsym $up resize shrink height 20px
     bindsym $right resize grow width 20px
 
-    # Ditto, with arrow keys
     bindsym Left resize shrink width 10px
     bindsym Down resize grow height 10px
     bindsym Up resize shrink height 10px
     bindsym Right resize grow width 10px
 
-    # Return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
 
-#
 # Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
 bar {
     swaybar_command waybar
 }
