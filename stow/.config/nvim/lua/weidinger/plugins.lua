@@ -166,16 +166,6 @@ return packer.startup(function(use)
 	use("f3fora/cmp-spell")
 	use("hrsh7th/cmp-calc")
 	use("ray-x/cmp-treesitter")
-	use({
-		"tzachar/cmp-tabnine",
-		run = "./install.sh",
-		requires = "hrsh7th/nvim-cmp",
-		config = function()
-			require("cmp_tabnine.config").setup({
-				show_prediction_strength = true,
-			})
-		end,
-	})
 	use("onsails/lspkind-nvim") -- Better iconography for completion
 	use({
 		"ray-x/lsp_signature.nvim",

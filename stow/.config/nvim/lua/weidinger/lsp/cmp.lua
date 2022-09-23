@@ -29,7 +29,6 @@ cmp.setup({
 		{ name = "calc" },
 		{ name = "treesitter" },
 		{ name = "dap" },
-		{ name = "cmp_tabnine" },
 	}),
 	formatting = {
 		format = lspkind.cmp_format({
@@ -38,7 +37,6 @@ cmp.setup({
 				buffer = "[Bff]",
 				nvim_lsp = "[LSP]",
 				vsnip = "[VSnp]",
-				cmp_tabnine = "[Tb9]",
 				treesitter = "[]",
 				spell = "[暈]",
 				dap = "[DAP]",
@@ -49,7 +47,6 @@ cmp.setup({
 	sorting = {
 		priority_weight = 2,
 		comparators = {
-			require("cmp_tabnine.compare"),
 			compare.offset,
 			compare.exact,
 			compare.score,
