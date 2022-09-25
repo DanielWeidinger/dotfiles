@@ -1,0 +1,8 @@
+[
+  {
+    "ws": 1,
+    "cmd": "$browser https://tuwel.tuwien.ac.at/my/ https://tiss.tuwien.ac.at/ --new-window",
+    "delay": 0.5
+  },
+  { "ws": 2, "cmd": "$term", "delay": 0.5 }
+]

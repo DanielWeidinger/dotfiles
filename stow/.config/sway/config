@@ -32,7 +32,7 @@ set $right l
 # Your preferred tools
 set $term alacritty
 set $browser firefox
-set $sec_browser gtk-lauch chromium.desktop
+set $sec_browser chromium
 set $sway_path ~/.config/sway
 set $file_explorer nautilus
 set $menu wofi --show=drun --lines=10 --prompt="" --allow-images

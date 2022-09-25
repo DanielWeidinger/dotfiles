@@ -49,6 +49,9 @@ rm $HOME/.bashrc
 mkdir $HOME/.config
 mkdir $HOME/.local
 mkdir $HOME/.local/.bin
+mkdir $HOME/.local/share/
+mkdir $HOME/.local/share/applications
+mkdir $HOME/.local/share/icons
 stow stow
 
 # OhMyZsh

@@ -23,6 +23,7 @@ setopt globdots # include hidden files
 alias luamake=$HOME/.vim/lua-language-server/3rd/luamake/luamake
 alias rrm='rm'
 alias rm='trash'
+alias gcal='gcalcli --default-calendar=daniw2801@gmail.com'
 
 ## PATH
 export GOPATH=~/go

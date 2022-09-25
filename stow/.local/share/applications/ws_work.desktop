@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Work
+GenericName=Workspace
+Icon=workspaces
+TryExec=/home/daniel/.local/bin/load_ws_config.sh
+Exec=/home/daniel/.local/bin/load_ws_config.sh /home/daniel/.workspaces/work.json
+Terminal=false

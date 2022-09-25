@@ -194,7 +194,7 @@
     max_icon_size = 32
 
     # Paths to default icons.
-    icon_path = /home/daniel/.local/icons/fontawesome
+    icon_path = /home/daniel/.local/share/icons/fontawesome
 
     ### History ###
 

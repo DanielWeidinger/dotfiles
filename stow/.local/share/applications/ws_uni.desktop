@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Uni
+GenericName=Workspace
+Icon=workspaces
+TryExec=/home/daniel/.local/bin/load_ws_config.sh
+Exec=/home/daniel/.local/bin/load_ws_config.sh /home/daniel/.workspaces/uni.json
+Terminal=false
