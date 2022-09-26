@@ -54,6 +54,9 @@ mkdir $HOME/.local/share/applications
 mkdir $HOME/.local/share/icons
 stow stow
 
+# Enable user service
+sudo systemctl enable --now ssh-agend.service --user
+
 # OhMyZsh
 if ! [ -d ~/.oh-my-zsh ]; then
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

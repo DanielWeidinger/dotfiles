@@ -1,3 +1,6 @@
+# SSH-Agent with systemd
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
 # Start sway
 if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
     echo Starting sway...

@@ -76,7 +76,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-# SSH-Agent with systemd
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-
