@@ -6,8 +6,8 @@ wk.register({
 	-- lsp provider to find the cursor word definition and reference
 	["gh"] = { ":Lspsaga lsp_finder<CR>", "ref finder" },
 	-- scroll hover doc or scroll in definition preview
-	["<C-n>"] = { "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>", "which_key_ignore" },
-	["<C-p>"] = { "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>", "which_key_ignore" },
+	-- ["<C-n>"] = { "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>", "which_key_ignore" },
+	-- ["<C-p>"] = { "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>", "which_key_ignore" },
 	["<C-k>"] = { ":Lspsaga signature_help<CR>", "signature help" },
 })
 

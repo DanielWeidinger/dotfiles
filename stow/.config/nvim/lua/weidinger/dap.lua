@@ -60,24 +60,29 @@ table.insert(dap.configurations.python, {
 	args = { "-m" },
 })
 -- node
-dap.adapters.node2 = {
-	type = "executable",
-	command = "node",
-	args = {
-		vim.fn.stdpath("data") .. "/dapinstall/jsnode_dbg/" .. "vscode-node-debug2/out/src/nodeDebug.js",
-	},
-}
-dap.configurations.javascript = {
-	{
-		type = "node2",
-		request = "launch",
-		program = "${workspaceFolder}/${file}",
-		cwd = vim.fn.getcwd(),
-		sourceMaps = true,
-		protocol = "inspector",
-		console = "integratedTerminal",
-	},
-}
+require("dap-vscode-js").setup({
+	debugger_path = vim.fn.stdpath("data") .. "/debugger/vscode-js-debug",
+	adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" }, -- which adapters to register in nvim-dap
+})
+
+for _, language in ipairs({ "typescript", "javascript" }) do
+	dap.configurations[language] = {
+		{
+			type = "pwa-node",
+			request = "launch",
+			name = "Launch file",
+			program = "${file}",
+			cwd = "${workspaceFolder}",
+		},
+		{
+			type = "pwa-node",
+			request = "attach",
+			name = "Attach",
+			processId = require("dap.utils").pick_process,
+			cwd = "${workspaceFolder}",
+		},
+	}
+end
 
 -- overwrite native nvim dialog to use telescope
 require("telescope").load_extension("dap")
