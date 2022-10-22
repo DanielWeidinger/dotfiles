@@ -92,6 +92,7 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
     bindsym $mod+Alt+Print exec grimshot save active
 
     bindsym $mod+c exec $HOME/.local/bin/connect_headset
+    bindsym $mod+m exec $HOME/.local/bin/mount_gdrive.sh
 
     # Function keys
     bindsym XF86AudioRaiseVolume exec ~/.local/bin/changevolume up
