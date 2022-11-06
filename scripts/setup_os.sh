@@ -28,6 +28,7 @@ sudo pacman -S $GUI_DEPS --noconfirm
 
 # Start services
 sudo systemctl enable --now NetworkManager.service
+sudo systemctl enable --now systemd-resolved.service # DNS caching
 
 # Install yay
 if ! command -v yay &> /dev/null
