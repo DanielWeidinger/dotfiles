@@ -17,12 +17,12 @@ end
 vim.lsp.handlers["textDocument/formatting"] = format_async
 
 function On_attach(client)
-	if client.resolved_capabilities.document_formatting then
+	if client.server_capabilities.documentFormattingProvider then
 		vim.api.nvim_exec(
 			[[
          augroup LspAutocommands
              autocmd! * <buffer>
-             autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()
+             autocmd BufWritePost <buffer> lua vim.lsp.buf.format { async = true }
          augroup END
          ]],
 			true
@@ -43,7 +43,7 @@ lspconfig.bashls.setup({ capabilities = Capabilities, on_attach = On_attach })
 lspconfig.tsserver.setup({
 	capabilities = Capabilities,
 	on_attach = function(client)
-		client.resolved_capabilities.document_formatting = false
+		client.server_capabilities.document_formatting = false
 		On_attach(client)
 	end,
 })
@@ -56,7 +56,7 @@ lspconfig.cssls.setup({
 lspconfig.html.setup({
 	capabilities = Capabilities,
 	on_attach = function(client)
-		client.resolved_capabilities.document_formatting = false
+		client.server_capabilities.document_formatting = false
 		On_attach(client)
 	end,
 })
@@ -99,7 +99,7 @@ lspconfig.jsonls.setup({
 		},
 	},
 	on_attach = function(client)
-		client.resolved_capabilities.document_formatting = false
+		client.server_capabilities.document_formatting = false
 		On_attach(client)
 	end,
 })
@@ -125,7 +125,7 @@ lspconfig.yamlls.setup({
 	},
 	cmd = { "yaml-language-server", "--stdio" },
 	on_attach = function(client)
-		client.resolved_capabilities.document_formatting = false
+		client.server_capabilities.document_formatting = false
 		On_attach(client)
 	end,
 })

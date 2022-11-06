@@ -16,7 +16,7 @@ M.setup = function()
 			enabled = false,
 			on_attach = function(client)
 				On_attach(client)
-				client.resolved_capabilities.document_formatting = true
+				client.server_capabilities.document_formatting = true
 			end,
 		},
 		debugger = { -- integrate with nvim dap + install dart code debugger

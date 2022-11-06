@@ -25,7 +25,7 @@ else
 		cmd = command,
 		capabilities = Capabilities,
 		on_attach = function(client)
-			client.resolved_capabilities.document_formatting = false
+			client.server_capabilities.document_formatting = false
 			On_attach(client)
 		end,
 		settings = {
