@@ -1,7 +1,7 @@
 [
   {
     "ws": 1,
-    "cmd": "$browser https://tuwel.tuwien.ac.at/my/ https://tiss.tuwien.ac.at/ --new-window",
+    "cmd": "$browser https://idp.zid.tuwien.ac.at/simplesaml/module.php/core/loginuserpass.php?AuthState=_bc3217a70c9c3d7af497a57c3cd2a72b69cc64e916%3Ahttps%3A%2F%2Fidp.zid.tuwien.ac.at%2Fsimplesaml%2Fsaml2%2Fidp%2FSSOService.php%3Fspentityid%3Dhttps%253A%252F%252Ftuwel.tuwien.ac.at%252Fauth%252Fsaml2%252Fsp%252Fmetadata.php%26RelayState%3Dhttps%253A%252F%252Ftuwel.tuwien.ac.at%252Fauth%252Fsaml2%252Flogin.php%26cookieTime%3D1665587498 https://tiss.tuwien.ac.at/ https://calendar.google.com/calendar/u/0/r https://todoist.com/app/today --new-window",
     "delay": 0.5
   }
 ]

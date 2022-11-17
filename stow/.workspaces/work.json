@@ -1,11 +1,11 @@
 [
   { "ws": -1, "cmd": "spotify", "delay": 1 },
-  { "ws": 1, "cmd": "$browser --new-window", "delay": 0.5 },
-  { "ws": 2, "cmd": "$term -e nvim" },
-  { "ws": 3, "cmd": "$browser --new-window", "delay": 0.5 },
+  { "ws": 1, "cmd": "$browser --new-window", "delay": 1 },
+  { "ws": 2, "cmd": "$term -e nvim", "delay": 1 },
+  { "ws": 3, "cmd": "$browser --new-window", "delay": 1 },
   {
     "ws": 9,
-    "cmd": "$browser https://mail.google.com/ https://calendar.google.com/ https://app.tmetric.com/ https://todoist.com/app/ --new-window",
-    "delay": 0.5
+    "cmd": "$sec_browser https://mail.google.com/ https://calendar.google.com/ https://todoist.com/app/ https://app.clockify.me/tracker https://github.com/codl-at/Deskpilot --new-window",
+    "delay": 1
   }
 ]
