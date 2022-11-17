@@ -1,0 +1,5 @@
+#!/bin/bash
+
+dunstify -a "connect_headset" "Turn of bluetooth" -t 3000
+bluetoothctl power off
+
