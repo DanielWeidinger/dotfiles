@@ -4,32 +4,25 @@
 }
 
 window#waybar {
-  background: rgba(0, 0, 0, 0);
+  background: @theme_base_color;
+  border-bottom: 1px solid @unfocused_borders;
+  color: @theme_text_color;
 }
 
-#network,
-#cpu,
-#battery {
-  background: #2e3440;
-  color: #e5e9f0;
-  margin: 3px 0px 3px 0px;
-  padding: 5px;
+window.DP-5 * {
+  font-size: 11px;
+}
+
+window.DP-4 * {
+  font-size: 11px;
 }
 
 #battery.warning {
   color: #d08770;
 }
 
-#battery.warning {
+#battery.critical {
   color: #bf616a;
-}
-
-#workspaces {
-  margin: 3px;
-  padding: 5px 7px 5px 7px;
-  border-radius: 10px;
-  background: #2e3440;
-  color: #e5e9f0;
 }
 
 #window {
@@ -44,11 +37,6 @@ window#waybar {
 
 #workspaces button {
   padding: 0 5px;
-  color: rgba(217, 216, 216, 0.4);
-}
-
-#workspaces button.visible {
-  color: rgba(217, 216, 216, 1);
 }
 
 #workspaces button.focused {
@@ -56,69 +44,29 @@ window#waybar {
   border-bottom: 3px solid rgba(217, 216, 216, 0);
 }
 
-#workspaces button.urgent {
-  color: rgba(238, 46, 36, 1);
-}
-
 #pulseaudio {
   margin: 3px 3px 3px 0px;
   padding: 5px 7px 5px 5px;
-  background: #2e3440;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  color: #e5e9f0;
-}
-
-#custom-quit {
-  margin: 3px 3px 3px 0px;
-  padding: 5px 7px 5px 5px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border-right: 2px solid #2e3440;
-  border-top: 2px solid #2e3440;
-  border-bottom: 2px solid #2e3440;
-  background: #f00;
-  color: #e5e9f0;
-}
-
-#custom-mode {
-  background: #f00;
-  color: #e5e9f0;
-  padding: 5px 7px 5px 5px;
-  margin-left: 50px;
-  border-radius: 10px;
 }
 
 #clock {
   margin: 3px 0px 3px 3px;
   padding: 5px;
-  background: #2e3440;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  color: #e5e9f0;
-}
-
-#pulseaudio {
-  margin: 3px 3px 3px 0px;
-  padding: 5px 7px 5px 5px;
-  background: #2e3440;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  color: #e5e9f0;
 }
 
 #backlight {
-  background: #2e3440;
-  color: #e5e9f0;
   margin: 3px 0px 3px 0px;
   padding: 5px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  color: #e5e9f0;
 }
 
 #memory {
-  background: #2e3440;
-  color: #e5e9f0;
   margin: 3px 0px 3px 0px;
   padding: 5px;
 }

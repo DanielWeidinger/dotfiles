@@ -46,6 +46,9 @@ yay -S $MISC_UTIL_DEPS --noconfirm
 AUX_DEPS="lazygit lazydocker anki-official-binary-bundle wlsunset"
 yay -S $AUX_DEPS --noconfirm
 
+THEMES="nordic-theme"
+yay -S $AUX_DEPS --noconfirm
+
 rm $HOME/.bashrc
 mkdir $HOME/.config
 mkdir $HOME/.local
