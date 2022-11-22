@@ -179,13 +179,6 @@ return packer.startup(function(use)
 		end,
 	}) -- Floating window lsp signature
 	use({
-		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-		disable = true,
-		config = function()
-			require("lsp_lines").setup()
-		end,
-	})
-	use({
 		"mrshmllow/document-color.nvim",
 		config = function()
 			require("document-color").setup({
