@@ -3,7 +3,7 @@
     "position": "top",
     "modules-left": ["sway/workspaces"],
     "modules-center": ["sway/window", "custom/mode"],
-    "modules-right": ["clock", "backlight", "custom/keyboard", "network", "cpu", "memory", "battery", "pulseaudio"],
+    "modules-right": [ "backlight", "custom/keyboard", "network", "cpu", "memory", "battery", "pulseaudio", "clock" ],
     "sway/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
