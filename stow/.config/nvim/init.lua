@@ -6,6 +6,9 @@ require("weidinger.keys")
 require("weidinger.utils")
 
 -- Theming
+vim.g.nord_borders = true
+vim.g.nord_bold = false
+vim.g.nord_italic = false
 local defaultTheme = "nord"
 local previousExists = Exists(vim.fn.stdpath("data") .. "/last_color")
 if not previousExists then
