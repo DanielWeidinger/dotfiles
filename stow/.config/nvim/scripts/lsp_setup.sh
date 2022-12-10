@@ -13,6 +13,9 @@ sudo npm install -g dockerfile-language-server-nodejs
 echo --Bash
 sudo npm install -g bash-language-server
 
+echo --Bash Formatting
+go install mvdan.cc/sh/v3/cmd/shfmt@latest
+
 echo --JSON, CSS and HTML
 sudo npm install -g vscode-langservers-extracted
  
