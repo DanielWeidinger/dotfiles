@@ -1,3 +1,4 @@
+local handlers = require("weidinger.lsp.handlers")
 local M = {}
 
 M.setup = function()
@@ -15,7 +16,7 @@ M.setup = function()
 			capabilities = Capabilities,
 			enabled = false,
 			on_attach = function(client)
-				On_attach(client)
+				handlers.on_attach(client)
 				client.server_capabilities.document_formatting = true
 			end,
 		},

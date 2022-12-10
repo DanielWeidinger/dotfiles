@@ -157,6 +157,7 @@ return packer.startup(function(use)
 	-- LSP
 	use("neovim/nvim-lspconfig")
 	use("jose-elias-alvarez/null-ls.nvim")
+	use("lukas-reineke/lsp-format.nvim") -- wrapper around LSP formatting to not have to worry about implementation
 	-- Autocomple + Sources
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-buffer")
@@ -234,7 +235,7 @@ return packer.startup(function(use)
 			require("lsp-colors").setup()
 		end,
 	})
-	use("bellini666/trouble.nvim")
+	use("folke/trouble.nvim")
 	use("folke/lua-dev.nvim")
 
 	use({

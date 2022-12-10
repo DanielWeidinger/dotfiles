@@ -1,7 +1,6 @@
+local handlers = require("weidinger.lsp.handlers")
 local lspconfig = require("lspconfig")
 
--- local sumneko_root_path = vim.fn.stdpath('cache')..'/lspconfig/sumneko_lua/lua-language-server'
--- local sumneko_binary = sumneko_root_path.."/bin/"..system_name.."/lua-language-server"
 local sumneko_root_path = vim.fn.expand("$HOME/.local/share/nvim/lang-servers/lua-language-server/bin")
 local sumneko_binary = sumneko_root_path .. "/lua-language-server"
 
@@ -12,7 +11,7 @@ if vim.g.plugin_dev_mode then
 		lspconfig = {
 			cmd = command,
 			capabilities = Capabilities,
-			on_attach = On_attach,
+			on_attach = handlers.on_attach,
 		},
 	})
 	lspconfig.sumneko_lua.setup(luadev)
@@ -26,7 +25,7 @@ else
 		capabilities = Capabilities,
 		on_attach = function(client)
 			client.server_capabilities.document_formatting = false
-			On_attach(client)
+			handlers.on_attach(client)
 		end,
 		settings = {
 			Lua = {
