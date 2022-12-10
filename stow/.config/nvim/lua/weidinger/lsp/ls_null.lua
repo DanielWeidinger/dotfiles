@@ -1,6 +1,8 @@
 local null_ls = require("null-ls")
+local handlers = require("weidinger.lsp.handlers")
+
 null_ls.setup({
-	on_attach = On_attach,
+	on_attach = handlers.on_attach,
 	capabilities = Capabilities,
 	sources = {
 		null_ls.builtins.formatting.stylua,
