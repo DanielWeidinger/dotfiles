@@ -13,15 +13,15 @@ vim.g.floaterm_autoclose = 1
 local wk = require("which-key")
 
 wk.register({
-	t = {
-		name = "Term", -- optional group name
-		[";"] = { ":FloatermNew --wintype=popup --height=6<cr>", "terminal" },
-		g = { ":FloatermNew lazygit<cr>", "git" },
-		d = { ":FloatermNew lazydocker<cr>", "docker" },
-		n = { ":FloatermNew node<cr>", "node" },
-		p = { ":FloatermNew python<cr>", "python" },
-		t = { ":FloatermToggle<cr>", "toggle" },
-		b = { ":FloatermNew btm<cr>", "bottom" },
-		a = { ":FloatermKill! <cr>", "close all" },
-	},
+    t = {
+        name = "Term", -- optional group name
+        [";"] = { ":FloatermNew --wintype=popup --height=6<cr>", "terminal" },
+        g = { ":FloatermNew lazygit<cr>", "git" },
+        d = { ":FloatermNew lazydocker<cr>", "docker" },
+        n = { ":FloatermNew node<cr>", "node" },
+        p = { ":FloatermNew python<cr>", "python" },
+        t = { ":FloatermToggle<cr>", "toggle" },
+        b = { ":FloatermNew btm<cr>", "bottom" },
+        a = { ":FloatermKill! <cr>", "close all" },
+    },
 }, { prefix = "<leader>" })

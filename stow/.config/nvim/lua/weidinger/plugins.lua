@@ -132,6 +132,22 @@ return packer.startup(function(use)
     -- Browser utils
     use("dhruvasagar/vim-open-url")
 
+    use({ "MunifTanjim/nui.nvim" })
+    use({
+        "jackMort/ChatGPT.nvim",
+        cmd = { "ChatGPT", "ChatGPTActAs" },
+        config = function()
+            require("chatgpt").setup({
+                -- optional configuration
+            })
+        end,
+        requires = {
+            "MunifTanjim/nui.nvim",
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim",
+        },
+    })
+
     use({ "GustavoKatel/tasks.nvim", requires = { "nvim-lua/plenary.nvim" } })
 
     use({

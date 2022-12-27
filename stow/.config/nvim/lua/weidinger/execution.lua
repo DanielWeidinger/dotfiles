@@ -24,15 +24,15 @@ local wk = require("which-key")
 
 local jmpBack = ":call JumpBackIfTerminal()<cr>" --<C-w>r
 wk.register({
-	r = {
-		name = "Run",
-		-- neoterm
-		f = { ":TREPLSendFile<CR>" .. jmpBack, "file" },
-		l = { ":TREPLSendLine<CR>" .. jmpBack, "line" },
-		s = { ":TREPLSendSelection<CR>" .. jmpBack, "selection", mode = "v" },
-	},
+    r = {
+        name = "Run",
+        -- neoterm
+        f = { ":TREPLSendFile<CR>" .. jmpBack, "file" },
+        l = { ":TREPLSendLine<CR>" .. jmpBack, "line" },
+        s = { ":TREPLSendSelection<CR>" .. jmpBack, "selection", mode = "v" },
+    },
 }, {
-	prefix = "<leader>",
+    prefix = "<leader>",
 })
 -- General
 vim.cmd([[autocmd FileType python map <buffer> <F9> :FloatermNew --autoclose=0 python %<CR>]])

@@ -11,7 +11,6 @@ if vim.g.plugin_dev_mode then
         lspconfig = {
             cmd = command,
             capabilities = Capabilities,
-            on_attach = handlers.on_attach_format,
         },
     })
     lspconfig.sumneko_lua.setup(luadev)

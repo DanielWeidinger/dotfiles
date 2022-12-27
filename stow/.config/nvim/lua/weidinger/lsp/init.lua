@@ -5,8 +5,8 @@ Capabilities.textDocument.completion.completionItem.snippetSupport = true
 LspSigns = { Error = "", Warn = "", Hint = "", Info = "" } -- Global Signs
 -- Set Signs
 for type, icon in pairs(LspSigns) do
-	local hl = "DiagnosticSign" .. type
-	vim.fn.sign_define(hl, { text = icon .. " ", texthl = hl, numhl = hl })
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon .. " ", texthl = hl, numhl = hl })
 end
 
 require("weidinger.lsp.lsp")
