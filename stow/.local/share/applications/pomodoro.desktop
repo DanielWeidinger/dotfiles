@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Pomodoro
+GenericName=Workspace
+Icon=pomodoro
+Exec=swaymsg "exec $browser --new-window https://studywithme.io/aesthetic-pomodoro-timer/"
+Terminal=false
