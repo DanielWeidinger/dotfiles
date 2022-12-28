@@ -29,11 +29,12 @@ wk.register({
     mode = "v",
 })
 
--- spelling
+-- spelling and folding
 wk.register({
     z = {
         name = "Text and spelling",
         t = { ":setlocal spell!<cr>", "local spelling" },
+        f = { require("weidinger.utils.folds").toggle_ts_folding, "folds with TS" },
     },
 }, {
     prefix = "<leader>",
