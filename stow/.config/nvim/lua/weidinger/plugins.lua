@@ -61,15 +61,7 @@ return packer.startup(function(use)
     -- Session managment(wrapper around mksession)
     use({
         "Shatur/neovim-session-manager",
-        config = function()
-            require("session_manager").setup({
-                autoload_mode = require("session_manager.config").AutoloadMode.LastSession, -- Define what to do when Neovim is started without arguments. Possible values: Disabled, CurrentDir, LastSession
-                autosave_ignore_filetypes = { -- All buffers of these file types will be closed before the session is saved.
-                    "gitcommit",
-                    "zsh",
-                },
-            })
-        end,
+        config = require("weidinger.utils.session_management").setup(),
     })
 
     use("kyazdani42/nvim-tree.lua")
@@ -173,7 +165,7 @@ return packer.startup(function(use)
     use("dracula/vim")
     use("morhetz/gruvbox")
     use("rebelot/kanagawa.nvim")
-    use("folke/tokyonight.nvim")
+    -- use("folke/tokyonight.nvim")
 
     -- LSP
     use("neovim/nvim-lspconfig")
