@@ -77,10 +77,10 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
 
     # Start a terminal
     bindsym $mod+Return exec $term
+    # Start NeoVim
+    bindsym $mod+n exec "$term -e nvim"
     # Start your launcher
     bindsym $mod+d exec $menu
-    # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
     # Lock
     bindsym $mod+p exec swaylock -e -f -c 000000 -i "$HOME/.wallpapers/impressionist_2.jpg"
     # Disable notifications
