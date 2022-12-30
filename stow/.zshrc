@@ -20,6 +20,7 @@ setopt globdots # include hidden files
 
 ### User configuration
 ## aliases
+setopt completealiases
 alias luamake=$HOME/.vim/lua-language-server/3rd/luamake/luamake
 alias rrm='rm'
 alias rm='trash'
