@@ -10,7 +10,7 @@ exec wlsunset -l 48.2 -L 16.3
 # Automatically switch to headphones when connected
 exec pactl load-module module-switch-on-connect
 
-# Cosmetics
+### Cosmetics
 font pango:SourceCodePro Medium 11
 default_border pixel 2
 gaps inner 5
@@ -20,6 +20,10 @@ client.unfocused #4c566a #2e3440 #ffffff
 client.focused #88c0d0 #5e81ac #ffffff 
 client.focused_inactive #5e81ac #4c566a #ffffff 
 client.urgent #bf616a #d08770 #ffffff 
+# Window config
+for_window [shell="xwayland"] title_format "%title [XWayland]"
+for_window [title="Spotify"] title_format "  %title"
+for_window [app_id="Alacritty"] title_format "  %title"
 
 ### Variables
 set $mod Mod4
