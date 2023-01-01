@@ -25,3 +25,7 @@ wk.register({
         a = { ":FloatermKill! <cr>", "close all" },
     },
 }, { prefix = "<leader>" })
+
+local keymap = vim.api.nvim_set_keymap
+keymap("i", "<F1>", "<cmd>FloatermToggle<cr><Esc>i", { noremap = true, silent = true })
+keymap("v", "<F1>", "<cmd>FloatermToggle<cr>", { noremap = true, silent = true })

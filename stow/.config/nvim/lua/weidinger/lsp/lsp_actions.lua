@@ -6,9 +6,8 @@ wk.register({
     -- lsp provider to find the cursor word definition and reference
     ["gh"] = { ":Lspsaga lsp_finder<CR>", "ref finder" },
     -- scroll hover doc or scroll in definition preview
-    -- ["<C-n>"] = { "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>", "which_key_ignore" },
-    -- ["<C-p>"] = { "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>", "which_key_ignore" },
-    ["<C-k>"] = { ":Lspsaga signature_help<CR>", "signature help" },
+    ["<C-n>"] = { "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>", "which_key_ignore" },
+    ["<C-p>"] = { "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>", "which_key_ignore" },
 })
 
 wk.register({
@@ -28,6 +27,6 @@ wk.register({
     g = {
         D = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Go to declaration" },
     },
-    ["Ö"] = { "<cmd>lua vim.diagnostic.goto_next()<CR>", "Go to next Diagnostic" },
-    ["Ä"] = { "<cmd>lua vim.diagnostic.goto_prev()<CR>", "Go to prev Diagnostic" },
+    ["Ö"] = { "<cmd>Lspsaga diagnostic_jump_next<CR>", "Go to next Diagnostic" },
+    ["Ä"] = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", "Go to prev Diagnostic" },
 })

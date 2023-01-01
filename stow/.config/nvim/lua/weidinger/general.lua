@@ -44,6 +44,8 @@ local options = {
 
     --commands
     showcmd = true,
+
+    laststatus = 3, -- to use global statusline instead of one for each window
 }
 
 for k, v in pairs(options) do

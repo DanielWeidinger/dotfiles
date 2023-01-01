@@ -74,7 +74,7 @@ return packer.startup(function(use)
 
     -- Hex code colorization
     use({
-        "norcalli/nvim-colorizer.lua",
+        "NvChad/nvim-colorizer.lua",
         config = function()
             require("colorizer").setup()
         end,

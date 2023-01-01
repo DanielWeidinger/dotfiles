@@ -1,4 +1,3 @@
-local handlers = require("weidinger.lsp.handlers")
 local lspconfig = require("lspconfig")
 
 local sumneko_root_path = vim.fn.expand("$HOME/.local/share/nvim/lang-servers/lua-language-server/bin")

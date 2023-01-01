@@ -5,7 +5,12 @@ local cmp = require("cmp")
 local lspkind = require("lspkind") -- Better iconography for completion
 local compare = require("cmp.config.compare")
 
+local border_opts = { border = "single" }
 cmp.setup({
+    window = {
+        completion = cmp.config.window.bordered(border_opts),
+        documentation = cmp.config.window.bordered(border_opts),
+    },
     snippet = {
         expand = function(args)
             vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.

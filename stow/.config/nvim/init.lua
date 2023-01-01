@@ -12,10 +12,10 @@ vim.g.nord_italic = false
 local defaultTheme = "nord"
 local previousExists = Exists(vim.fn.stdpath("data") .. "/last_color")
 if not previousExists then
-	vim.cmd(("colorscheme %s"):format(defaultTheme))
+    vim.cmd(("colorscheme %s"):format(defaultTheme))
 else
-	local theme = require("last-color").recall() or defaultTheme
-	vim.cmd(("colorscheme %s"):format(theme)) -- actiavtes filetype, the possibility to load plugins and the indent.vim plugin
+    local theme = require("last-color").recall() or defaultTheme
+    vim.cmd(("colorscheme %s"):format(theme)) -- actiavtes filetype, the possibility to load plugins and the indent.vim plugin
 end
 
 -- -- Plug Configs

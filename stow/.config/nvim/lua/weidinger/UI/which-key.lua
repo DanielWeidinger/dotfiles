@@ -5,7 +5,7 @@ wk.register({
 })
 
 wk.register({
-    s = { ":so ~/.config/nvim/init.lua<cr>", "source" },
+    s = { ":source $MYVIMRC<cr>", "source" },
     e = { ":NvimTreeToggle<cr>", "explorer" },
     m = { ":MaximizerToggle!<cr>", "maximize" },
     q = { ":call ToggleQFList(0)<CR>", "local qfl" },
