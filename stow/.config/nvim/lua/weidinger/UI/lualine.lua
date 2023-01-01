@@ -19,24 +19,6 @@ function empty:draw(default_highlight)
     return self.status
 end
 
--- Put proper separators and gaps between components in sections
-local function process_sections(sections)
-    for name, section in pairs(sections) do
-        local left = name:sub(9, 10) < "x"
-        for pos = 1, name ~= "lualine_z" and #section or #section - 1 do
-            table.insert(section, pos * 2, { empty, color = { fg = colors.white, bg = colors.white } })
-        end
-        for id, comp in ipairs(section) do
-            if type(comp) ~= "table" then
-                comp = { comp }
-                section[id] = comp
-            end
-            comp.separator = left and { right = "" } or { left = "" }
-        end
-    end
-    return sections
-end
-
 local function search_result()
     if vim.v.hlsearch == 0 then
         return ""
@@ -62,12 +44,12 @@ require("lualine").setup({
     options = {
         theme = theme,
         component_separators = "",
-        section_separators = { left = "", right = "" },
+        section_separators = "",
     },
-    sections = process_sections({
+    sections = {
         lualine_a = { "mode" },
         lualine_b = {
-            "branch",
+            { "branch", color = "Directory" },
             "diff",
             {
                 "diagnostics",
@@ -81,7 +63,7 @@ require("lualine").setup({
                 sections = { "warn" },
                 diagnostics_color = { warn = { bg = colors.orange, fg = colors.white } },
             },
-            { "filename", file_status = false, path = 1 },
+            { "filename", icon = "", file_status = false, path = 1 },
             { modified, color = { bg = colors.red } },
             {
                 "%w",
@@ -103,10 +85,10 @@ require("lualine").setup({
             },
         },
         lualine_c = {},
-        lualine_x = {},
-        lualine_y = { search_result, "filetype" },
+        lualine_x = { search_result },
+        lualine_y = { "filetype" },
         lualine_z = { "%l:%c", "%p%%/%L" },
-    }),
+    },
     inactive_sections = {
         lualine_c = { "%f %y %m" },
         lualine_x = {},
