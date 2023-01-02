@@ -1,5 +1,5 @@
 require("weidinger.UI.cokeline")
-require("weidinger.UI.floaterm")
+require("weidinger.UI.toggleterm")
 require("weidinger.UI.lualine")
 require("weidinger.UI.telescope")
 require("weidinger.UI.tree")

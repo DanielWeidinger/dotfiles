@@ -10,8 +10,7 @@ require("telescope").load_extension("tasks")
 local create_run_floaterm_fn = function(cmd_list)
     local cmd = vim.fn.join(cmd_list)
     return function()
-        vim.cmd([[:FloatermNew! --silent ]] .. cmd)
-        vim.cmd(":FloatermToggle")
+        vim.cmd([[:5TermExec direction="float" cmd="]] .. cmd .. [["]])
     end
 end
 
