@@ -50,7 +50,7 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- To escape insert mode in a terminal
-keymap("t", "<Esc><Esc>", "<C-\\><C-n>", opts)
+keymap("t", "<c-j>", "<C-\\><C-n>", opts)
 
 -- Closing buffers(the extra are here to no let NERD tree get the focus on closing)
 keymap("n", "<C-x>", ":bp<bar>sp<bar>bn<bar>bd<CR>", opts)

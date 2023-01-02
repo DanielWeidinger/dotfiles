@@ -88,7 +88,7 @@ return packer.startup(function(use)
     use("kyazdani42/nvim-web-devicons") -- for folke's Trouble plugin
 
     -- Terminal functionality and execution
-    use("voldikss/vim-floaterm")
+    use({ "akinsho/toggleterm.nvim", tag = "*" })
     use("kassio/neoterm")
     use({
         "untitled-ai/jupyter_ascending.vim",
@@ -280,7 +280,12 @@ return packer.startup(function(use)
     use("nvim-telescope/telescope-dap.nvim")
     use("rcarriga/cmp-dap")
 
-    use("szw/vim-maximizer")
+    use({
+        "szw/vim-maximizer",
+        config = function()
+            vim.g.maximizer_set_default_mapping = 0
+        end,
+    })
 
     -- Test runner
     use("nvim-neotest/neotest")
