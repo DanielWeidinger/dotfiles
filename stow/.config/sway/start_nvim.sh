@@ -1,0 +1,3 @@
+#!/bin/zsh
+nvim
+zsh

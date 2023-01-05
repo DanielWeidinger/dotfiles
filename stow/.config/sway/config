@@ -78,7 +78,7 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
     # Start a terminal
     bindsym $mod+Return exec $term
     # Start NeoVim
-    bindsym $mod+n exec "$term -e nvim"
+    bindsym $mod+n exec "$term -e $sway_path/start_nvim.sh"
     # Start your launcher
     bindsym $mod+d exec $menu
     # Lock
