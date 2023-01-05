@@ -88,7 +88,7 @@ return packer.startup(function(use)
     use("kyazdani42/nvim-web-devicons") -- for folke's Trouble plugin
 
     -- Terminal functionality and execution
-    use({ "akinsho/toggleterm.nvim", tag = "*" })
+    use({ "DanielWeidinger/toggleterm.nvim", tag = "*" })
     use("kassio/neoterm")
     use({
         "untitled-ai/jupyter_ascending.vim",
@@ -249,7 +249,7 @@ return packer.startup(function(use)
         end,
     })
     use("folke/trouble.nvim")
-    use("folke/lua-dev.nvim")
+    -- use("folke/neodev.nvim")
 
     use({
         "nvim-treesitter/nvim-treesitter",
@@ -257,7 +257,7 @@ return packer.startup(function(use)
     })
 
     use("windwp/nvim-autopairs")
-    use({ "windwp/nvim-ts-autotag", config = function() end })
+    use({ "windwp/nvim-ts-autotag" })
 
     -- todo finder and highlighting
     use({

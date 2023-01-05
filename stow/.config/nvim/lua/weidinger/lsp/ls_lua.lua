@@ -6,13 +6,8 @@ local sumneko_binary = sumneko_root_path .. "/lua-language-server"
 local command = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" }
 
 if vim.g.plugin_dev_mode then
-    local luadev = require("lua-dev").setup({
-        lspconfig = {
-            cmd = command,
-            capabilities = Capabilities,
-        },
-    })
-    lspconfig.sumneko_lua.setup(luadev)
+    vim.notify("DEV Mode is enabled")
+    require("neodev").setup({})
 else
     local runtime_path = vim.split(package.path, ";")
     table.insert(runtime_path, "lua/?.lua")
