@@ -6,9 +6,14 @@ M.setup = function(state)
             term:toggle()
         end, { noremap = true, silent = true })
     end
+    local on_close = function(term)
+        require("weidinger.UI.toggleterm.keymaps").setup(state) -- reinstall keymaps
+    end
     local Terminal = require("toggleterm.terminal").Terminal
-    local lazygit = Terminal:new({ cmd = "lazygit", hidden = true, direction = "float", on_open = on_open })
-    local lazydocker = Terminal:new({ cmd = "lazydocker", hidden = true, direction = "float", on_open = on_open })
+    local lazygit =
+        Terminal:new({ cmd = "lazygit", hidden = true, direction = "float", on_open = on_open, on_close = on_close })
+    local lazydocker =
+        Terminal:new({ cmd = "lazydocker", hidden = true, direction = "float", on_open = on_open, on_close = on_close })
 
     local wk = require("which-key")
     wk.register({
