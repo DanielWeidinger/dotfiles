@@ -1,3 +1,4 @@
+local utils = require("weidinger.UI.toggleterm.utils")
 local M = {}
 M.setup = function(state)
     local on_open = function(term)
@@ -58,6 +59,12 @@ M.setup = function(state)
             v = {
                 function()
                     state.currentDirection = "vertical"
+                end,
+                "Mode: Vertical",
+            },
+            t = {
+                function()
+                    utils.toggleTerm(state.currentDirection, state.latestTerm)
                 end,
                 "Mode: Vertical",
             },

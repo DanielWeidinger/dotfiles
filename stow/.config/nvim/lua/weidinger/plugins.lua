@@ -88,7 +88,7 @@ return packer.startup(function(use)
     use("kyazdani42/nvim-web-devicons") -- for folke's Trouble plugin
 
     -- Terminal functionality and execution
-    use({ "DanielWeidinger/toggleterm.nvim", tag = "*" })
+    use({ "akinsho/toggleterm.nvim", tag = "*" })
     use("kassio/neoterm")
     use({
         "untitled-ai/jupyter_ascending.vim",

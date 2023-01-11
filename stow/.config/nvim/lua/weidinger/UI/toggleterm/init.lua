@@ -1,5 +1,5 @@
 local state = {
-    termsInUse = { 1 },
+    termsInUse = {},
     latestTerm = 1,
     currentDirection = "float",
 }
@@ -13,7 +13,7 @@ require("toggleterm").setup({
     persist_mode = true,
     size = function(term)
         if term.direction == "horizontal" then
-            return 15
+            return 16
         elseif term.direction == "vertical" then
             return vim.o.columns * 0.3
         end
@@ -49,3 +49,10 @@ require("toggleterm").setup({
         end,
     },
 })
+
+local M = {}
+M.open_in_unused = function(cmd)
+    local freeId = utils.getNextFreeId(state.termsInUse)
+    utils.execTermWithCmd(state.currentDirection, freeId, cmd)
+end
+return M

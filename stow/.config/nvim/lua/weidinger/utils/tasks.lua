@@ -7,10 +7,12 @@ local builtin = require("tasks.sources.builtin")
 
 require("telescope").load_extension("tasks")
 
-local create_run_floaterm_fn = function(cmd_list)
+local toggleterm = require("weidinger.UI.toggleterm")
+local create_run_toggleterm_fn = function(cmd_list)
     local cmd = vim.fn.join(cmd_list)
     return function()
-        vim.cmd([[:5TermExec direction="float" cmd="]] .. cmd .. [["]])
+        toggleterm.open_in_unused(cmd)
+        -- vim.cmd([[:5TermExec direction="float" cmd="]] .. cmd .. [["]])
     end
 end
 
@@ -18,7 +20,7 @@ tasks.setup({
     runners = {
         floaterm_runner = {
             create_task = function(self, spec, args)
-                return Task:new(create_run_floaterm_fn(spec.cmd), args)
+                return Task:new(create_run_toggleterm_fn(spec.cmd), args)
             end,
         },
     },
