@@ -34,8 +34,7 @@ export PATH=$PATH:$HOME/.cargo/bin
 
 ## Plugins
 
-# nnn config
-source ~/.config/nnn/nnnrc.sh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # vi mode
 bindkey -v
