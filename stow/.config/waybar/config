@@ -7,7 +7,7 @@
     "sway/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
-        "format": " {name} {icon}",
+        "format": " {name} ",
         "format-icons": {
             "urgent": "",
             "focused": "",

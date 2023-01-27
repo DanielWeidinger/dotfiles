@@ -39,9 +39,12 @@ window.DP-4 * {
   padding: 0 5px;
 }
 
+@define-color focused-color #81a1c1;
 #workspaces button.focused {
-  border-top: 3px solid rgba(217, 216, 216, 1);
-  border-bottom: 3px solid rgba(217, 216, 216, 0);
+  border-top: 3px solid @focused-color; /* rgba(217, 216, 216, 1);*/
+  border-bottom: 3px solid rgba(0, 0, 0, 0);
+  color: @focused-color;
+  font-weight: 900;
 }
 
 #pulseaudio {
