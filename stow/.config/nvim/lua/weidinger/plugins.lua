@@ -201,19 +201,8 @@ return packer.startup(function(use)
             })
         end,
     })
+    use("lewis6991/hover.nvim")
     -- better code diagnostics with floating window
-    use({
-        "glepnir/lspsaga.nvim",
-        branch = "main",
-        config = function()
-            require("lspsaga").init_lsp_saga({
-                code_action_icon = "ﴞ ",
-                code_action_lightbulb = {
-                    virtual_text = false,
-                },
-            })
-        end,
-    })
     use("b0o/schemastore.nvim") -- For json schema validation capabilities
 
     -- Flutter support (autosetup for dartls)
