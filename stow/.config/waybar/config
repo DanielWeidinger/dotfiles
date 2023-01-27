@@ -2,7 +2,7 @@
     "layer": "top",
     "position": "top",
     "modules-left": ["sway/workspaces"],
-    "modules-center": ["sway/window", "custom/mode"],
+    "modules-center": ["sway/window", "sway/mode"],
     "modules-right": [ "backlight", "custom/keyboard", "network", "cpu", "memory", "battery", "pulseaudio", "clock" ],
     "sway/workspaces": {
         "disable-scroll": true,
@@ -15,7 +15,6 @@
         }
     },
     "sway/window": {
-        "format": "{}",
         "max-length": 50,
     },
     "clock": {
@@ -83,9 +82,8 @@
         "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
         "on-click": "alacritty -e btm"
     },
-    "custom/mode": {
-        "format": "{}",
-        "interval": 1,
-        "exec": "$HOME/.config/waybar/get_sway_mode.sh"
-    },
+    "sway/mode": {
+        "format": "  {} ",
+        "max-length": 50
+    }
 }

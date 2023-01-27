@@ -70,3 +70,9 @@ window.DP-4 * {
   margin: 3px 0px 3px 0px;
   padding: 5px;
 }
+
+#mode {
+  background-color: #ca1243;
+  margin: 3px;
+  border-radius: 5px;
+}
