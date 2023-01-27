@@ -24,6 +24,7 @@ client.urgent #bf616a #d08770 #ffffff
 for_window [shell="xwayland"] title_format "%title [XWayland]"
 for_window [title="Spotify"] title_format "  %title"
 for_window [app_id="Alacritty"] title_format "  %title"
+for_window [class="pomotroid"] move scratchpad; scratchpad show
 
 ### Variables
 set $mod Mod4
