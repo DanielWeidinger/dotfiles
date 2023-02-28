@@ -42,16 +42,13 @@ set $sway_path ~/.config/sway
 set $file_explorer nautilus
 set $menu wofi --show=drun --lines=10 --prompt="" --allow-images
 
-# Start when env is set
-exec $HOME/.local/bin/start_default_setup.sh
-
 # Cycle through random wallpapers
 exec $sway_path/background.sh
 
-exec swayidle -w \
-	timeout 1800 'swaylock' \
-	timeout 1805 'swaymsg "output * dpms off"' \
-	resume 'swaymsg "output * dpms on"'
+# exec swayidle -w \
+#   timeout 1800 'swaylock' \
+#   timeout 1805 'swaymsg "output * dpms off"' \
+#   resume 'swaymsg "output * dpms on"'
 
 ### Input configuration
 input * xkb_layout "de"
