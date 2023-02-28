@@ -19,5 +19,5 @@ if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
     #GTK
     export GTK_THEME=Nordic
     export MOZ_ENABLE_WAYLAND=1
-    exec sway --unsupported-gpu
+    exec sway > /var/log/sway/sway.log 2>&1
 fi

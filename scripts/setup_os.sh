@@ -58,6 +58,10 @@ mkdir $HOME/.local/share/applications
 mkdir $HOME/.local/share/icons
 stow stow
 
+# Enable sway logging
+sudo mkdir /var/log/sway
+sudo chown daniel:daniel /var/log/sway
+
 # Enable user service
 sudo systemctl enable --now ssh-agend.service --user
 
