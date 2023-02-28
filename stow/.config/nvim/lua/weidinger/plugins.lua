@@ -263,7 +263,7 @@ return packer.startup(function(use)
     -- DAP
     use("mfussenegger/nvim-dap")
     use("theHamsta/nvim-dap-virtual-text")
-    use("rcarriga/nvim-dap-ui")
+    use({ "rcarriga/nvim-dap-ui", commit = "ad3539d6ceede41c7c7dc5c9a9363adf14bd4611" }) --TODO: Remove once the invalid buffer bug is fixed
     use("mfussenegger/nvim-dap-python")
     use({ "mxsdev/nvim-dap-vscode-js", requires = { "mfussenegger/nvim-dap" } })
     use("nvim-telescope/telescope-dap.nvim")
