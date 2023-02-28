@@ -129,7 +129,9 @@ cokeline.setup({
         end,
     },
     buffers = {
-        -- filter_visible = function(buffer) return buffer.type ~= 'terminal' end,
+        filter_visible = function(buffer)
+            return buffer.type ~= "terminal" and buffer.type ~= "dap-repl"
+        end,
         new_buffers_position = "next",
     },
     rendering = {
