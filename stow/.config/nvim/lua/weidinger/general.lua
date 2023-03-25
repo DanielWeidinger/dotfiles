@@ -3,6 +3,7 @@
 
 -- Local setting
 vim.cmd([[autocmd FileType markdown setlocal wrap]])
+vim.cmd([[set nohlsearch]]) -- Remove later but the option just gets ignored
 
 -- Global settings
 vim.cmd([[filetype plugin indent on]]) -- actiavtes filetype, the possibility to load plugins and the indent.vim plugin

@@ -7,10 +7,9 @@ vim.diagnostic.config({
 wk.register({
     c = {
         name = "Code", -- optional group name
-        a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Action" }, -- create a binding with label
-        r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" }, -- create a binding with label
-        d = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Line Diagnostic" }, -- create a binding with label
-        -- c = { "<cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>", "Cursor Diagnostic" },
+        a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Action" },
+        r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+        d = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Line Diagnostic" },
         ["ö"] = { "<cmd>LspRestart<CR>", "Restart Lsp" },
     },
 }, { prefix = "<leader>" })

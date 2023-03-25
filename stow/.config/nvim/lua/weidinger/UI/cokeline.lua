@@ -130,7 +130,7 @@ cokeline.setup({
     },
     buffers = {
         filter_visible = function(buffer)
-            return buffer.type ~= "terminal" and buffer.type ~= "dap-repl"
+            return buffer.type ~= "terminal" and buffer.type ~= "dap-repl" and buffer.type ~= "quickfix"
         end,
         new_buffers_position = "next",
     },
