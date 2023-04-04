@@ -127,12 +127,6 @@ return packer.startup(function(use)
     use({ "MunifTanjim/nui.nvim" })
     use({
         "jackMort/ChatGPT.nvim",
-        cmd = { "ChatGPT", "ChatGPTActAs" },
-        config = function()
-            require("chatgpt").setup({
-                -- optional configuration
-            })
-        end,
         requires = {
             "MunifTanjim/nui.nvim",
             "nvim-lua/plenary.nvim",
