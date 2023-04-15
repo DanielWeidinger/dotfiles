@@ -2,8 +2,8 @@
 
 echo --TSServer
 sudo npm install -g typescript typescript-language-server
-    
-echo --Python 
+
+echo --Python
 sudo npm install -g pyright
 sudo pacman -S autopep8 --noconfirm
 
@@ -14,11 +14,11 @@ echo --Bash
 sudo npm install -g bash-language-server
 
 echo --Bash Formatting
-go install mvdan.cc/sh/v3/cmd/shfmt@latest
+sudo pacman -S shfmt
 
 echo --JSON, CSS and HTML
 sudo npm install -g vscode-langservers-extracted
- 
+
 echo --YAML
 sudo npm install -g yaml-language-server
 
@@ -30,7 +30,7 @@ sudo npm install -g eslint_d @fsouza/prettierd
 
 langserver_dir="$HOME/.local/share/nvim/lang-servers"
 if [ ! -d "$langserver_dir" ]; then
-    mkdir $langserver_dir
+	mkdir $langserver_dir
 fi
 echo --Lua
 sudo pacman -S stylua --noconfirm
@@ -46,12 +46,12 @@ cd ../..
 echo --OmniSharp
 cd $langserver_dir
 if [ ! -d "omnisharp" ]; then
-    mkdir omnisharp
+	mkdir omnisharp
 fi
 cd omnisharp
-curl -s https://api.github.com/repos/OmniSharp/omnisharp-roslyn/releases/latest \
-| grep "browser_download_url.*omnisharp-linux-x86.tar.gz" \
-| cut -d : -f 2,3 \
-| tr -d \" \
-| wget -qi -
+curl -s https://api.github.com/repos/OmniSharp/omnisharp-roslyn/releases/latest |
+	grep "browser_download_url.*omnisharp-linux-x86.tar.gz" |
+	cut -d : -f 2,3 |
+	tr -d \" |
+	wget -qi -
 tar -xzf omnisharp-linux-x86.tar.gz

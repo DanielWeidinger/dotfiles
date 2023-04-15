@@ -100,6 +100,7 @@ return packer.startup(function(use)
                     name = "Jupyter",
                     j = { "<Plug>JupyterExecute", "Execute cell" },
                     a = { "<Plug>JupyterExecuteAll", "Execute all cells" },
+                    r = { "<Plug>JupyterRestart", "Restart Kernel" },
                 },
             }, {
                 prefix = "<leader>",
@@ -133,6 +134,7 @@ return packer.startup(function(use)
             "nvim-telescope/telescope.nvim",
         },
     })
+    use({ "github/copilot.vim" })
 
     use({ "GustavoKatel/tasks.nvim", requires = { "nvim-lua/plenary.nvim" } })
 
