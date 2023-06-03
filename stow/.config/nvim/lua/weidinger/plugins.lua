@@ -45,19 +45,6 @@ return packer.startup(function(use)
     use("nvim-lua/plenary.nvim")
     -- use 'DanielWeidinger/nvim-sshfs'
 
-    use({
-        "nathom/filetype.nvim",
-        config = function()
-            require("filetype").setup({
-                overrides = {
-                    extensions = {
-                        ipynb = "jupyter",
-                    },
-                },
-            })
-        end,
-    })
-
     -- Session managment(wrapper around mksession)
     use({
         "Shatur/neovim-session-manager",
