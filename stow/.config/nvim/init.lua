@@ -1,3 +1,6 @@
+-- Improve startup time
+vim.loader.enable()
+
 -- require files
 require("weidinger.plugins")
 require("weidinger.general")

@@ -13,6 +13,13 @@ imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
 ]])
 
+vim.cmd([[
+let g:copilot_filetypes = {
+      \ 'dap-repl': v:false,
+      \ 'TelescopePrompt': v:false,
+      \ }
+]])
+
 local wk = require("which-key")
 wk.register({
     a = {

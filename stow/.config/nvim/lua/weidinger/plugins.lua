@@ -68,11 +68,12 @@ return packer.startup(function(use)
     })
     -- Fancy bar
     use("nvim-lualine/lualine.nvim")
-    use("noib3/nvim-cokeline")
+    use("willothy/nvim-cokeline")
 
-    -- should be last
+    -- Icons
     use("ryanoasis/vim-devicons")
     use("kyazdani42/nvim-web-devicons") -- for folke's Trouble plugin
+    use("ChristianChiarulli/neovim-codicons") -- for folke's Trouble plugin
 
     -- Terminal functionality and execution
     use({ "akinsho/toggleterm.nvim", tag = "*" })
@@ -99,7 +100,7 @@ return packer.startup(function(use)
     use({
         "lewis6991/gitsigns.nvim",
         config = function()
-            require("gitsigns").setup({ keymaps = {} })
+            require("gitsigns").setup()
         end,
     }) -- GitGutter and diff in Airline
     use("tpope/vim-fugitive") -- Basic git functionality

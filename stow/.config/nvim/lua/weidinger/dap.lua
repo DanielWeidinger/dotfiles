@@ -100,10 +100,7 @@ wk.register({
         j = { ":lua require'dap'.step_over()<cr>", "Over" },
         k = { ":lua require'dap'.step_out()<cr>", "Out" },
         h = { ":lua require'dap'.step_back()<cr>", "Back" },
-        -- ["<leader>"] = { ":lua require'dap'.continue()<cr>", "Continue" },
         r = { ":lua require'dap'.run_to_cursor()<cr>", "ToCursor" },
-        -- b = { ":lua require'dap'.toggle_breakpoint()<cr>", "◯ :Toggle" },
-        i = { ":lua require'dap.ui.widgets'.hover()<cr>", "Eval under cursor" },
         o = { ":lua require'dapui'.toggle()<cr>", "Toggle full UI" },
         O = { ":lua require'dapui'.open()<cr>", "Open full UI" },
         w = { ":Telescope dap list_breakpoints<cr>", "Open Watches" },
@@ -113,4 +110,15 @@ wk.register({
     b = { ":lua require'dap'.toggle_breakpoint()<cr>", "◯ :Toggle" },
 }, {
     prefix = "<leader>",
+})
+
+wk.register({
+    d = {
+        name = "DAP Debug", -- optional group name
+        I = { ":lua require'dap.ui.widgets'.hover()<cr>", "(NATIVE)Eval under cursor" },
+        i = { ":lua require'dapui'.eval()<cr>", "(DAPUI)Eval under cursor" },
+    },
+}, {
+    prefix = "<leader>",
+    mode = { "v", "n" },
 })
