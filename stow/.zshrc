@@ -32,10 +32,6 @@ export PATH=$PATH:$GOPATH/bin
 
 export PATH=$PATH:$HOME/.cargo/bin
 
-## Plugins
-
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
@@ -76,3 +72,4 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
