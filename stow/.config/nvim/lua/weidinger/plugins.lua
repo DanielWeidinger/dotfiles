@@ -48,7 +48,9 @@ return packer.startup(function(use)
     -- Session managment(wrapper around mksession)
     use({
         "Shatur/neovim-session-manager",
-        config = require("weidinger.utils.session_management").setup(),
+        config = function()
+            require("weidinger.utils.session_management").setup()
+        end,
     })
 
     use("kyazdani42/nvim-tree.lua")
