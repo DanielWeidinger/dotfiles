@@ -1,13 +1,18 @@
 #!/bin/bash
 
-FONT_PATH="/tmp/fonts"
+FONT_PATH="/tmp"
+cd $FONT_PATH
 
 echo NERD font
 echo --Downloading...
-git clone https://github.com/ryanoasis/nerd-fonts $FONT_PATH
+if [ -d "nerd-fonts" ]; then
+	rm -rf nerd-fonts
+fi
+mkdir nerd-fonts
+git clone https://github.com/ryanoasis/nerd-fonts nerd-fonts
 
 echo --Installing...
+cd nerd-fonts
 font="SourceCodePro"
-cd $FONT_PATH
-chmod +x install.sh 
+chmod +x install.sh
 ./install $font
