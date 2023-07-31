@@ -55,7 +55,7 @@ input * xkb_layout "de"
 input "type:keyboard" {
     xkb_options caps:escape
 }
-input "2:7:SynPS/2_Synaptics_TouchPad" {
+input "1739:52862:VEN_06CB:00_06CB:CE7E_Touchpad" {
       dwt enabled
       tap enabled
       natural_scroll enabled
