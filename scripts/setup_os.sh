@@ -19,7 +19,7 @@ sudo pacman -S $DRIVERS --noconfirm
 BASE_DEPS="networkmanager zsh git curl wget go npm ninja stow jq ripgrep wl-clipboard"
 sudo pacman -S $BASE_DEPS --noconfirm
 
-DEV_DEPS="docker dotnet-sdk mono mono-msbuild"
+DEV_DEPS="docker"
 sudo pacman -S $BASE_DEPS --noconfirm
 
 GUI_DEPS="wofi feh alacritty firefox chromium nautlius"
@@ -44,8 +44,8 @@ yay -S $MISC_UTIL_DEPS --noconfirm
 AUX_DEPS="lazygit lazydocker anki-official-binary-bundle wlsunset"
 yay -S $AUX_DEPS --noconfirm
 
-THEMES="nordic-theme"
-yay -S $AUX_DEPS --noconfirm
+COSMETICS="nordic-theme ttf-sourcecodepro-nerd"
+yay -S $COSMETICS --noconfirm
 
 rm $HOME/.bashrc
 mkdir $HOME/.config
@@ -90,7 +90,3 @@ sudo chmod +x /usr/bin/grimshot
 # Docker non-sudo execution
 sudo groupadd docker
 sudo usermod -aG docker $USER
-
-# Install fonts
-echo "Install fonts(takes a long time)"
-zsh ./fonts.sh

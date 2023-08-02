@@ -39,16 +39,18 @@ export KEYTIMEOUT=1
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
+# nnn file manager
+if [ -f /usr/share/nnn/quitcd/quitcd.bash_zsh ]; then
+    source /usr/share/nnn/quitcd/quitcd.bash_zsh
+fi
+bindkey -s '^u' 'n -p -H -d -g -o\n'
+
 # Android SDK
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools/
 export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin/
 export PATH=$PATH:$ANDROID_SDK_ROOT/tools/
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
-
-# Flutter executeables
-export PATH="$PATH":"$HOME/.pub-cache/bin"   
-
 
 export EDITOR=nvim # to be able use sudoedit for write-protected files
 
