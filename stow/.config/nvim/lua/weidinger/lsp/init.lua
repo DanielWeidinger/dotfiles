@@ -2,7 +2,7 @@
 Capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 Capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-LspSigns = { Error = "", Warn = "", Hint = "", Info = "" } -- Global Signs
+LspSigns = { Error = "", Warn = "", Hint = "", Info = "" } -- Global Signs
 -- Set Signs
 for type, icon in pairs(LspSigns) do
     local hl = "DiagnosticSign" .. type

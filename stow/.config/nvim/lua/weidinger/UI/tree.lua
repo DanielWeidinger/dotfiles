@@ -1,13 +1,15 @@
+local lsp = require("weidinger.lsp")
+
 require("nvim-tree").setup({
     disable_netrw = false,
     update_cwd = true,
     diagnostics = {
         enable = false,
         icons = {
-            hint = "",
-            info = "",
-            warning = "",
-            error = "",
+            hint = LspSigns.Hint,
+            info = LspSigns.Info,
+            warning = LspSigns.Warning,
+            error = LspSigns.Error,
         },
     },
     renderer = {
