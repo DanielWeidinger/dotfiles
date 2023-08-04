@@ -1,0 +1,4 @@
+create_default_packages:
+  - pip
+  - numpy
+auto_activate_base: false

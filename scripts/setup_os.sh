@@ -72,10 +72,9 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 
 # miniconda/python
 INSTALL_SCRIPT_PATH="/tmp/install_minionda.sh"
-curl https://repo.anaconda.com/miniconda/Miniconda3-py37_4.12.0-Linux-x86_64.sh >$INSTALL_SCRIPT_PATH
+curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh >$INSTALL_SCRIPT_PATH
 chmod +x $INSTALL_SCRIPT_PATH
 zsh $INSTALL_SCRIPT_PATH
-conda config --set auto_activate_base false
 
 # nvim deps
 zsh ~/.dotfiles/stow/.config/nvim/scripts/dependencies.sh
