@@ -1,0 +1,31 @@
+#!/bin/bash
+
+GENERATION_PROMPT="suggest one single commit messages based on the following diff:
+{{diff}}
+commit messages should:
+ - follow conventional commits
+ - message format should be: <type>[scope]: <description>
+
+examples:
+ - fix(authentication): add password regex pattern
+ - test(storage): add new test cases
+"
+
+if which chatgpt >/dev/null; then
+	GIT_DIFF=$(git diff --staged)
+	OUTPUT=$(chatgpt -p "$GENERATION_PROMPT\n\n$GIT_DIFF")
+	echo "Message: $OUTPUT"
+	echo "Do you want to accept? (y/n)"
+	read answer
+
+	if [ "$answer" = "y" ] || [ "$answer" = "Y" ]; then
+		echo "Message accepted."
+		git commit -m "$OUTPUT"
+	else
+		echo "Message declined."
+	fi
+	exit 0
+else
+	echo "ChatGPT not installed"
+	exit -1
+fi
