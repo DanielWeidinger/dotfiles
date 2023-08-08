@@ -25,12 +25,15 @@ wk.register({
     a = {
         name = "AI Stuff",
         a = { ":ChatGPT<cr>", "Launch (GPT)" },
-        r = { ":ChatGPTRun<cr>", "Run (GPT)" },
         e = {
             function()
                 chatgpt.edit_with_instructions()
             end,
-            "Edit (GPT)",
+            "Edit with instructions (GPT)",
+        },
+        g = {
+            ":ChatGPTRun grammar_correction<cr>",
+            "Grammar (GPT)",
         },
         c = { ":Copilot setup <bar>Copilot enable<cr>", "Enable (Copilot)" },
         d = { ":Copilot disable<cr>", "Disable (Copilot)" },
@@ -38,4 +41,5 @@ wk.register({
     },
 }, {
     prefix = "<leader>",
+    mode = { "n", "v" },
 })

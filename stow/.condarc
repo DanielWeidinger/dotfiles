@@ -1,4 +1,9 @@
+channels:
+  - conda-forge
+  - defaults
+
 create_default_packages:
   - pip
   - numpy
+  - pynvim
 auto_activate_base: false
