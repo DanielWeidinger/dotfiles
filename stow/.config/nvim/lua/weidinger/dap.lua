@@ -62,7 +62,7 @@ table.insert(dap.configurations.python, {
 })
 -- node
 require("dap-vscode-js").setup({
-    debugger_path = vim.fn.stdpath("data") .. "/debugger/vscode-js-debug",
+    debugger_path = vim.fn.stdpath("data") .. "/debugger/vscode-js-debug/out/src/",
     adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" }, -- which adapters to register in nvim-dap
 })
 
