@@ -40,7 +40,7 @@
     "network": {
         "format": "{ifname}",
         "format-wifi": " {essid}",
-        "format-ethernet": " {ipaddr}",
+        "format-ethernet": "󰈀 {ipaddr}",
         "format-disconnected": "Disconnected",
         "tooltip-format-wifi": "{signalStrength}%",
         "max-length": 20,

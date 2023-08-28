@@ -80,7 +80,7 @@ input "1739:52862:VEN_06CB:00_06CB:CE7E_Touchpad" {
     # Start your launcher
     bindsym $mod+d exec $menu
     # Lock
-    bindsym $mod+p exec swaylock -e -f -c 000000 -i "$HOME/.wallpapers/impressionist_2.jpg"
+    bindsym $mod+p exec swaylock -e -f -c 000000 -i "$HOME/.wallpapers/aiwasowski1.jpg"
     # Disable notifications
     bindsym $mod+i exec dunstctl set-paused toggle
     # File Explorer
