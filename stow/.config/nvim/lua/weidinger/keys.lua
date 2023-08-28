@@ -41,10 +41,6 @@ keymap("n", "<C-S>", ":update<CR>", opts)
 keymap("v", "<C-S>", "<C-C>:update<CR>", opts)
 keymap("i", "<C-S>", "<C-O>:update<CR>", opts)
 
--- Quick Escape
-keymap("i", "jk", "<Esc>", opts)
-keymap("i", "kj", "<Esc>", opts)
-
 -- Better Indentations
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)

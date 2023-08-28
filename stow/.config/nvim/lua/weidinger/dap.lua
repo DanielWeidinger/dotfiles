@@ -62,7 +62,7 @@ table.insert(dap.configurations.python, {
 })
 -- node
 require("dap-vscode-js").setup({
-    debugger_path = vim.fn.stdpath("data") .. "/debugger/vscode-js-debug/out/src/",
+    debugger_path = vim.fn.stdpath("data") .. "/debugger/vscode-js-debug",
     adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" }, -- which adapters to register in nvim-dap
 })
 
@@ -74,6 +74,9 @@ for _, language in ipairs({ "typescript", "javascript" }) do
             name = "Attach",
             processId = require("dap.utils").pick_process,
             cwd = "${workspaceFolder}",
+            skipFiles = { "<node_internals>/**", "node_modules/**" },
+            localRoot = vim.fn.getcwd(),
+            remoteRoot = "/usr/src/app",
         },
         {
             type = "pwa-node",
