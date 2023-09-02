@@ -95,7 +95,6 @@ input "1739:52862:VEN_06CB:00_06CB:CE7E_Touchpad" {
 
     bindsym $mod+c exec $HOME/.local/bin/connect_headset
     bindsym $mod+Alt+c exec $HOME/.local/bin/disconnect_headset
-    bindsym $mod+m exec $HOME/.local/bin/mount_gdrive.sh
 
     # Function keys
     bindsym XF86AudioRaiseVolume exec ~/.local/bin/changevolume up
