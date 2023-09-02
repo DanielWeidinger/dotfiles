@@ -129,11 +129,7 @@ return packer.startup(function(use)
     use({ "GustavoKatel/tasks.nvim", requires = { "nvim-lua/plenary.nvim" } })
 
     use({
-        "phaazon/hop.nvim",
-        branch = "v1", -- optional but strongly recommended
-        config = function()
-            require("hop").setup()
-        end,
+        "ggandor/leap.nvim",
     })
     use("ThePrimeagen/harpoon")
 
@@ -164,8 +160,7 @@ return packer.startup(function(use)
     use("hrsh7th/nvim-cmp")
     use("hrsh7th/cmp-vsnip")
     use("hrsh7th/cmp-path")
-    use("f3fora/cmp-spell")
-    use("hrsh7th/cmp-calc")
+    use("hrsh7th/cmp-cmdline")
     use("ray-x/cmp-treesitter")
     use("onsails/lspkind-nvim") -- Better iconography for completion
     use({

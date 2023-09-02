@@ -1,4 +1,4 @@
-require("trouble").setup({})
+require("trouble").setup()
 
 local wk = require("which-key")
 
@@ -19,8 +19,6 @@ wk.register({
     g = {
         r = { "<cmd>TroubleToggle lsp_references<cr>", "(Trouble)Refrences" },
         d = { "<cmd>TroubleToggle lsp_definitions<cr>", "(Trouble)Definitions" },
-        i = { "<cmd>TroubleToggle lsp_implementations<cr>", "(Trouble)Implementations" },
         -- t = { "<cmd>TroubleToggle lsp_type_definitions<cr>", "(Trouble)Definitions" },
     },
 })
---nnoremap gR <cmd>TroubleToggle lsp_references<cr>
