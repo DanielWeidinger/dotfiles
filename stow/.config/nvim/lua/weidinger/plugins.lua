@@ -135,6 +135,7 @@ return packer.startup(function(use)
             require("hop").setup()
         end,
     })
+    use("ThePrimeagen/harpoon")
 
     use({
         "rcarriga/nvim-notify",
