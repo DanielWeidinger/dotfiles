@@ -4,6 +4,7 @@ vim.o.completeopt = "menu,menuone,noselect"
 local cmp = require("cmp")
 local lspkind = require("lspkind") -- Better iconography for completion
 local compare = require("cmp.config.compare")
+local context = require("cmp.config.context")
 
 local border_opts = { border = "single" }
 cmp.setup({
@@ -30,8 +31,6 @@ cmp.setup({
         { name = "vsnip" }, -- For vsnip users.
         { name = "buffer" },
         { name = "path" },
-        { name = "spell" },
-        { name = "calc" },
         { name = "treesitter" },
         { name = "dap" },
     }),
@@ -39,13 +38,11 @@ cmp.setup({
         format = lspkind.cmp_format({
             mode = "symbol_text",
             menu = {
-                buffer = "[Bff]",
+                buffer = "[Buf]",
                 nvim_lsp = "[LSP]",
                 vsnip = "[VSnp]",
                 treesitter = "[]",
-                spell = "[暈]",
                 dap = "[DAP]",
-                calc = "[]",
             },
         }),
     },
@@ -63,8 +60,32 @@ cmp.setup({
         },
     },
     enabled = function()
-        return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt" or require("cmp_dap").is_dap_buffer()
+        -- disable completion in comments
+        -- keep command mode completion enabled when cursor is in a comment
+        if vim.api.nvim_get_mode().mode == "c" then
+            print("in command mode")
+            return true
+        end
+        -- disable completion in comments
+        local is_not_comment = not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment")
+        local other_conditions = vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt"
+            or require("cmp_dap").is_dap_buffer()
+        return is_not_comment and other_conditions
     end,
+})
+-- `:` cmdline setup.
+cmp.setup.cmdline(":", {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+        { name = "path" },
+    }, {
+        {
+            name = "cmdline",
+            option = {
+                ignore_cmds = { "Man", "!" },
+            },
+        },
+    }),
 })
 
 -- enable spellling suggestions

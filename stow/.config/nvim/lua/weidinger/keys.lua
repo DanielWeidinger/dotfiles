@@ -33,8 +33,7 @@ keymap("n", "ö", "}", opts)
 keymap("n", "ä", "{", opts)
 keymap("v", "ö", "}", opts)
 keymap("v", "ä", "{", opts)
-keymap("n", "ü", ":HopWord<cr>", opts)
-keymap("n", "Ü", "/", { noremap = true })
+-- keymap("n", "ü", ":HopWord<cr>", opts)
 
 -- Ctrl + s for buffer writing
 keymap("n", "<C-S>", ":update<CR>", opts)

@@ -28,7 +28,7 @@ wk.register({
         c = { "<cmd>Telescope command_history<cr>", "prev. commands" }, -- create a binding with label
         ["&"] = { "<cmd>Telescope colorscheme<cr>", "avaliable colorschemes" }, -- create a binding with label
         g = { "<cmd>Telescope live_grep<cr>", "Grep" }, -- create a binding with label
-        b = { "<cmd>Telescope fers<cr>", "Buffers" },
+        b = { "<cmd>Telescope buffers<cr>", "Buffers" },
         h = { "<cmd>Telescope help_tags<cr>", "Help tags" },
         r = { "<cmd>Telescope reloader<cr>", "Reload modules" },
         t = { "<cmd>Telescope tasks specs<cr>", "Tasks" },
