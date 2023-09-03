@@ -54,3 +54,8 @@ keymap("n", "<leader><C-x>", ":call CloseExtraWindows()<bar>:qa<CR>", opts)
 
 -- Tab functionality
 keymap("n", "<A-x>", ":tabclose<CR>", opts)
+
+-- QFlist functionality
+keymap("n", "<leader>q", ":copen<CR>", opts)
+keymap("n", "<C-k>", ":cnext<CR>", opts)
+keymap("n", "<C-l>", ":cprev<CR>", opts)

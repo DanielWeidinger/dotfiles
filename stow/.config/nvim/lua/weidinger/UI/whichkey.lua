@@ -1,10 +1,6 @@
 local wk = require("which-key")
 
 wk.register({
-    ["<C-q>"] = { ":call ToggleQFList(1)<CR>", "quickfix" },
-})
-
-wk.register({
     s = { ":source $MYVIMRC<cr>", "source" },
     e = { ":NvimTreeToggle<cr>", "explorer" },
     m = { ":MaximizerToggle!<cr>", "maximize" },
