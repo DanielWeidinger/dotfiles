@@ -62,15 +62,14 @@ cmp.setup({
     enabled = function()
         -- disable completion in comments
         -- keep command mode completion enabled when cursor is in a comment
-        if vim.api.nvim_get_mode().mode == "c" then
-            print("in command mode")
-            return true
-        end
-        -- disable completion in comments
-        local is_not_comment = not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment")
+        local in_command_mode = vim.api.nvim_get_mode().mode == "c"
+        local is_not_comment = (not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment"))
+            or in_command_mode
+
         local other_conditions = vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt"
             or require("cmp_dap").is_dap_buffer()
-        return is_not_comment and other_conditions
+        local is_not_chatgpt_input = vim.bo.filetype ~= "chatgpt-input"
+        return is_not_comment and other_conditions and is_not_chatgpt_input
     end,
 })
 -- `:` cmdline setup.
