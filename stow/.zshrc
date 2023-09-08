@@ -40,8 +40,8 @@ autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
 # nnn file manager
-if [ -f /usr/share/nnn/quitcd/quitcd.bash_zsh ]; then
-    source /usr/share/nnn/quitcd/quitcd.bash_zsh
+if [ -f /usr/share/nnn/quitcd/quitcd.bash_sh_zsh ]; then
+    source /usr/share/nnn/quitcd/quitcd.bash_sh_zsh
 fi
 bindkey -s '^u' 'n -p -H -d -g -o\n'
 
