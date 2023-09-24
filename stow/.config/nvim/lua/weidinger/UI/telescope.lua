@@ -7,6 +7,12 @@ telescope.setup({
             i = { ["<c-t>"] = trouble.open_with_trouble },
             n = { ["<c-t>"] = trouble.open_with_trouble },
         },
+        file_ignore_patterns = { "^.git/" },
+    },
+    pickers = {
+        find_all_files = {
+            -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
+        },
     },
     extensions = {
         ["ui-select"] = {
@@ -22,8 +28,12 @@ local wk = require("which-key")
 wk.register({
     f = {
         name = "Telescope", -- optional group name
-        f = { "<cmd>Telescope find_files<cr>", "Find File" }, -- create a binding with label
-        F = { "<cmd>Telescope git_files<cr>", "Find non-ignored File" }, -- create a binding with label
+        f = { "<cmd>Telescope find_files<cr>", "Find file" }, -- create a binding with label
+        F = {
+            ":lua require'telescope.builtin'.find_files({ hidden = true, find_command = { 'rg', '--files', '--hidden', '--no-ignore-vcs', '--glob', '*' },  })<cr>",
+            "Find all files",
+        }, -- Search though all files
+        -- F = { "<cmd>Telescope git_files<cr>", "Find non-ignored File" }, -- create a binding with label
         o = { "<cmd>Telescope oldfiles<cr>", "prev. opened" }, -- create a binding with label
         c = { "<cmd>Telescope command_history<cr>", "prev. commands" }, -- create a binding with label
         ["&"] = { "<cmd>Telescope colorscheme<cr>", "avaliable colorschemes" }, -- create a binding with label
