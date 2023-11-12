@@ -1,0 +1,8 @@
+#!/bin/bash
+
+eval "$(conda shell.bash hook)"
+
+cd ~/Projects/TunaShake
+conda activate scripts
+python run.py "data/$1"
+
