@@ -1,3 +1,6 @@
+# zsh sources .zshrc automatically, only need to source .profile
+source ~/.profile
+
 # SSH-Agent with systemd
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
