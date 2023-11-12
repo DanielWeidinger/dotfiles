@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ -z ${WALLPAPER_DIR+x} ]; then
-	source $HOME/.zshenv
+	source $HOME/.shrc
 fi
 function change_wp() {
 	swaybg -i "$(ls $WALLPAPER_DIR/*.jpg | shuf -n1)" -m fill &

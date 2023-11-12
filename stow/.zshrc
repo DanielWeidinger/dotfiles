@@ -1,3 +1,6 @@
+# Source default config for all shell types
+test -f ~/.shrc && source ~/.shrc
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -22,15 +25,6 @@ setopt globdots # include hidden files
 ## aliases
 setopt completealiases
 alias luamake=$HOME/.vim/lua-language-server/3rd/luamake/luamake
-alias rrm='rm'
-alias rm='trash'
-alias gcal='gcalcli --default-calendar=daniw2801@gmail.com'
-
-## PATH
-export GOPATH=~/go
-export PATH=$PATH:$GOPATH/bin
-
-export PATH=$PATH:$HOME/.cargo/bin
 
 # vi mode
 bindkey -v
@@ -45,14 +39,6 @@ if [ -f /usr/share/nnn/quitcd/quitcd.bash_sh_zsh ]; then
 fi
 bindkey -s '^u' 'n -p -H -d -g -o\n'
 
-# Android SDK
-export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
-export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools/
-export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin/
-export PATH=$PATH:$ANDROID_SDK_ROOT/tools/
-export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
-
-export EDITOR=nvim # to be able use sudoedit for write-protected files
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
