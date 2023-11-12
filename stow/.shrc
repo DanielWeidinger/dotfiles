@@ -1,0 +1,5 @@
+test -f "$HOME/.env" && . "$HOME/.env"
+
+# Put interactive shell setup here, e.g.
+alias rrm='rm'
+alias rm='trash'
