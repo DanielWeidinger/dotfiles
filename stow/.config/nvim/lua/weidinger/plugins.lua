@@ -70,12 +70,11 @@ return packer.startup(function(use)
     })
     -- Fancy bar
     use("nvim-lualine/lualine.nvim")
-    use("willothy/nvim-cokeline")
+    -- use("willothy/nvim-cokeline")
 
     -- Icons
     use("ryanoasis/vim-devicons")
-    use("kyazdani42/nvim-web-devicons") -- for folke's Trouble plugin
-    use("ChristianChiarulli/neovim-codicons") -- for folke's Trouble plugin
+    use("nvim-tree/nvim-web-devicons") -- for folke's Trouble plugin
 
     -- Terminal functionality and execution
     use({ "akinsho/toggleterm.nvim", tag = "*" })
@@ -124,7 +123,7 @@ return packer.startup(function(use)
             "nvim-telescope/telescope.nvim",
         },
     })
-    use({ "github/copilot.vim" })
+    -- use({ "github/copilot.vim" })
 
     use({ "GustavoKatel/tasks.nvim", requires = { "nvim-lua/plenary.nvim" } })
 
@@ -143,12 +142,8 @@ return packer.startup(function(use)
     use("mbbill/undotree")
 
     -- Themes
-    use("raddari/last-color.nvim")
     use("shaunsingh/nord.nvim")
-    use("dracula/vim")
-    use("morhetz/gruvbox")
     use("rebelot/kanagawa.nvim")
-    -- use("folke/tokyonight.nvim")
 
     -- LSP
     use("neovim/nvim-lspconfig")
@@ -169,32 +164,23 @@ return packer.startup(function(use)
             require("lsp_signature").setup({
                 hint_enable = true,
                 floating_window = false,
-                hint_prefix = "ﲒ ",
+                hint_prefix = " ",
                 timer_interval = 100,
             })
         end,
     }) -- Floating window lsp signature
-    use({
-        "mrshmllow/document-color.nvim",
-        config = function()
-            require("document-color").setup({
-                -- Default options
-                mode = "background", -- "background" | "foreground"
-            })
-        end,
-    })
     use("lewis6991/hover.nvim")
     -- better code diagnostics with floating window
     use("b0o/schemastore.nvim") -- For json schema validation capabilities
 
-    -- Flutter support (autosetup for dartls)
-    use({
-        "akinsho/flutter-tools.nvim",
-        config = function()
-            require("weidinger.lsp.ls_flutter").setup()
-        end,
-        ft = { "dart" },
-    })
+    -- -- Flutter support (autosetup for dartls)
+    -- use({
+    --     "akinsho/flutter-tools.nvim",
+    --     config = function()
+    --         require("weidinger.lsp.ls_flutter").setup()
+    --     end,
+    --     ft = { "dart" },
+    -- })
 
     -- Snippets
     use("hrsh7th/vim-vsnip")
@@ -259,8 +245,8 @@ return packer.startup(function(use)
     })
 
     -- Test runner
-    use("nvim-neotest/neotest")
-    use("haydenmeade/neotest-jest")
+    -- use("nvim-neotest/neotest")
+    -- use("haydenmeade/neotest-jest")
 
     -- Fuzzy finding
     use("nvim-telescope/telescope.nvim")
