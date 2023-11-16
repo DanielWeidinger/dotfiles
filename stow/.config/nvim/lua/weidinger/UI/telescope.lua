@@ -28,9 +28,9 @@ local wk = require("which-key")
 wk.register({
     f = {
         name = "Telescope", -- optional group name
-        f = { "<cmd>Telescope find_files<cr>", "Find file" }, -- create a binding with label
-        F = {
-            ":lua require'telescope.builtin'.find_files({ hidden = true, find_command = { 'rg', '--files', '--hidden', '--no-ignore-vcs', '--glob', '*' },  })<cr>",
+        -- F = { "<cmd>Telescope find_files<cr>", "Find file" }, -- create a binding with label
+        f = {
+            ":lua require'telescope.builtin'.find_files({ hidden = true, find_command = { 'rg', '--files', '--hidden', '--no-ignore-vcs', '--glob', '!{**/dist/*,**/node_modules/*,**/.git/*}' },  })<cr>",
             "Find all files",
         }, -- Search though all files
         -- F = { "<cmd>Telescope git_files<cr>", "Find non-ignored File" }, -- create a binding with label
