@@ -72,3 +72,5 @@ lspconfig.yamlls.setup({
     },
     cmd = { "yaml-language-server", "--stdio" },
 })
+
+lspconfig.texlab.setup({})
