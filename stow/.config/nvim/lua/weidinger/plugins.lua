@@ -200,6 +200,17 @@ return packer.startup(function(use)
         ft = { "markdown" },
     })
 
+    use({
+        "lervag/vimtex",
+        setup = function()
+            vim.cmd([[
+            let g:vimtex_view_general_viewer = 'okular'
+            let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+            ]])
+        end,
+        ft = { "tex" },
+    })
+
     -- Which key to show leader commands
     use("folke/which-key.nvim")
     -- Pretty code diagnostics

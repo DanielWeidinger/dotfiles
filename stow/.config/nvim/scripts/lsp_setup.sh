@@ -43,6 +43,9 @@ cd 3rd/luamake
 cd ../..
 ./3rd/luamake/luamake rebuild
 
+echo --LaTex
+sudo pacman -S texlab --noconfirm
+
 # echo --OmniSharp
 # cd $langserver_dir
 # if [ ! -d "omnisharp" ]; then
