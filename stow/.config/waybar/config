@@ -2,7 +2,7 @@
     "layer": "top",
     "position": "top",
     "modules-left": ["sway/workspaces"],
-    "modules-center": ["sway/window", "sway/mode"],
+    "modules-center": [ "sway/mode", "sway/window"],
     "modules-right": [ "backlight", "custom/keyboard", "network", "cpu", "memory", "battery", "pulseaudio", "clock" ],
     "sway/workspaces": {
         "disable-scroll": true,
@@ -83,7 +83,7 @@
         "on-click": "alacritty -e btm"
     },
     "sway/mode": {
-        "format": "  {} ",
+        "format": " 󰩨 {} ",
         "max-length": 50
     }
 }
