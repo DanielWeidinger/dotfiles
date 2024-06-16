@@ -18,5 +18,7 @@ require("nvim-treesitter.configs").setup({
         "scss",
         "php",
         "lua",
+        "markdown",
+        "markdown_inline",
     },
 })

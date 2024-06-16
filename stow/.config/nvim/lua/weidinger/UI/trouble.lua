@@ -5,11 +5,8 @@ local wk = require("which-key")
 wk.register({
     x = {
         name = "Trouble", -- optional group name
-        x = { "<cmd>TroubleToggle<cr>", "Toggle" },
-        w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace" },
-        d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document" },
-        q = { "<cmd>TroubleToggle quickfix<cr>", "QFList" },
-        l = { "<cmd>TroubleToggle loclist<cr>", "LocalList" },
+        r = { "<cmd>Trouble lsp_references toggle<cr>", "Toggle" },
+        q = { "<cmd>Trouble qflist toggle<cr>", "QFList" },
     },
 }, {
     prefix = "<leader>",
@@ -17,8 +14,7 @@ wk.register({
 
 wk.register({
     g = {
-        r = { "<cmd>TroubleToggle lsp_references<cr>", "(Trouble)Refrences" },
-        d = { "<cmd>TroubleToggle lsp_definitions<cr>", "(Trouble)Definitions" },
-        -- t = { "<cmd>TroubleToggle lsp_type_definitions<cr>", "(Trouble)Definitions" },
+        r = { "<cmd>Trouble lsp_references focus=true<cr>", "(Trouble)Refrences" },
+        d = { "<cmd>Trouble lsp_definitions<cr>", "(Trouble)Definitions" },
     },
 })
