@@ -8,13 +8,13 @@ M.setup = function()
         },
     })
 
-    --Set set Sway window class
-    if os.getenv("XDG_CURRENT_DESKTOP") == "sway" then
-        local config_group = vim.api.nvim_create_augroup("SessionGroup", {})
-        vim.api.nvim_create_autocmd({ "User" }, {
-            pattern = "SessionLoadPost",
-            group = config_group,
-            callback = function()
+    local config_group = vim.api.nvim_create_augroup("SessionGroup", {})
+    vim.api.nvim_create_autocmd({ "User" }, {
+        pattern = "SessionLoadPost",
+        group = config_group,
+        callback = function()
+            --Set set Sway window class
+            if os.getenv("XDG_CURRENT_DESKTOP") == "sway" then
                 vim.opt.title = true
                 local file_path_split = {}
                 for i in string.gmatch(vim.loop.cwd(), "[^/]+") do
@@ -22,9 +22,12 @@ M.setup = function()
                 end
                 local title = "[" .. file_path_split[#file_path_split - 1] .. "] " .. file_path_split[#file_path_split]
                 vim.opt.titlestring = title
-            end,
-        })
-    end
+            end
+
+            -- Setup harpoon after session is loaded
+            require("weidinger.UI.harpoon")
+        end,
+    })
 end
 
 return M
