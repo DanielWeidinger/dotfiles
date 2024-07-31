@@ -1,13 +1,4 @@
-local wk = require("which-key")
-
-wk.register({
-    g = {
-        name = "Git", -- optional group name
-        s = { ":Git<cr>", "Status" },
-        b = { ":G blame<cr>", "Blame" },
-        d = { ":Gvdiffsplit @~1<cr>", "Diff @~1" },
-        h = { ":GBrowse<cr>", "Open in Web" },
-    },
-}, {
-    prefix = "<leader>",
-})
+vim.keymap.set("n", "<leader>gs", ":Git<cr>", { desc = "Status" })
+vim.keymap.set("n", "<leader>gb", ":G blame<cr>", { desc = "Blame" })
+vim.keymap.set("n", "<leader>gd", ":Gvdiffsplit @~1<cr>", { desc = "Diff @~1" })
+vim.keymap.set("n", "<leader>gh", ":GBrowse<cr>", { desc = "Open in Web" })

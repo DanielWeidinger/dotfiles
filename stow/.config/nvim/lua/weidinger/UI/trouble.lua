@@ -1,20 +1,9 @@
 require("trouble").setup()
 
-local wk = require("which-key")
+-- Leader key mappings for Trouble
+vim.keymap.set("n", "<leader>xr", "<cmd>Trouble lsp_references toggle<cr>", { desc = "Toggle" })
+vim.keymap.set("n", "<leader>xq", "<cmd>Trouble qflist toggle<cr>", { desc = "QFList" })
 
-wk.register({
-    x = {
-        name = "Trouble", -- optional group name
-        r = { "<cmd>Trouble lsp_references toggle<cr>", "Toggle" },
-        q = { "<cmd>Trouble qflist toggle<cr>", "QFList" },
-    },
-}, {
-    prefix = "<leader>",
-})
-
-wk.register({
-    g = {
-        r = { "<cmd>Trouble lsp_references focus=true<cr>", "(Trouble)Refrences" },
-        d = { "<cmd>Trouble lsp_definitions<cr>", "(Trouble)Definitions" },
-    },
-})
+-- Normal mode mappings for Trouble
+vim.keymap.set("n", "gr", "<cmd>Trouble lsp_references focus=true<cr>", { desc = "(Trouble)References" })
+vim.keymap.set("n", "gd", "<cmd>Trouble lsp_definitions<cr>", { desc = "(Trouble)Definitions" })

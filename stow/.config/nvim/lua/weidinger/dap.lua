@@ -89,39 +89,28 @@ for _, language in ipairs({ "typescript", "javascript" }) do
 end
 
 -- overwrite native nvim dialog to use telescope
-require("telescope").load_extension("dap")
+-- require("telescope").load_extension("dap")
 
--- dap.set_log_level('DEBUG')
+-- Define key mappings for DAP Debug group
+vim.keymap.set("n", "<leader>dd", ":lua require'dap'.run()<cr>", { desc = "Launch" })
+vim.keymap.set("n", "<leader>de", ":lua require'dap'.terminate()<cr>", { desc = "End/Terminate" })
+vim.keymap.set("n", "<leader>dl", ":lua require'dap'.step_into()<cr>", { desc = "Into" })
+vim.keymap.set("n", "<leader>dj", ":lua require'dap'.step_over()<cr>", { desc = "Over" })
+vim.keymap.set("n", "<leader>dk", ":lua require'dap'.step_out()<cr>", { desc = "Out" })
+vim.keymap.set("n", "<leader>dh", ":lua require'dap'.step_back()<cr>", { desc = "Back" })
+vim.keymap.set("n", "<leader>dr", ":lua require'dap'.run_to_cursor()<cr>", { desc = "ToCursor" })
+vim.keymap.set("n", "<leader>do", ":lua require'dapui'.toggle()<cr>", { desc = "Toggle full UI" })
+vim.keymap.set("n", "<leader>dO", ":lua require'dapui'.open()<cr>", { desc = "Open full UI" })
+vim.keymap.set("n", "<leader>dw", ":Telescope dap list_breakpoints<cr>", { desc = "Open Watches" })
+vim.keymap.set("n", "<leader>ds", ":call GotoWindow(1004)<cr>", { desc = "Goto Scopes" })
+vim.keymap.set("n", "<leader><leader>", ":lua require'dap'.continue()<cr>", { desc = "Continue" })
+vim.keymap.set("n", "<leader>b", ":lua require'dap'.toggle_breakpoint()<cr>", { desc = "◯ :Toggle" })
 
-local wk = require("which-key")
-wk.register({
-    d = {
-        name = "DAP Debug", -- optional group name
-        d = { ":lua require'dap'.run()<cr>", "Launch" },
-        e = { ":lua require'dap'.terminate()<cr>", "End/Terminate" },
-        l = { ":lua require'dap'.step_into()<cr>", "Into" },
-        j = { ":lua require'dap'.step_over()<cr>", "Over" },
-        k = { ":lua require'dap'.step_out()<cr>", "Out" },
-        h = { ":lua require'dap'.step_back()<cr>", "Back" },
-        r = { ":lua require'dap'.run_to_cursor()<cr>", "ToCursor" },
-        o = { ":lua require'dapui'.toggle()<cr>", "Toggle full UI" },
-        O = { ":lua require'dapui'.open()<cr>", "Open full UI" },
-        w = { ":Telescope dap list_breakpoints<cr>", "Open Watches" },
-        s = { ":call GotoWindow(1004)<cr>", "Goto Scopes" },
-    },
-    ["<leader>"] = { ":lua require'dap'.continue()<cr>", "Continue" },
-    b = { ":lua require'dap'.toggle_breakpoint()<cr>", "◯ :Toggle" },
-}, {
-    prefix = "<leader>",
-})
-
-wk.register({
-    d = {
-        name = "DAP Debug", -- optional group name
-        I = { ":lua require'dap.ui.widgets'.hover()<cr>", "(NATIVE)Eval under cursor" },
-        i = { ":lua require'dapui'.eval()<cr>", "(DAPUI)Eval under cursor" },
-    },
-}, {
-    prefix = "<leader>",
-    mode = { "v", "n" },
-})
+-- Define additional key mappings for DAP Debug group in normal and visual modes
+vim.keymap.set(
+    { "n", "v" },
+    "<leader>dI",
+    ":lua require'dap.ui.widgets'.hover()<cr>",
+    { desc = "(NATIVE)Eval under cursor" }
+)
+vim.keymap.set({ "n", "v" }, "<leader>di", ":lua require'dapui'.eval()<cr>", { desc = "(DAPUI)Eval under cursor" })

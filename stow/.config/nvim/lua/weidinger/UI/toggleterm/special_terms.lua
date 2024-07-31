@@ -28,47 +28,24 @@ M.setup = function(state)
         on_close = on_close,
     })
 
-    local wk = require("which-key")
-    wk.register({
-        t = {
-            name = "Term", -- optional group name
-            g = {
-                function()
-                    lazygit:toggle()
-                end,
-                "git",
-            },
-            d = {
-                function()
-                    lazydocker:toggle()
-                end,
-                "docker",
-            },
-            f = {
-                function()
-                    state.currentDirection = "float"
-                end,
-                "Mode: Float",
-            },
-            h = {
-                function()
-                    state.currentDirection = "horizontal"
-                end,
-                "Mode: Horizontal",
-            },
-            v = {
-                function()
-                    state.currentDirection = "vertical"
-                end,
-                "Mode: Vertical",
-            },
-            t = {
-                function()
-                    utils.toggleTerm(state.currentDirection, state.latestTerm)
-                end,
-                "Mode: Vertical",
-            },
-        },
-    }, { prefix = "<leader>" })
+    -- Leader key mappings for terminal actions
+    vim.keymap.set("n", "<leader>tg", function()
+        lazygit:toggle()
+    end, { desc = "git" })
+    vim.keymap.set("n", "<leader>td", function()
+        lazydocker:toggle()
+    end, { desc = "docker" })
+    vim.keymap.set("n", "<leader>tf", function()
+        state.currentDirection = "float"
+    end, { desc = "Mode: Float" })
+    vim.keymap.set("n", "<leader>th", function()
+        state.currentDirection = "horizontal"
+    end, { desc = "Mode: Horizontal" })
+    vim.keymap.set("n", "<leader>tv", function()
+        state.currentDirection = "vertical"
+    end, { desc = "Mode: Vertical" })
+    vim.keymap.set("n", "<leader>tt", function()
+        utils.toggleTerm(state.currentDirection, state.latestTerm)
+    end, { desc = "Mode: Vertical" })
 end
 return M

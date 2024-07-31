@@ -1,7 +1,7 @@
 local opts = { noremap = true, silent = true }
 
 -- Shorten function name
-local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
 
 keymap("", "<Space>", "<Nop>", { silent = true })
 vim.g.mapleader = " "
@@ -59,3 +59,20 @@ keymap("n", "<A-x>", ":tabclose<CR>", opts)
 keymap("n", "<leader>q", ":copen<CR>", opts)
 keymap("n", "<C-k>", ":cnext<CR>", opts)
 keymap("n", "<C-l>", ":cprev<CR>", opts)
+
+-- Leader key mappings for general actions
+vim.keymap.set("n", "<leader>s", ":source $MYVIMRC<cr>", { desc = "source" })
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>", { desc = "explorer" })
+vim.keymap.set("n", "<leader>m", ":MaximizerToggle!<cr>", { desc = "maximize" })
+vim.keymap.set("n", "<leader>q", ":call ToggleQFList(1)<CR>", { desc = "local qfl" })
+vim.keymap.set("n", "<leader>u", ":UndotreeToggle<CR>", { desc = "Open UndoTree helper" })
+vim.keymap.set("n", "<leader>-", ":call ToggleMouseMode()<CR>", { desc = "local qfl" })
+
+-- Visual mode mappings for renaming
+vim.keymap.set("v", "<leader>s", '"sy:%s/<C-R>s//g<Left><Left>', { desc = "rename all" })
+vim.keymap.set("v", "<leader>S", '"sy:%s/<C-R>s/<C-R>s/g<Left><Left>', { desc = "full rename all" })
+-- vim.keymap.set("v", "<leader>k", [[:s/\%V\w\u\+\(_\w\u\+\)\+/\L\0/g<cr>:s/\%V_\(\w\)/\U\1/g<cr>]], { desc = "Snake to Camel" }) -- uncomment if needed
+
+-- Leader key mappings for spelling and folding
+vim.keymap.set("n", "<leader>zt", ":setlocal spell!<cr>", { desc = "local spelling" })
+vim.keymap.set("n", "<leader>zf", require("weidinger.utils.folds").toggle_ts_folding, { desc = "folds with TS" })
