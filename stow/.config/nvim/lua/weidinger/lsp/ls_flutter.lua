@@ -2,14 +2,12 @@ local handlers = require("weidinger.lsp.handlers")
 local M = {}
 
 M.setup = function()
-    local wk = require("which-key")
-    wk.register({
-        f = {
-            d = { "<cmd>lua require('telescope').extensions.flutter.commands()<cr>", "Flutter commands" },
-        },
-    }, {
-        prefix = "<leader>",
-    })
+    vim.keymap.set(
+        "n",
+        "<leader>fd",
+        "<cmd>lua require('telescope').extensions.flutter.commands()<cr>",
+        { desc = "Flutter commands" }
+    )
 
     require("flutter-tools").setup({
         lsp = {

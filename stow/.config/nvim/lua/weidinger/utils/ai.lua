@@ -20,26 +20,11 @@ let g:copilot_filetypes = {
       \ }
 ]])
 
-local wk = require("which-key")
-wk.register({
-    a = {
-        name = "AI Stuff",
-        a = { ":ChatGPT<cr>", "Launch (GPT)" },
-        e = {
-            function()
-                chatgpt.edit_with_instructions()
-            end,
-            "Edit with instructions (GPT)",
-        },
-        g = {
-            ":ChatGPTRun grammar_correction<cr>",
-            "Grammar (GPT)",
-        },
-        c = { ":Copilot setup <bar>Copilot enable<cr>", "Enable (Copilot)" },
-        d = { ":Copilot disable<cr>", "Disable (Copilot)" },
-        p = { ":Copilot panel<cr>", "Panel (Copilot)" },
-    },
-}, {
-    prefix = "<leader>",
-    mode = { "n", "v" },
-})
+vim.keymap.set({ "n", "v" }, "<leader>aa", ":ChatGPT<cr>", { desc = "Launch (GPT)" })
+vim.keymap.set({ "n", "v" }, "<leader>ae", function()
+    chatgpt.edit_with_instructions()
+end, { desc = "Edit with instructions (GPT)" })
+vim.keymap.set({ "n", "v" }, "<leader>ag", ":ChatGPTRun grammar_correction<cr>", { desc = "Grammar (GPT)" })
+vim.keymap.set({ "n", "v" }, "<leader>ac", ":Copilot setup <bar>Copilot enable<cr>", { desc = "Enable (Copilot)" })
+vim.keymap.set({ "n", "v" }, "<leader>ad", ":Copilot disable<cr>", { desc = "Disable (Copilot)" })
+vim.keymap.set({ "n", "v" }, "<leader>ap", ":Copilot panel<cr>", { desc = "Panel (Copilot)" })

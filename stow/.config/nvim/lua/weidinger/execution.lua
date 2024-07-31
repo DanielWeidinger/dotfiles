@@ -20,20 +20,12 @@ endfunction
 ]])
 
 -- --- Remaps ---
-local wk = require("which-key")
+local jmpBack = ":call JumpBackIfTerminal()<cr>"
 
-local jmpBack = ":call JumpBackIfTerminal()<cr>" --<C-w>r
-wk.register({
-    r = {
-        name = "Run",
-        -- neoterm
-        f = { ":TREPLSendFile<CR>" .. jmpBack, "file" },
-        l = { ":TREPLSendLine<CR>" .. jmpBack, "line" },
-        s = { ":TREPLSendSelection<CR>" .. jmpBack, "selection", mode = "v" },
-    },
-}, {
-    prefix = "<leader>",
-})
+vim.keymap.set("n", "<leader>rf", ":TREPLSendFile<CR>" .. jmpBack, { desc = "file" })
+vim.keymap.set("n", "<leader>rl", ":TREPLSendLine<CR>" .. jmpBack, { desc = "line" })
+vim.keymap.set("v", "<leader>rs", ":TREPLSendSelection<CR>" .. jmpBack, { desc = "selection" })
+
 -- General
 vim.cmd([[autocmd FileType python map <buffer> <F9> :9TermExec direction="vertical" cmd="python %"<CR>]])
 vim.cmd([[autocmd FileType sh map <buffer> <F9> :9TermExec direction="vertical" cmd="./%"<CR>]])

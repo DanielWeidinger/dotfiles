@@ -1,24 +1,14 @@
-local wk = require("which-key")
-
 vim.diagnostic.config({
     float = { border = "single" },
 })
 
-wk.register({
-    c = {
-        name = "Code", -- optional group name
-        a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Action" },
-        r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-        d = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Line Diagnostic" },
-        ["ö"] = { "<cmd>LspRestart<CR>", "Restart Lsp" },
-    },
-}, { prefix = "<leader>" })
+-- Leader key mappings for code actions
+vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", { desc = "Action" })
+vim.keymap.set("n", "<leader>cr", "<cmd>lua vim.lsp.buf.rename()<cr>", { desc = "Rename" })
+vim.keymap.set("n", "<leader>cd", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Line Diagnostic" })
+vim.keymap.set("n", "<leader>cö", "<cmd>LspRestart<CR>", { desc = "Restart Lsp" })
 
--- Using trouble for navigation rather than QL list
-wk.register({
-    g = {
-        D = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Go to declaration" },
-    },
-    ["Ö"] = { "<cmd>lua vim.diagnostic.goto_next()<CR>", "Go to next Diagnostic" },
-    ["Ä"] = { "<cmd>lua vim.diagnostic.goto_prev()<CR>", "Go to prev Diagnostic" },
-})
+-- Normal mode mappings for navigation using trouble
+vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { desc = "Go to declaration" })
+vim.keymap.set("n", "Ö", "<cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "Go to next Diagnostic" })
+vim.keymap.set("n", "Ä", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { desc = "Go to prev Diagnostic" })

@@ -24,27 +24,19 @@ telescope.setup({
 telescope.load_extension("fzy_native")
 telescope.load_extension("ui-select")
 
-local wk = require("which-key")
-wk.register({
-    f = {
-        name = "Telescope", -- optional group name
-        -- F = { "<cmd>Telescope find_files<cr>", "Find file" }, -- create a binding with label
-        f = {
-            ":lua require'telescope.builtin'.find_files({ hidden = true, find_command = { 'rg', '--files', '--hidden', '--no-ignore-vcs', '--glob', '!{**/dist/*,**/node_modules/*,**/.git/*}' },  })<cr>",
-            "Find all files",
-        }, -- Search though all files
-        -- F = { "<cmd>Telescope git_files<cr>", "Find non-ignored File" }, -- create a binding with label
-        o = { "<cmd>Telescope oldfiles<cr>", "prev. opened" }, -- create a binding with label
-        c = { "<cmd>Telescope command_history<cr>", "prev. commands" }, -- create a binding with label
-        ["&"] = { "<cmd>Telescope colorscheme<cr>", "avaliable colorschemes" }, -- create a binding with label
-        g = { "<cmd>Telescope live_grep<cr>", "Grep" }, -- create a binding with label
-        b = { "<cmd>Telescope buffers<cr>", "Buffers" },
-        h = { "<cmd>Telescope help_tags<cr>", "Help tags" },
-        r = { "<cmd>Telescope reloader<cr>", "Reload modules" },
-        t = { "<cmd>Telescope tasks specs<cr>", "Tasks" },
-        T = { "<cmd>TodoTelescope<cr>", "Todos" },
-        s = { "<cmd>SessionManager load_session<cr>", "Load Session" }, --SessionCommands
-    },
-}, {
-    prefix = "<leader>",
-})
+vim.keymap.set(
+    "n",
+    "<leader>ff",
+    ":lua require'telescope.builtin'.find_files({ hidden = true, find_command = { 'rg', '--files', '--hidden', '--no-ignore-vcs', '--glob', '!{**/dist/*,**/node_modules/*,**/.git/*}' } })<cr>",
+    { desc = "Find all files" }
+)
+vim.keymap.set("n", "<leader>fo", "<cmd>Telescope oldfiles<cr>", { desc = "prev. opened" })
+vim.keymap.set("n", "<leader>fc", "<cmd>Telescope command_history<cr>", { desc = "prev. commands" })
+vim.keymap.set("n", "<leader>f&", "<cmd>Telescope colorscheme<cr>", { desc = "avaliable colorschemes" })
+vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Grep" })
+vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Buffers" })
+vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Help tags" })
+vim.keymap.set("n", "<leader>fr", "<cmd>Telescope reloader<cr>", { desc = "Reload modules" })
+vim.keymap.set("n", "<leader>ft", "<cmd>Telescope tasks specs<cr>", { desc = "Tasks" })
+vim.keymap.set("n", "<leader>fT", "<cmd>TodoTelescope<cr>", { desc = "Todos" })
+vim.keymap.set("n", "<leader>fs", "<cmd>SessionManager load_session<cr>", { desc = "Load Session" })

@@ -1,25 +1,15 @@
 vim.g["open_url_default_mappings"] = 0 -- disable default mappings
 
-local wk = require("which-key")
+-- Normal mode mappings
+vim.keymap.set("n", "gB", "<Plug>(open-url-browser)", { desc = "Open url under cursor" })
+vim.keymap.set("n", "gG", "<Plug>(open-url-search-google)", { desc = "Google search word under cursor" })
+vim.keymap.set("n", "gW", "<Plug>(open-url-search-wikipedia)", { desc = "Wiki search word under cursor" })
+-- vim.keymap.set("n", "g<CR>", "<Plug>(open-url-search)", { desc = "DuckDuckGo search word under cursor" }) -- uncomment if needed
+-- vim.keymap.set("n", "gS", "<Plug>(open-url-search-so)", { desc = "StackOverflow search word under cursor" }) -- uncomment if needed
 
--- https://www.google.com/
-
-wk.register({
-    g = {
-        B = { "<Plug>(open-url-browser)", "Open url under cursor" },
-        G = { "<Plug>(open-url-search-google)", "Google search word under cursor" },
-        W = { "<Plug>(open-url-search-wikipedia)", "Wiki search word under cursor" },
-        -- ["<CR>"] = {"<Plug>(open-url-search)", ""}, -- duckduckgo
-        -- S = {"<Plug>(open-url-search-so)", ""}, --stackoverflow
-    },
-})
-
-wk.register({
-    g = {
-        B = { "<Plug>(open-url-browser)", "Open url selection" },
-        G = { "<Plug>(open-url-search-google)", "Google search selection" },
-        W = { "<Plug>(open-url-search-wikipedia)", "Wiki searc selection" },
-        -- ["<CR>"] = {"<Plug>(open-url-search)", ""}, -- duckduckgo
-        -- S = {"<Plug>(open-url-search-so)", ""}, --stackoverflow
-    },
-}, { mode = "x" })
+-- Visual mode mappings
+vim.keymap.set("x", "gB", "<Plug>(open-url-browser)", { desc = "Open url selection" })
+vim.keymap.set("x", "gG", "<Plug>(open-url-search-google)", { desc = "Google search selection" })
+vim.keymap.set("x", "gW", "<Plug>(open-url-search-wikipedia)", { desc = "Wiki search selection" })
+-- vim.keymap.set("x", "g<CR>", "<Plug>(open-url-search)", { desc = "DuckDuckGo search selection" }) -- uncomment if needed
+-- vim.keymap.set("x", "gS", "<Plug>(open-url-search-so)", { desc = "StackOverflow search selection" }) -- uncomment if needed

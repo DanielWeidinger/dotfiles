@@ -83,17 +83,9 @@ return packer.startup(function(use)
         "untitled-ai/jupyter_ascending.vim",
         ft = { "python" },
         setup = function()
-            local wk = require("which-key")
-            wk.register({
-                j = {
-                    name = "Jupyter",
-                    j = { "<Plug>JupyterExecute", "Execute cell" },
-                    a = { "<Plug>JupyterExecuteAll", "Execute all cells" },
-                    r = { "<Plug>JupyterRestart", "Restart Kernel" },
-                },
-            }, {
-                prefix = "<leader>",
-            })
+            vim.keymap.set("n", "<leader>jj", "<Plug>JupyterExecute", { desc = "Execute cell" })
+            vim.keymap.set("n", "<leader>ja", "<Plug>JupyterExecuteAll", { desc = "Execute all cells" })
+            vim.keymap.set("n", "<leader>jr", "<Plug>JupyterRestart", { desc = "Restart Kernel" })
         end,
     })
 
@@ -264,6 +256,7 @@ return packer.startup(function(use)
     -- use("nvim-neotest/neotest")
     -- use("haydenmeade/neotest-jest")
 
+    --
     -- Fuzzy finding
     use("nvim-telescope/telescope.nvim")
     use("nvim-telescope/telescope-fzy-native.nvim")
