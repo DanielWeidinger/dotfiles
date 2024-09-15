@@ -38,20 +38,6 @@ fun GotoWindow(id)
 endfun
 ]])
 
-vim.cmd([[
-let g:current_mouse_mode = 0
-
-fun! ToggleMouseMode()
-if g:current_mouse_mode == 1
-    set mouse=
-    let g:current_mouse_mode = 0
-else
-    set mouse=n
-    let g:current_mouse_mode = 1
-    endif
-endfun
-]])
-
 --- Check if a file or directory exists in this path
 function Exists(file)
     local ok, err, code = os.rename(file, file)
@@ -71,4 +57,3 @@ require("weidinger.utils.tasks")
 require("weidinger.utils.case_conversion")
 require("weidinger.utils.hover")
 require("weidinger.utils.ai")
-require("weidinger.utils.leap")

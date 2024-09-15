@@ -33,7 +33,8 @@ keymap("n", "ö", "}", opts)
 keymap("n", "ä", "{", opts)
 keymap("v", "ö", "}", opts)
 keymap("v", "ä", "{", opts)
--- keymap("n", "ü", ":HopWord<cr>", opts)
+-- mark navigation
+keymap({ "n", "v" }, "ü", "'", opts)
 
 -- Ctrl + s for buffer writing
 keymap("n", "<C-S>", ":update<CR>", opts)
@@ -64,9 +65,11 @@ keymap("n", "<C-l>", ":cprev<CR>", opts)
 vim.keymap.set("n", "<leader>s", ":source $MYVIMRC<cr>", { desc = "source" })
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>", { desc = "explorer" })
 vim.keymap.set("n", "<leader>m", ":MaximizerToggle!<cr>", { desc = "maximize" })
-vim.keymap.set("n", "<leader>q", ":call ToggleQFList(1)<CR>", { desc = "local qfl" })
 vim.keymap.set("n", "<leader>u", ":UndotreeToggle<CR>", { desc = "Open UndoTree helper" })
-vim.keymap.set("n", "<leader>-", ":call ToggleMouseMode()<CR>", { desc = "local qfl" })
+-- QF list
+vim.keymap.set("n", "<leader>q", ":call ToggleQFList(1)<CR>", { desc = "local qfl" })
+vim.keymap.set("n", "<leader>ö", ":cnext<CR>", { desc = "next qf list item" })
+vim.keymap.set("n", "<leader>ä", ":cprev<CR>", { desc = "previous qf list item" })
 
 -- Visual mode mappings for renaming
 vim.keymap.set("v", "<leader>s", '"sy:%s/<C-R>s//g<Left><Left>', { desc = "rename all" })
