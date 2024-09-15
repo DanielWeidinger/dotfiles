@@ -6,6 +6,7 @@ inode/directory=org.gnome.Nautilus.desktop
 x-scheme-handler/http=firefox.desktop
 x-scheme-handler/https=firefox.desktop
 text/plain=libreoffice-writer.desktop
+text/csv=libreoffice-calc.desktop
 
 [Added Associations]
 text/plain=libreoffice-writer.desktop;
