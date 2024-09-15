@@ -119,9 +119,13 @@ return packer.startup(function(use)
 
     use({ "GustavoKatel/tasks.nvim", requires = { "nvim-lua/plenary.nvim" } })
 
-    use({
-        "ggandor/leap.nvim",
-    })
+    -- use({
+    --     "ggandor/leap.nvim",
+    --     config = function ()
+    --         require("weidinger.utils.leap")
+    --     end
+    -- })
+
     use({
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
@@ -148,7 +152,7 @@ return packer.startup(function(use)
     -- Autocomple + Sources
     use("hrsh7th/cmp-nvim-lsp")
     use("hrsh7th/cmp-buffer")
-    use({ "hrsh7th/nvim-cmp", commit = "b356f2c" })
+    use("hrsh7th/nvim-cmp")
     use("hrsh7th/cmp-vsnip")
     use("hrsh7th/cmp-path")
     use("hrsh7th/cmp-cmdline")
