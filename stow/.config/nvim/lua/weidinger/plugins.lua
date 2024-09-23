@@ -147,7 +147,11 @@ return packer.startup(function(use)
 
     -- LSP
     use("neovim/nvim-lspconfig")
-    use("jose-elias-alvarez/null-ls.nvim")
+    use("nvimtools/none-ls-extras.nvim")
+    use({ "nvimtools/none-ls.nvim", dependencies = {
+        "nvimtools/none-ls-extras.nvim",
+    } })
+
     use("lukas-reineke/lsp-format.nvim") -- wrapper around LSP formatting to not have to worry about implementation
     -- Autocomple + Sources
     use("hrsh7th/cmp-nvim-lsp")

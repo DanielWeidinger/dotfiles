@@ -13,7 +13,7 @@ lspconfig.pyright.setup({
 lspconfig.dockerls.setup({ capabilities = Capabilities, on_attach = handlers.on_attach_format })
 lspconfig.bashls.setup({ capabilities = Capabilities })
 
-lspconfig.tsserver.setup({
+lspconfig.ts_ls.setup({
     capabilities = Capabilities,
 })
 
