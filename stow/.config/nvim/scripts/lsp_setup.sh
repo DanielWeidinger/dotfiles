@@ -5,7 +5,7 @@ sudo npm install -g typescript typescript-language-server
 
 echo --Python
 sudo npm install -g pyright
-sudo pacman -S autopep8 --noconfirm
+sudo pacman -S ruff --noconfirm
 
 echo --Docker
 sudo npm install -g dockerfile-language-server-nodejs
