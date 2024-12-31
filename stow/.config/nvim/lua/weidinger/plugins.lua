@@ -53,7 +53,15 @@ return packer.startup(function(use)
         end,
     })
 
+    -- Filesystem
     use("kyazdani42/nvim-tree.lua")
+    use({
+        "stevearc/oil.nvim",
+        config = function()
+            require("oil").setup()
+        end,
+    })
+
     use({
         "numToStr/Comment.nvim",
         config = function()
@@ -75,6 +83,7 @@ return packer.startup(function(use)
     -- Icons
     use("ryanoasis/vim-devicons")
     use("nvim-tree/nvim-web-devicons") -- for folke's Trouble plugin
+    use({ "echasnovski/mini.icons", version = "*" })
 
     -- Terminal functionality and execution
     use({ "akinsho/toggleterm.nvim", tag = "*" })
