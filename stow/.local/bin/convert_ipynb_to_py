@@ -1,0 +1,7 @@
+#!/bin/bash
+
+eval "$(conda shell.bash hook)"
+
+conda activate scripts
+python "$HOME/.local/bin/convert_ipynb_to_py".py $1
+
