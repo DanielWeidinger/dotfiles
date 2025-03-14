@@ -57,9 +57,6 @@ return packer.startup(function(use)
     use("kyazdani42/nvim-tree.lua")
     use({
         "stevearc/oil.nvim",
-        config = function()
-            require("oil").setup()
-        end,
     })
 
     use({

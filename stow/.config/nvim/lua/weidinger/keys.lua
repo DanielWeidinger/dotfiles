@@ -64,7 +64,6 @@ keymap("n", "<C-l>", ":cprev<CR>", opts)
 -- Leader key mappings for general actions
 vim.keymap.set("n", "<leader>s", ":source $MYVIMRC<cr>", { desc = "source" })
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>", { desc = "explorer" })
-vim.keymap.set("n", "<leader>E", ":vsplit<cr>:e .<cr>", { desc = "oil.nvim" })
 vim.keymap.set("n", "<leader>m", ":MaximizerToggle!<cr>", { desc = "maximize" })
 vim.keymap.set("n", "<leader>u", ":UndotreeToggle<CR>", { desc = "Open UndoTree helper" })
 -- QF list

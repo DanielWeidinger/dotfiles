@@ -2,8 +2,8 @@
 vim.loader.enable()
 
 -- require files
-require("weidinger.plugins")
 require("weidinger.general")
+require("weidinger.plugins")
 require("weidinger.keys")
 
 require("weidinger.utils")
