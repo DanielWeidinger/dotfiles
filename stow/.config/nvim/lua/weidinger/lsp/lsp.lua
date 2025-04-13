@@ -50,7 +50,6 @@ lspconfig.jsonls.setup({
         },
     },
 })
-
 -- add yaml schema definitions
 local json_schemas = require("schemastore").json.schemas({})
 local yaml_schemas = {}
@@ -74,3 +73,4 @@ lspconfig.yamlls.setup({
 })
 
 lspconfig.texlab.setup({})
+lspconfig.clangd.setup({})

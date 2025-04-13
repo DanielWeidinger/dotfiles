@@ -17,5 +17,6 @@ null_ls.setup({
         -- null_ls.builtins.code_actions.gitsigns,
         require("none-ls.formatting.ruff_format"),
         null_ls.builtins.formatting.shfmt, -- shell script formatting
+        null_ls.builtins.formatting.clang_format,
     },
 })

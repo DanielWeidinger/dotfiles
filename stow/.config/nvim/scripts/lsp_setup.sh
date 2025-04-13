@@ -28,6 +28,9 @@ sudo npm install -g emmet-ls
 echo --eslint + prettier
 sudo npm install -g eslint_d @fsouza/prettierd
 
+echo --C/C++
+sudo pacman -S clang
+
 echo --Lua
 langserver_dir="$HOME/.local/share/nvim/lang-servers"
 if [ ! -d "$langserver_dir" ]; then

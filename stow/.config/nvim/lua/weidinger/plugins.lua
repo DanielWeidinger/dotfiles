@@ -84,7 +84,6 @@ return packer.startup(function(use)
 
     -- Terminal functionality and execution
     use({ "akinsho/toggleterm.nvim", tag = "*" })
-    use("kassio/neoterm")
     use({
         "untitled-ai/jupyter_ascending.vim",
         ft = { "python" },
@@ -123,7 +122,7 @@ return packer.startup(function(use)
     })
     -- use({ "github/copilot.vim" })
 
-    use({ "GustavoKatel/tasks.nvim", requires = { "nvim-lua/plenary.nvim" } })
+    use("stevearc/overseer.nvim")
 
     -- use({
     --     "ggandor/leap.nvim",
