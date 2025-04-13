@@ -61,10 +61,16 @@ table.insert(dap.configurations.python, {
     python = vim.g.python3_host_prog,
 })
 -- node
-require("dap-vscode-js").setup({
-    debugger_path = vim.fn.stdpath("data") .. "/debugger/vscode-js-debug",
-    adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" }, -- which adapters to register in nvim-dap
-})
+local debuggerPath = vim.fn.stdpath("data") .. "/debugger/vscode-js-debug/dist/src/dapDebugServer.js"
+require("dap").adapters["pwa-node"] = {
+    type = "server",
+    host = "localhost",
+    port = "${port}",
+    executable = {
+        command = "node",
+        args = { debuggerPath, "${port}" },
+    },
+}
 
 for _, language in ipairs({ "typescript", "javascript" }) do
     dap.configurations[language] = {
@@ -78,15 +84,17 @@ for _, language in ipairs({ "typescript", "javascript" }) do
             localRoot = vim.fn.getcwd(),
             remoteRoot = "/usr/src/app",
         },
-        {
-            type = "pwa-node",
-            request = "launch",
-            name = "Launch file",
-            program = "${file}",
-            cwd = "${workspaceFolder}",
-        },
     }
 end
+-- C++
+dap.adapters.codelldb = {
+    type = "server",
+    port = "${port}",
+    executable = {
+        command = "codelldb",
+        args = { "--port", "${port}" },
+    },
+}
 
 -- overwrite native nvim dialog to use telescope
 -- require("telescope").load_extension("dap")

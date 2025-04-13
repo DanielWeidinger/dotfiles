@@ -9,5 +9,4 @@ cd ~/.local/share/nvim/debugger
 git clone git@github.com:microsoft/vscode-js-debug.git
 cd vscode-js-debug
 npm install --legacy-peer-deps
-npx gulp vsDebugServerBundle
-mv dist out
+npx gulp dapDebugServer

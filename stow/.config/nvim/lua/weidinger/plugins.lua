@@ -255,7 +255,6 @@ return packer.startup(function(use)
     use("theHamsta/nvim-dap-virtual-text")
     use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } })
     use("mfussenegger/nvim-dap-python")
-    use({ "mxsdev/nvim-dap-vscode-js", requires = { "mfussenegger/nvim-dap" } })
     use("nvim-telescope/telescope-dap.nvim")
     use("rcarriga/cmp-dap")
 
