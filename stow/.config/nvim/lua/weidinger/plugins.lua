@@ -68,7 +68,7 @@ return packer.startup(function(use)
 
     -- Hex code colorization
     use({
-        "NvChad/nvim-colorizer.lua",
+        "catgoose/nvim-colorizer.lua",
         config = function()
             require("colorizer").setup()
         end,
@@ -78,8 +78,7 @@ return packer.startup(function(use)
     -- use("willothy/nvim-cokeline")
 
     -- Icons
-    use("ryanoasis/vim-devicons")
-    use("nvim-tree/nvim-web-devicons") -- for folke's Trouble plugin
+    use("nvim-tree/nvim-web-devicons")
     use({ "echasnovski/mini.icons", version = "*" })
 
     -- Terminal functionality and execution
@@ -100,7 +99,7 @@ return packer.startup(function(use)
         config = function()
             require("gitsigns").setup()
         end,
-    }) -- GitGutter and diff in Airline
+    }) -- mainly for GitGutter
     use("tpope/vim-fugitive") -- Basic git functionality
     use("tpope/vim-rhubarb") -- Adds Browse command to open in the web
 
@@ -159,9 +158,9 @@ return packer.startup(function(use)
 
     use("lukas-reineke/lsp-format.nvim") -- wrapper around LSP formatting to not have to worry about implementation
     -- Autocomple + Sources
+    use("hrsh7th/nvim-cmp")
     use("hrsh7th/cmp-nvim-lsp")
     use("hrsh7th/cmp-buffer")
-    use("hrsh7th/nvim-cmp")
     use("hrsh7th/cmp-vsnip")
     use("hrsh7th/cmp-path")
     use("hrsh7th/cmp-cmdline")
@@ -218,13 +217,6 @@ return packer.startup(function(use)
 
     -- Which key to show leader commands
     use("folke/which-key.nvim")
-    -- Pretty code diagnostics
-    use({
-        "folke/lsp-colors.nvim",
-        config = function()
-            require("lsp-colors").setup()
-        end,
-    })
     use("folke/trouble.nvim")
     -- use("folke/neodev.nvim")
 

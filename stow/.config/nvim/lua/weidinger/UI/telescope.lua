@@ -37,6 +37,5 @@ vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Grep
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Buffers" })
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Help tags" })
 vim.keymap.set("n", "<leader>fr", "<cmd>Telescope reloader<cr>", { desc = "Reload modules" })
-vim.keymap.set("n", "<leader>ft", "<cmd>Telescope tasks specs<cr>", { desc = "Tasks" })
-vim.keymap.set("n", "<leader>fT", "<cmd>TodoTelescope<cr>", { desc = "Todos" })
+vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Todos" })
 vim.keymap.set("n", "<leader>fs", "<cmd>SessionManager load_session<cr>", { desc = "Load Session" })
