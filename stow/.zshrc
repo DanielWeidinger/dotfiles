@@ -61,4 +61,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+source <(fzf --zsh)
+
 source "$HOME/aliases.zsh"
