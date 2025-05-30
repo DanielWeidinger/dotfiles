@@ -1,0 +1,19 @@
+{
+  "latex_correction": {
+    "type": "chat",
+    "opts": {
+      "template": "Correct this to standard {{lang}}, if there are any latex commands leave them as they are:\n\n{{input}}",
+      "strategy": "replace",
+      "params": {
+        "model": "gpt-3.5-turbo"
+      }
+    },
+    "args": {
+      "lang": {
+        "type": "string",
+        "optional": "true",
+        "default": "german"
+      }
+    }
+  }
+}

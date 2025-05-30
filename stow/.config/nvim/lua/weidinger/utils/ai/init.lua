@@ -3,6 +3,7 @@ require("chatgpt").setup({
     popup_input = {
         submit = "<cr>",
     },
+    actions_paths = { vim.fn.stdpath("config") .. "/lua/weidinger/utils/ai/actions.json" },
 })
 
 local chatgpt = require("chatgpt")
@@ -24,7 +25,8 @@ vim.keymap.set({ "n", "v" }, "<leader>aa", ":ChatGPT<cr>", { desc = "Launch (GPT
 vim.keymap.set({ "n", "v" }, "<leader>ae", function()
     chatgpt.edit_with_instructions()
 end, { desc = "Edit with instructions (GPT)" })
-vim.keymap.set({ "n", "v" }, "<leader>ag", ":ChatGPTRun grammar_correction<cr>", { desc = "Grammar (GPT)" })
+vim.keymap.set({ "n", "v" }, "<leader>ag", ":ChatGPTRun grammar_correction<cr>", { desc = "Grammar English (GPT)" })
+vim.keymap.set({ "n", "v" }, "<leader>at", ":ChatGPTRun latex_correction<cr>", { desc = "German (GPT)" })
 vim.keymap.set({ "n", "v" }, "<leader>ac", ":Copilot setup <bar>Copilot enable<cr>", { desc = "Enable (Copilot)" })
 vim.keymap.set({ "n", "v" }, "<leader>ad", ":Copilot disable<cr>", { desc = "Disable (Copilot)" })
 vim.keymap.set({ "n", "v" }, "<leader>ap", ":Copilot panel<cr>", { desc = "Panel (Copilot)" })
