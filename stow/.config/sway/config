@@ -22,7 +22,7 @@ client.focused_inactive #5e81ac #4c566a #ffffff
 client.urgent #bf616a #d08770 #ffffff 
 # Window config
 for_window [shell="xwayland"] title_format "%title [XWayland]"
-for_window [title="Spotify"] title_format "  %title"
+for_window [class="Spotify"] title_format "  %title"
 for_window [app_id="Alacritty"] title_format "  %title"
 for_window [class="pomotroid"] move scratchpad; scratchpad show
 
@@ -36,8 +36,8 @@ set $right l
 
 # Your preferred tools
 set $term alacritty
-set $browser firefox
-set $sec_browser chromium
+set $browser zen-browser
+set $sec_browser firefox
 set $sway_path ~/.config/sway
 set $file_explorer nautilus
 set $menu wofi --show=drun --lines=10 --prompt="" --allow-images
@@ -131,6 +131,10 @@ input "1739:52862:VEN_06CB:00_06CB:CE7E_Touchpad" {
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
 
+    # Switch to adjecent Workspaces
+    bindsym $mod+Ctrl+h workspace prev
+    bindsym $mod+Ctrl+l workspace next
+
 # Workspaces:
     # Switch to workspace
     bindsym $mod+1 workspace number 1
@@ -179,10 +183,11 @@ input "1739:52862:VEN_06CB:00_06CB:CE7E_Touchpad" {
 # Scratchpad:
     bindsym $mod+Shift+minus move scratchpad
     bindsym $mod+minus scratchpad show
-    bindsym $mod+alt+Return [app_id="Alacritty"] scratchpad show; move position center; resize set 70ppt 70ppt
-    bindsym $mod+alt+u [app_id="org.gnome.Nautilus"] scratchpad show; move position center; resize set 70ppt 70ppt
-    bindsym $mod+alt+b [app_id="firefox"] scratchpad show; move position center; resize set 70ppt 70ppt
-    bindsym $mod+alt+m [class="Spotify"] scratchpad show; move position center; resize set 70ppt 70ppt
+
+    bindsym $mod+Alt+Return [app_id="Alacritty"] scratchpad show; move position center; resize set 70ppt 70ppt
+    bindsym $mod+Alt+u [app_id="org.gnome.Nautilus"] scratchpad show; move position center; resize set 70ppt 70ppt
+    bindsym $mod+Alt+b [app_id="firefox"] scratchpad show; move position center; resize set 70ppt 70ppt
+    bindsym $mod+Alt+m [class="Spotify"] scratchpad show; move position center; resize set 70ppt 70ppt
 
 # Resizing containers:
 mode "resize" {
