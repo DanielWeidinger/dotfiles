@@ -219,6 +219,13 @@ return packer.startup(function(use)
     use("folke/which-key.nvim")
     use("folke/trouble.nvim")
     -- use("folke/neodev.nvim")
+    use({
+        "m4xshen/hardtime.nvim",
+        dependencies = { "MunifTanjim/nui.nvim" },
+        config = function()
+            require("hardtime").setup()
+        end,
+    })
 
     use({
         "nvim-treesitter/nvim-treesitter",

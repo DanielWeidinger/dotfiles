@@ -39,7 +39,7 @@ set $term alacritty
 set $browser zen-browser
 set $sec_browser firefox
 set $sway_path ~/.config/sway
-set $file_explorer nautilus
+set $file_explorer xdg-open ~
 set $menu wofi --show=drun --lines=10 --prompt="" --allow-images
 
 # Cycle through random wallpapers
