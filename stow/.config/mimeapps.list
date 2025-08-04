@@ -6,6 +6,7 @@ text/csv=libreoffice-calc.desktop
 application/pdf=zen.desktop
 x-scheme-handler/chrome=zen.desktop
 text/html=zen.desktop
+inode/directory=org.gnome.Nautilus.desktop
 application/x-extension-htm=zen.desktop
 application/x-extension-html=zen.desktop
 application/x-extension-shtml=zen.desktop

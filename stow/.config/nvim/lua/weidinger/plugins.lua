@@ -194,6 +194,9 @@ return packer.startup(function(use)
     use("hrsh7th/vim-vsnip")
     use("rafamadriz/friendly-snippets")
 
+    --Macros
+    use({ "kr40/nvim-macros" })
+
     -- Previewers
     use({
         "iamcco/markdown-preview.nvim",
