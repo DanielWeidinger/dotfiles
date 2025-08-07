@@ -197,16 +197,7 @@ return packer.startup(function(use)
     --Macros
     use({ "kr40/nvim-macros" })
 
-    -- Previewers
-    use({
-        "iamcco/markdown-preview.nvim",
-        run = "cd app && npm install",
-        setup = function()
-            vim.g.mkdp_filetypes = { "markdown" }
-        end,
-        ft = { "markdown" },
-    })
-
+    --Latex
     use({
         "lervag/vimtex",
         setup = function()
@@ -237,18 +228,6 @@ return packer.startup(function(use)
 
     use("windwp/nvim-autopairs")
     use({ "windwp/nvim-ts-autotag" })
-
-    -- todo finder and highlighting
-    use({
-        "folke/todo-comments.nvim",
-        config = function()
-            require("todo-comments").setup({
-                search = {
-                    command = "rg",
-                },
-            })
-        end,
-    })
 
     -- DAP
     use("mfussenegger/nvim-dap")
