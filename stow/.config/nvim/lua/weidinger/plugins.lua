@@ -43,6 +43,8 @@ return packer.startup(function(use)
 
     -- Nvim utils(need for some plugs(e.g. todo))
     use("nvim-lua/plenary.nvim")
+    use({ "MunifTanjim/nui.nvim" })
+
     -- use 'DanielWeidinger/nvim-sshfs'
 
     -- Session managment(wrapper around mksession)
@@ -75,7 +77,6 @@ return packer.startup(function(use)
     })
     -- Fancy bar
     use("nvim-lualine/lualine.nvim")
-    -- use("willothy/nvim-cokeline")
 
     -- Icons
     use("nvim-tree/nvim-web-devicons")
@@ -110,7 +111,7 @@ return packer.startup(function(use)
     -- Browser utils
     use("dhruvasagar/vim-open-url")
 
-    use({ "MunifTanjim/nui.nvim" })
+    -- AI
     use({
         "jackMort/ChatGPT.nvim",
         requires = {
@@ -119,16 +120,9 @@ return packer.startup(function(use)
             "nvim-telescope/telescope.nvim",
         },
     })
-    -- use({ "github/copilot.vim" })
 
+    -- Task Executor
     use("stevearc/overseer.nvim")
-
-    -- use({
-    --     "ggandor/leap.nvim",
-    --     config = function ()
-    --         require("weidinger.utils.leap")
-    --     end
-    -- })
 
     use({
         "ThePrimeagen/harpoon",
@@ -207,6 +201,15 @@ return packer.startup(function(use)
             ]])
         end,
         ft = { "tex" },
+    })
+    --Markdown viewer
+    use({
+        "MeanderingProgrammer/render-markdown.nvim",
+        after = { "nvim-treesitter" },
+        requires = { "nvim-tree/nvim-web-devicons", opt = true },
+        config = function()
+            require("render-markdown").setup({})
+        end,
     })
 
     -- Which key to show leader commands
