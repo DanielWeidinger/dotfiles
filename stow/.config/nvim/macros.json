@@ -1,1 +1,1 @@
-{"macros": [{"name": "id1", "raw": "ZGRkZjqA/TVBLBtqZGQ=", "content": "dddf:<Ignore>A,<Esc>jdd"}]}
+{"macros": [{"name": "id1", "raw": "ZGRkZjqA/TVBLBtqZGQ=", "content": "dddf:<Ignore>A,<Esc>jdd"}, {"name": "workernode from backend", "raw": "QS4uDXdyb4BrYoBrYm9ya2Vybm9kZQ1jb25kYSBhY3RpdmF0ZSBkZXNrcGlsb3QNcHl0aGlugGtigGtib24gbWFpbi5weQ2A/ARK", "content": "A..<CR>wro<BS><BS>orkernode<CR>conda<Space>activate<Space>deskpilot<CR>pythin<BS><BS>on<Space>main.py<CR><C-J>"}]}

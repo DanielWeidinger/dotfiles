@@ -53,23 +53,11 @@ keymap("n", "<C-x>", ":bp<bar>sp<bar>bn<bar>bd<CR>", opts)
 keymap("n", "<C-c>", ":close<CR>", opts)
 keymap("n", "<leader><C-x>", ":call CloseExtraWindows()<bar>:qa<CR>", opts)
 
--- Tab functionality
-keymap("n", "<A-x>", ":tabclose<CR>", opts)
-
--- QFlist functionality
-keymap("n", "<leader>q", ":copen<CR>", opts)
-keymap("n", "<C-k>", ":cnext<CR>", opts)
-keymap("n", "<C-l>", ":cprev<CR>", opts)
-
 -- Leader key mappings for general actions
 vim.keymap.set("n", "<leader>s", ":source $MYVIMRC<cr>", { desc = "source" })
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>", { desc = "explorer" })
 vim.keymap.set("n", "<leader>m", ":MaximizerToggle!<cr>", { desc = "maximize" })
 vim.keymap.set("n", "<leader>u", ":UndotreeToggle<CR>", { desc = "Open UndoTree helper" })
--- QF list
-vim.keymap.set("n", "<leader>q", ":call ToggleQFList(1)<CR>", { desc = "local qfl" })
-vim.keymap.set("n", "<leader>ö", ":cnext<CR>", { desc = "next qf list item" })
-vim.keymap.set("n", "<leader>ä", ":cprev<CR>", { desc = "previous qf list item" })
 
 -- Visual mode mappings for renaming
 vim.keymap.set("v", "<leader>s", '"sy:%s/<C-R>s//g<Left><Left>', { desc = "rename all" })

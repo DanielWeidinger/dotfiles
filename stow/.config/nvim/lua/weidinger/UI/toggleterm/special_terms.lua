@@ -1,4 +1,3 @@
-local utils = require("weidinger.UI.toggleterm.utils")
 local M = {}
 M.setup = function(state)
     local on_open = function(term)
@@ -43,9 +42,6 @@ M.setup = function(state)
     end, { desc = "Mode: Horizontal" })
     vim.keymap.set("n", "<leader>tv", function()
         state.currentDirection = "vertical"
-    end, { desc = "Mode: Vertical" })
-    vim.keymap.set("n", "<leader>tt", function()
-        utils.toggleTerm(state.currentDirection, state.latestTerm)
     end, { desc = "Mode: Vertical" })
 end
 return M

@@ -11,7 +11,7 @@ null_ls.setup({
         }),
         require("none-ls.diagnostics.eslint_d").with({
             condition = function(utils)
-                return utils.root_has_file({ "eslint.json", "eslintrc.json", ".eslintrc.json", "eslint.js" })
+                return utils.root_has_file({ "eslintrc.json", ".eslintrc.json" })
             end,
         }),
         -- null_ls.builtins.code_actions.gitsigns,
