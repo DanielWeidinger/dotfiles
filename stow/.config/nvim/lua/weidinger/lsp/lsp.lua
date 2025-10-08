@@ -1,31 +1,38 @@
-local lspconfig = require("lspconfig")
 local handlers = require("weidinger.lsp.handlers")
 
 vim.lsp.handlers["textDocument/formatting"] = handlers.async_formatting
 
-lspconfig.pyright.setup({
+vim.lsp.config("pyright", {
     capabilities = Capabilities,
     on_attach = handlers.on_attach_format,
     root_dir = function(_)
         return vim.loop.cwd()
     end,
 })
-lspconfig.dockerls.setup({ capabilities = Capabilities, on_attach = handlers.on_attach_format })
-lspconfig.bashls.setup({ capabilities = Capabilities })
+vim.lsp.enable("pyright")
 
-lspconfig.ts_ls.setup({
+vim.lsp.config("dockerls", { capabilities = Capabilities, on_attach = handlers.on_attach_format })
+vim.lsp.enable("dockerls")
+
+vim.lsp.config("bashls", { capabilities = Capabilities })
+vim.lsp.enable("bashls")
+
+vim.lsp.config("ts_ls", {
     capabilities = Capabilities,
 })
+vim.lsp.enable("ts_ls")
 
-lspconfig.cssls.setup({
+vim.lsp.config("cssls", {
     capabilities = Capabilities,
 })
+vim.lsp.enable("cssls")
 
-lspconfig.html.setup({
+vim.lsp.config("html", {
     capabilities = Capabilities,
 })
+vim.lsp.enable("html")
 
-lspconfig.emmet_ls.setup({
+vim.lsp.config("emmet_ls", {
     capabilities = Capabilities,
     cmd = { "emmet-ls", "--stdio" },
     filetypes = { "html", "css" },
@@ -33,8 +40,9 @@ lspconfig.emmet_ls.setup({
         return vim.loop.cwd()
     end,
 })
+vim.lsp.enable("emmet_ls")
 
-lspconfig.jsonls.setup({
+vim.lsp.config("jsonls", {
     settings = {
         json = {
             schemas = require("schemastore").json.schemas(),
@@ -50,6 +58,8 @@ lspconfig.jsonls.setup({
         },
     },
 })
+vim.lsp.enable("jsonls")
+
 -- add yaml schema definitions
 local json_schemas = require("schemastore").json.schemas({})
 local yaml_schemas = {}
@@ -59,7 +69,7 @@ vim.tbl_map(function(schema)
     end
     yaml_schemas[schema.url] = schema.fileMatch
 end, json_schemas)
-lspconfig.yamlls.setup({
+vim.lsp.config("yamlls", {
     capabilities = Capabilities,
     settings = {
         yaml = {
@@ -71,6 +81,7 @@ lspconfig.yamlls.setup({
     },
     cmd = { "yaml-language-server", "--stdio" },
 })
+vim.lsp.enable("yamlls")
 
-lspconfig.texlab.setup({})
-lspconfig.clangd.setup({})
+vim.lsp.enable("texlab")
+vim.lsp.enable("clangd")

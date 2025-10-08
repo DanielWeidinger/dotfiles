@@ -13,7 +13,7 @@ else
     table.insert(runtime_path, "lua/?.lua")
     table.insert(runtime_path, "lua/?/init.lua")
 
-    lspconfig.lua_ls.setup({
+    vim.lsp.config("lua_ls", {
         cmd = command,
         capabilities = Capabilities,
         settings = {
