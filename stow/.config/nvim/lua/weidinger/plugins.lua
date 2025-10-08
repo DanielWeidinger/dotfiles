@@ -155,7 +155,6 @@ return packer.startup(function(use)
     use("hrsh7th/nvim-cmp")
     use("hrsh7th/cmp-nvim-lsp")
     use("hrsh7th/cmp-buffer")
-    use("hrsh7th/cmp-vsnip")
     use("hrsh7th/cmp-path")
     use("hrsh7th/cmp-cmdline")
     use("ray-x/cmp-treesitter")
@@ -185,8 +184,16 @@ return packer.startup(function(use)
     -- })
 
     -- Snippets
-    use("hrsh7th/vim-vsnip")
+    use({
+        "L3MON4D3/LuaSnip",
+        -- follow latest release.
+        tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+        config = function()
+            require("luasnip.loaders.from_vscode").lazy_load()
+        end,
+    })
     use("rafamadriz/friendly-snippets")
+    use("saadparwaiz1/cmp_luasnip")
 
     --Macros
     use({ "kr40/nvim-macros" })

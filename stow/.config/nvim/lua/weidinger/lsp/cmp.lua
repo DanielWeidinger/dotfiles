@@ -14,7 +14,7 @@ cmp.setup({
     },
     snippet = {
         expand = function(args)
-            vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+            require("luasnip").lsp_expand(args.body)
         end,
     },
     mapping = {
@@ -28,7 +28,7 @@ cmp.setup({
     },
     sources = cmp.config.sources({
         { name = "nvim_lsp" },
-        { name = "vsnip" }, -- For vsnip users.
+        { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
         { name = "treesitter" },
@@ -40,7 +40,7 @@ cmp.setup({
             menu = {
                 buffer = "[Buf]",
                 nvim_lsp = "[LSP]",
-                vsnip = "[VSnp]",
+                luasnip = "[LuaSnip]",
                 treesitter = "[]",
                 dap = "[DAP]",
             },
@@ -65,8 +65,7 @@ cmp.setup({
         local in_command_mode = vim.api.nvim_get_mode().mode == "c"
         local is_not_comment = (not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment"))
             or in_command_mode
-
-        local other_conditions = vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt"
+        local other_conditions = vim.api.nvim_get_option_value("buftype", { buf = 0 }) ~= "prompt"
             or require("cmp_dap").is_dap_buffer()
         local is_not_chatgpt_input = vim.bo.filetype ~= "chatgpt-input"
         return is_not_comment and other_conditions and is_not_chatgpt_input

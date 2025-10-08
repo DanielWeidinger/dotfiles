@@ -27,7 +27,7 @@ telescope.load_extension("ui-select")
 vim.keymap.set(
     "n",
     "<leader>ff",
-    ":lua require'telescope.builtin'.find_files({ hidden = true, find_command = { 'rg', '--files', '--hidden', '--no-ignore-vcs', '--glob', '!{**/dist/*,**/node_modules/*,**/.git/*}' } })<cr>",
+    ":lua require'telescope.builtin'.find_files({ hidden = true, find_command = { 'rg', '--files', '--hidden', '--no-ignore-vcs', '--glob', '!{**/dist/*,**/node_modules/*,**/.git/*,**/.next/*}' } })<cr>",
     { desc = "Find all files" }
 )
 vim.keymap.set("n", "<leader>fo", "<cmd>Telescope oldfiles<cr>", { desc = "prev. opened" })
