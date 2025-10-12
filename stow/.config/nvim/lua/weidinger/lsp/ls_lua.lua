@@ -44,3 +44,4 @@ else
         },
     })
 end
+vim.lsp.enable("lua_ls")

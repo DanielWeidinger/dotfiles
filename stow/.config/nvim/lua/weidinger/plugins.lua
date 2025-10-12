@@ -171,17 +171,6 @@ return packer.startup(function(use)
         end,
     }) -- Floating window lsp signature
     use("lewis6991/hover.nvim")
-    -- better code diagnostics with floating window
-    use("b0o/schemastore.nvim") -- For json schema validation capabilities
-
-    -- -- Flutter support (autosetup for dartls)
-    -- use({
-    --     "akinsho/flutter-tools.nvim",
-    --     config = function()
-    --         require("weidinger.lsp.ls_flutter").setup()
-    --     end,
-    --     ft = { "dart" },
-    -- })
 
     -- Snippets
     use({
