@@ -15,6 +15,14 @@ send -- "scan on\r"
 sleep 2
 expect "$device"
 send -- "connect $device\r"
-expect "Connection successful"
+
+expect {
+    -re {\[agent\] Authorize service .* \(yes/no\):} {
+        send -- "yes\r"
+        exp_continue          ;# keep listening for “Connection successful”
+    }
+    "Connection successful"  { }
+}
+
 send -- "exit\r"
 expect eof

@@ -1,13 +1,14 @@
 #!/bin/zsh
 
 alias o="xdg-open"
+alias c="wl-copy"
 
 mrl() {
     mongorestore --host localhost --drop --gzip --archive="$HOME/Projects/Deskpilot/database/$1" --nsFrom="$2" --nsTo="$3"
 }
 
 mdr() {
-    mongodump --uri="mongodb+srv://daniel:$MONGODB_PASSWORD@cluster0.dbdrlww.mongodb.net/?retryWrites=true&w=majority" --gzip  --db $1 --archive="$HOME/Projects/Deskpilot/database/$2"
+    mongodump --uri="mongodb+srv://daniel:$DO_DESKPILOT_DATABASE_PASSWORD@deskpilot-main-116ef2a6.mongo.ondigitalocean.com/?tls=true&authSource=admin&replicaSet=deskpilot-main" --gzip  --db $1 --archive="$HOME/Projects/Deskpilot/database/$2"
 }
 
 mdl() {
