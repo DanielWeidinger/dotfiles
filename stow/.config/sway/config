@@ -206,6 +206,15 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+# define display output names
+set $main_display "eDP-1"
+set $left_display "DP-6"
+set $right_display "DP-5"
+# default display outputs for workspaces
+workspace 1 output $main_display
+workspace 2 output $left_display
+workspace 3 output $right_display
+
 # Status Bar:
 bar {
     swaybar_command waybar
