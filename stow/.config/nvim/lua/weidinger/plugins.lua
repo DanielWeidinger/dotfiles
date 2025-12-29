@@ -122,7 +122,7 @@ return packer.startup(function(use)
     })
 
     -- Task Executor
-    use("stevearc/overseer.nvim")
+    use({ "stevearc/overseer.nvim", tag = "v1.6.0" })
 
     use({
         "ThePrimeagen/harpoon",
@@ -216,7 +216,11 @@ return packer.startup(function(use)
         "m4xshen/hardtime.nvim",
         dependencies = { "MunifTanjim/nui.nvim" },
         config = function()
-            require("hardtime").setup()
+            require("hardtime").setup({
+                disabled_filetypes = {
+                    ["markdown"] = true,
+                },
+            })
         end,
     })
 
