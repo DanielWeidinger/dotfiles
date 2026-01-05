@@ -113,6 +113,15 @@ return packer.startup(function(use)
 
     -- AI
     use({
+        "Kurama622/llm.nvim",
+        requires = {
+            "MunifTanjim/nui.nvim",
+            "nvim-lua/plenary.nvim",
+            "MeanderingProgrammer/render-markdown.nvim",
+            -- "nvim-telescope/telescope.nvim",
+        },
+    })
+    use({
         "jackMort/ChatGPT.nvim",
         requires = {
             "MunifTanjim/nui.nvim",
