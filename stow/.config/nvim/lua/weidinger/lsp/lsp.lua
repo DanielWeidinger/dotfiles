@@ -52,3 +52,5 @@ vim.lsp.enable("yamlls")
 
 vim.lsp.enable("texlab")
 vim.lsp.enable("clangd")
+
+vim.lsp.enable("csharp_ls")

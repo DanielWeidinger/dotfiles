@@ -34,7 +34,7 @@ sudo pacman -S clang
 echo --Lua
 langserver_dir="$HOME/.local/share/nvim/lang-servers"
 if [ ! -d "$langserver_dir" ]; then
-	mkdir $langserver_dir
+    mkdir $langserver_dir
 fi
 sudo pacman -S stylua --noconfirm
 cd $langserver_dir
@@ -48,6 +48,9 @@ cd ../..
 
 echo --LaTex
 sudo pacman -S texlab --noconfirm
+
+# echo --C#
+# dotnet tool install --global csharp-ls
 
 # echo --OmniSharp
 # cd $langserver_dir

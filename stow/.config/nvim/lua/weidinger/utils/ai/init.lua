@@ -7,7 +7,7 @@ chatgpt.setup({
     actions_paths = { vim.fn.stdpath("config") .. "/lua/weidinger/utils/ai/actions.json" },
 })
 
-vim.keymap.set({ "n", "v" }, "<leader>aa", ":ChatGPT<cr>", { desc = "Launch (GPT)" })
+vim.keymap.set({ "n", "v" }, "<leader>aA", ":ChatGPT<cr>", { desc = "Launch (GPT)" })
 vim.keymap.set({ "n", "v" }, "<leader>ae", function()
     chatgpt.edit_with_instructions()
 end, { desc = "Edit with instructions (GPT)" })

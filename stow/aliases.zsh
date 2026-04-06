@@ -39,3 +39,4 @@ philo(){
     cp "$HOME/Philosophie/0_Templates/$proj_type" $2 -r
 }
 
+alias avante='nvim -c "lua vim.defer_fn(function()require(\"avante.api\").zen_mode()end, 100)"'
