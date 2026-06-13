@@ -24,6 +24,7 @@ local ensureInstalled = {
     "markdown_inline",
     "cpp",
     "c_sharp",
+    "bash",
 }
 local alreadyInstalled = require("nvim-treesitter.config").get_installed()
 local parsersToInstall = vim.iter(ensureInstalled)

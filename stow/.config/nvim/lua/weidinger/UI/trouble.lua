@@ -1,4 +1,4 @@
-require("trouble").setup()
+require("trouble").setup({ auto_refresh = false, pinned = true })
 
 -- Leader key mappings for Trouble
 

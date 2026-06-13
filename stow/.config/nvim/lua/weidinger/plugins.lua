@@ -62,9 +62,9 @@ return packer.startup(function(use)
     })
 
     use({
-        "numToStr/Comment.nvim",
+        "nvim-mini/mini.comment",
         config = function()
-            require("Comment").setup()
+            require("mini.comment").setup()
         end,
     })
 
@@ -223,6 +223,7 @@ return packer.startup(function(use)
         dependencies = { "MunifTanjim/nui.nvim" },
         config = function()
             require("hardtime").setup({
+                disable_mouse = false,
                 disabled_filetypes = {
                     ["markdown"] = true,
                     ["llm"] = true,
