@@ -26,6 +26,14 @@ M.setup = function(state)
         on_open = on_open,
         on_close = on_close,
     })
+    local opencode = Terminal:new({
+        count = 96,
+        cmd = "opencode",
+        hidden = true,
+        direction = "vertical",
+        on_open = on_open,
+        on_close = on_close,
+    })
 
     -- Leader key mappings for terminal actions
     vim.keymap.set("n", "<leader>tg", function()
@@ -34,6 +42,9 @@ M.setup = function(state)
     vim.keymap.set("n", "<leader>td", function()
         lazydocker:toggle()
     end, { desc = "docker" })
+    vim.keymap.set("n", "<leader>tc", function()
+        opencode:toggle()
+    end, { desc = "Open Code" })
     vim.keymap.set("n", "<leader>tf", function()
         state.currentDirection = "float"
     end, { desc = "Mode: Float" })

@@ -11,6 +11,7 @@ require("weidinger.UI.toggleterm.special_terms").setup(state)
 require("toggleterm").setup({
     start_in_insert = true,
     persist_mode = true,
+    persist_size = false,
     size = function(term)
         if term.direction == "horizontal" then
             return 16

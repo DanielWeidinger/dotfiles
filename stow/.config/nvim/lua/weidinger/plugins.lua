@@ -184,6 +184,10 @@ return packer.startup(function(use)
     use("rafamadriz/friendly-snippets")
     use("saadparwaiz1/cmp_luasnip")
 
+    use({ 
+        "coder/claudecode.nvim",
+        dependencies = { "folke/snacks.nvim" },
+    })
     --Macros
     use({ "kr40/nvim-macros" })
 
