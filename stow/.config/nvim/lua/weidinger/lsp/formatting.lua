@@ -1,24 +1,18 @@
-require("lsp-format").setup({
-    typescript = {
-        exclude = { "ts_ls" },
+require("conform").setup({
+    format_on_save = {
+        -- These options will be passed to conform.format()
+        timeout_ms = 500,
+        lsp_format = "fallback",
     },
-    typescriptreact = {
-        exclude = { "ts_ls" },
+    formatters_by_ft = {
+        lua = { "stylua" },
+        python = { "isort", "black" },
+        -- You can customize some of the format options for the filetype (:help conform.format)
+        rust = { "rustfmt", lsp_format = "fallback" },
+        -- Conform will run the first available formatter
+        javascript = { "prettierd", "prettier", "ts_ls", stop_after_first = true },
+        typescript = { "prettierd", "prettier", "ts_ls", stop_after_first = true },
+        typescriptreact = { "prettierd", "prettier", "ts_ls", stop_after_first = true },
+        json = { "prettierd", "prettier", "ts_ls", stop_after_first = true },
     },
-    javascriptreact = {
-        exclude = { "ts_ls" },
-    },
-    javascript = {
-        exclude = { "ts_ls" },
-    },
-    json = {
-        exclude = { "jsonls" },
-    },
-})
-
-vim.api.nvim_create_autocmd("LspAttach", {
-    callback = function(args)
-        local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
-        require("lsp-format").on_attach(client, args.buf)
-    end,
 })

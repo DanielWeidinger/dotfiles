@@ -145,12 +145,16 @@ return packer.startup(function(use)
 
     -- LSP
     use("neovim/nvim-lspconfig")
-    use("nvimtools/none-ls-extras.nvim")
-    use({ "nvimtools/none-ls.nvim", dependencies = {
-        "nvimtools/none-ls-extras.nvim",
-    } })
+    use({
+        "stevearc/conform.nvim",
+    }) -- Formatting
+    use({
+        "esmuellert/nvim-eslint",
+        config = function()
+            require("nvim-eslint").setup({})
+        end,
+    }) -- Formatting
 
-    use("lukas-reineke/lsp-format.nvim") -- wrapper around LSP formatting to not have to worry about implementation
     -- Autocomple + Sources
     use("hrsh7th/nvim-cmp")
     use("hrsh7th/cmp-nvim-lsp")
@@ -184,7 +188,7 @@ return packer.startup(function(use)
     use("rafamadriz/friendly-snippets")
     use("saadparwaiz1/cmp_luasnip")
 
-    use({ 
+    use({
         "coder/claudecode.nvim",
         dependencies = { "folke/snacks.nvim" },
     })
