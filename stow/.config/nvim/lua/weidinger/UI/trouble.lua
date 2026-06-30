@@ -12,4 +12,6 @@ vim.keymap.set("n", "<C-k>", ":lua require('trouble').prev({ jump = true })<cr>"
 
 -- Normal mode mappings for Trouble
 vim.keymap.set("n", "gr", "<cmd>Trouble lsp_references<cr>", { desc = "(Trouble)References" })
+
 vim.keymap.set("n", "gd", "<cmd>Trouble lsp_definitions<cr>", { desc = "(Trouble)Definitions" })
+vim.keymap.set("n", "gD", "<c-w>v<cmd>Trouble lsp_definitions<cr><c-w>l", { desc = "(Trouble)Definitions in Split" })

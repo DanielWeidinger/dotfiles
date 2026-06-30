@@ -111,16 +111,6 @@ return packer.startup(function(use)
     -- Browser utils
     use("dhruvasagar/vim-open-url")
 
-    -- AI
-    use({
-        "jackMort/ChatGPT.nvim",
-        requires = {
-            "MunifTanjim/nui.nvim",
-            "nvim-lua/plenary.nvim",
-            "nvim-telescope/telescope.nvim",
-        },
-    })
-
     -- Task Executor
     use({ "stevearc/overseer.nvim", tag = "v1.6.0" })
 
@@ -192,6 +182,10 @@ return packer.startup(function(use)
         "coder/claudecode.nvim",
         dependencies = { "folke/snacks.nvim" },
     })
+    use({
+        "ThePrimeagen/99",
+    })
+
     --Macros
     use({ "kr40/nvim-macros" })
 
