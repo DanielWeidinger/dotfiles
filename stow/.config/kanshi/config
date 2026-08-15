@@ -1,6 +1,6 @@
 profile {
-    output DP-5 position 0,0
-    output DP-6 position 1920,0
+    output 'BNQ BenQ GL2780 ETA7M0360404U' position 0,0
+    output 'BNQ BenQ GL2780 ET7CL0175304U' position 1920,0
     output eDP-1 position 3840,0
 }
 
