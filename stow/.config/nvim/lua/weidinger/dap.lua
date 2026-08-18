@@ -62,39 +62,47 @@ table.insert(dap.configurations.python, {
 })
 -- node
 local debuggerPath = vim.fn.stdpath("data") .. "/debugger/vscode-js-debug/dist/src/dapDebugServer.js"
-require("dap").adapters["pwa-node"] = {
+dap.adapters["pwa-node"] = {
     type = "server",
-    host = "localhost",
+    host = "127.0.0.1",
     port = "${port}",
     executable = {
         command = "node",
-        args = { debuggerPath, "${port}" },
+        args = {
+            debuggerPath,
+            "${port}",
+            "127.0.0.1",
+        },
     },
 }
 
-for _, language in ipairs({ "typescript", "javascript" }) do
-    dap.configurations[language] = {
-        {
-            type = "pwa-node",
-            request = "attach",
-            name = "Attach",
-            processId = require("dap.utils").pick_process,
-            cwd = "${workspaceFolder}",
-            skipFiles = { "<node_internals>/**", "node_modules/**" },
-            localRoot = vim.fn.getcwd(),
-            remoteRoot = "/usr/src/app",
-        },
-    }
-end
--- C++
-dap.adapters.codelldb = {
-    type = "server",
-    port = "${port}",
-    executable = {
-        command = "codelldb",
-        args = { "--port", "${port}" },
+local nest_attach = {
+    type = "pwa-node",
+    request = "attach",
+    name = "Attach to Nest :9229",
+
+    address = "127.0.0.1",
+    port = 9229,
+    timeout = 30000,
+    restart = true,
+    trace = true,
+
+    cwd = "${workspaceFolder}",
+    sourceMaps = true,
+    autoAttachChildProcesses = true,
+
+    outFiles = {
+        "${workspaceFolder}/dist/**/*.js",
+    },
+
+    skipFiles = {
+        "<node_internals>/**",
+        "**/node_modules/**",
     },
 }
+
+dap.configurations.typescript = { nest_attach }
+dap.configurations.javascript = { nest_attach }
 
 -- overwrite native nvim dialog to use telescope
 -- require("telescope").load_extension("dap")

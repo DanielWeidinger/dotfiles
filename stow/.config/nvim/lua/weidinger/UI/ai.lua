@@ -34,6 +34,7 @@ local basename = vim.fs.basename(cwd)
 _99.setup({
     -- provider = _99.Providers.ClaudeCodeProvider,  -- default: OpenCodeProvider
     provider = _99.Providers.ClaudeCodeProvider,
+    model = "claude-haiku-4-5",
     logger = {
         level = _99.DEBUG,
         path = "/tmp/" .. basename .. ".99.debug",
@@ -44,7 +45,7 @@ _99.setup({
     -- and generation will fail refer to tool documentation to resolve
     -- https://opencode.ai/docs/permissions/#external-directories
     -- https://code.claude.com/docs/en/permissions#read-and-edit
-    tmp_dir = "./tmp",
+    tmp_dir = "/tmp",
 
     --- Completions: #rules and @files in the prompt buffer
     completion = {

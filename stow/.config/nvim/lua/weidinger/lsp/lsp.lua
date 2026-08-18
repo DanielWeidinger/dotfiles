@@ -1,5 +1,14 @@
-vim.lsp.config("pyright", { capabilities = Capabilities })
-vim.lsp.enable("pyright")
+vim.lsp.config("basedpyright", {
+    capabilities = Capabilities,
+    settings = {
+        basedpyright = {
+            analysis = {
+                typeCheckingMode = "basic",
+            },
+        },
+    },
+})
+vim.lsp.enable("basedpyright")
 
 vim.lsp.config("dockerls", { capabilities = Capabilities })
 vim.lsp.enable("dockerls")

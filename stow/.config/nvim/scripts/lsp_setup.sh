@@ -4,7 +4,7 @@ echo --TSServer
 sudo npm install -g typescript typescript-language-server
 
 echo --Python
-sudo npm install -g pyright
+yay -S basedpyright-bin
 sudo pacman -S ruff --noconfirm
 
 echo --Docker
