@@ -23,6 +23,11 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
+-- CODEX PLUGIN
+vim.keymap.set({ "n", "t" }, "<leader>ao", function()
+    require("codex").toggle()
+end, { desc = "Toggle Codex popup or side-panel" })
+
 -- 99
 local _99 = require("99")
 

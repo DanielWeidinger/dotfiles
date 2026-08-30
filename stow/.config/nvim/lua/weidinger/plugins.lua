@@ -182,6 +182,7 @@ return packer.startup(function(use)
         "coder/claudecode.nvim",
         dependencies = { "folke/snacks.nvim" },
     })
+    use("johnseth97/codex.nvim")
     use({
         "ThePrimeagen/99",
     })
