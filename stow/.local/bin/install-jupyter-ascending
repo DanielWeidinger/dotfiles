@@ -1,0 +1,29 @@
+#!/bin/bash
+set -euo pipefail
+
+# Fork of imbue-ai/jupyter_ascending supporting Notebook v7+ / JupyterLab (python 3.10 - 3.13)
+# pinned to the reviewed commit
+COMMIT="a912aebf15cfa3d6dd897bed2d3ec810d37424a6"
+PKG="jupyter_ascending @ git+https://github.com/RitschAlex/jupyter_ascending.git@${COMMIT}"
+
+usage() {
+    echo "Usage: $0 server             install the global jupyter notebook server (uv tool)"
+    echo "       $0 project [name]     run inside a uv project to add the kernel side"
+}
+
+case "${1:-}" in
+server)
+    uv tool install --python 3.12 notebook --with "$PKG"
+    "$(uv tool dir)/notebook/bin/jupyter" server extension list 2>&1 | grep jupyter_ascending ||
+        echo "WARNING: jupyter_ascending server extension not found"
+    ;;
+project)
+    name="${2:-$(basename "$PWD")}"
+    uv add --dev ipykernel "$PKG"
+    uv run python -m ipykernel install --user --name "$name" --display-name "Python ($name)"
+    ;;
+*)
+    usage
+    exit 1
+    ;;
+esac

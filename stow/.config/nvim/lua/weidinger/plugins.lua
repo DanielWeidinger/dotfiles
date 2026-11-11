@@ -84,15 +84,8 @@ return packer.startup(function(use)
 
     -- Terminal functionality and execution
     use({ "akinsho/toggleterm.nvim", tag = "*" })
-    use({
-        "untitled-ai/jupyter_ascending.vim",
-        ft = { "python" },
-        setup = function()
-            vim.keymap.set("n", "<leader>jj", "<Plug>JupyterExecute", { desc = "Execute cell" })
-            vim.keymap.set("n", "<leader>ja", "<Plug>JupyterExecuteAll", { desc = "Execute all cells" })
-            vim.keymap.set("n", "<leader>jr", "<Plug>JupyterRestart", { desc = "Restart Kernel" })
-        end,
-    })
+    -- pinned to the reviewed commit; keymaps live in utils/jupyter_ascending.lua
+    use({ "RitschAlex/jupyter_ascending.nvim", commit = "4f3bfb75f8757fa440c765b835352bcf4749eeba" })
 
     -- General Git Stuff
     use({
